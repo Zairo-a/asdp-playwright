@@ -1,0 +1,18 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Positif] KA-K10 ganti kapal → kapasitas fisik, kuota, SUP, mode, & list ikut berubah; lalu kembali ke default";"PEMERIKSAAN";"LULUS";"12.4";"";""
+"2";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Temuan] KA-K11 setelah ganti kapal, jumlah kuota semua kelas di Alokasi seharusnya = Total kuota";"PEMERIKSAAN";"LULUS";"5.0";"KA-K11 — Setelah ganti kapal, kuota per kelas tidak menjumlah ke Total kuota
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02
+  2. Tab Kapasitas Operasional → Kapal (override harian) pilih ""KMP Naraya"" → Simpan
+  3. Buka tab Alokasi, jumlahkan ""kuota"" di judul setiap kolom kelas
+Ekspektasi: Jumlah kuota semua kelas = Total kuota (340)
+Aktual: Jumlah kuota kelas 276, Total kuota 340 (selisih 64 kursi tidak teralokasi), status tetap ""Sesuai kuota""";""
+"3";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Positif] KA-K12 kembali ke kapal default → alokasi per kelas pulih seperti awal";"PEMERIKSAAN";"LULUS";"6.6";"";""
+"4";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Edge] KA-K13 kapal default jadwal tidak ditawarkan lagi sebagai kapal pengganti (hanya lewat ""Pakai kapal default jadwal"")";"PEMERIKSAAN";"LULUS";"3.3";"";""
+"5";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Negatif] KA-K14 ganti kapal saat alokasi Mitra tersimpan lebih besar dari kuota kapal baru → seharusnya ditolak";"PEMERIKSAAN";"LULUS";"20.9";"KA-K15 — Kapal bisa diganti walau kuota kapal baru lebih kecil dari alokasi Mitra yang sudah tersimpan
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 → tab Alokasi
+  2. Isi Mitra kelas REGULER = 340 (tepat kuota kelas) → Simpan
+  3. Tab Kapasitas Operasional → Kapal (override harian) = KMP Naraya → Simpan
+Ekspektasi: Ditolak (seperti aturan ""ditolak bila kuota baru < hold + terjual""), atau alokasi Mitra disesuaikan ≤ kuota baru
+Aktual: Toast ""Override kapasitas berhasil disimpan""; kapal sekarang ""KMP Naraya (NARAYA)""; kuota kelas REGULER = 276, Mitra = 340";""

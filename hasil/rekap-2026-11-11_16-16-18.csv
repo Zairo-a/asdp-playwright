@@ -1,0 +1,21 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Positif] KA-K10 ganti kapal → kapasitas fisik, kuota, SUP, mode, & list ikut berubah; lalu kembali ke default";"PEMERIKSAAN";"LULUS";"14.2";"";""
+"2";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Temuan] KA-K11 setelah ganti kapal, jumlah kuota semua kelas di Alokasi seharusnya = Total kuota";"PEMERIKSAAN";"LULUS";"5.8";"KA-K11 — Setelah ganti kapal, kuota per kelas tidak menjumlah ke Total kuota
+Langkah:
+  1. Buka detail keberangkatan MRK-BKH-REG-2100 tanggal 2027-05-02
+  2. Tab Kapasitas Operasional → Kapal (override harian) pilih ""orange"" → Simpan
+  3. Buka tab Alokasi, jumlahkan ""kuota"" di judul setiap kolom kelas
+Ekspektasi: Jumlah kuota semua kelas = Total kuota (29)
+Aktual: Jumlah kuota kelas 32, Total kuota 29 (selisih -3 kursi tidak teralokasi), status tetap ""Sesuai kuota""";""
+"3";"UI\keberangkatan-kapal-ubah.spec.ts";"Keberangkatan — Kapal override (ubah data + restore) > [Positif] KA-K12 kembali ke kapal default → alokasi per kelas pulih seperti awal";"PEMERIKSAAN";"LULUS";"5.6";"";""
+"4";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Positif] KA-K01 dropdown Kapal hanya berisi kapal AKTIF dari master Kapal";"PEMERIKSAAN";"LULUS";"3.5";"";""
+"5";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Positif] KA-K02 ganti kapal tanpa Simpan → angka belum berubah; Batal mengembalikan kapal default";"PEMERIKSAAN";"LULUS";"2.9";"";""
+"6";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Negatif] KA-K03 cari kapal yang tidak ada → tidak ada opsi";"PEMERIKSAAN";"LULUS";"2.2";"";""
+"7";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Positif] KA-K04 kapasitas fisik = min(SKKP − ABK, pelampung) sesuai keterangan di layar";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"8";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Temuan] KA-K05 kapasitas fisik di keberangkatan seharusnya sama dengan ""Kap. Penumpang"" di master Kapal [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"3.5";"KA-K05 — Kapasitas fisik keberangkatan beda dengan Kap. Penumpang di master Kapal
+Langkah:
+  1. Buka menu Kapal, catat ""Kap. Penumpang"" kapal JDHAFGD
+  2. Buka detail keberangkatan MRK-BKH-REG-2100 tanggal 2027-05-02
+  3. Lihat kartu ""Kapasitas fisik penumpang""
+Ekspektasi: Kapasitas fisik = Kap. Penumpang di master (38), atau keterangan rumusnya dijelaskan
+Aktual: Kapasitas fisik 36 = min(SKKP 60 − ABK 24, pelampung 42); master Kap. Penumpang 38";""

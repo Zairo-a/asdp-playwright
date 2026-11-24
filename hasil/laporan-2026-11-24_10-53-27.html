@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 10:53</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 10:53 · 26 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">26</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">0</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">26</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lewat">
+        <td>1</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Positif] PR-30 Tambah perusahaan → muncul Aktif dengan Jumlah Cabang 0 &amp; Jumlah Kapal 0</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>2</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Dampak] PR-31 perusahaan baru (Aktif) muncul di pilihan &quot;Perusahaan&quot; form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>3</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Negatif] PR-32 kode perusahaan yang sudah dipakai → ditolak, tidak ada data ganda</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>4</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Positif] PR-33 Ubah nama, telepon &amp; email → daftar ikut berubah; [Dampak] nama baru di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>5</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Dampak] PR-34 Nonaktifkan → Status &quot;Nonaktif&quot;, menu &quot;Aktifkan&quot;, hilang dari pilihan Perusahaan form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>6</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Dampak] PR-35 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>7</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Dampak] PR-36 kapal baru memakai perusahaan uji → &quot;Jumlah Kapal&quot; jadi 1; kode perusahaan terkunci; hapus ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>8</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Edge] PR-37 Tambah perusahaan dengan status Nonaktif sejak awal → tersimpan Nonaktif, tidak ada di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>9</td><td>UI\perusahaan-ubah.spec.ts</td><td>Perusahaan — siklus data uji &gt; [Positif] PR-38 Hapus Data (tidak dipakai kapal lagi) → hilang dari daftar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-01 halaman tampil: judul, toolbar, 6 kolom, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-02 cari kode &amp; nama (huruf kecil) → hasil sesuai</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>12</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Negatif] PR-03 cari kata yang tidak ada → 0 data; [Edge] karakter khusus → tidak error</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>13</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-04 filter Status Aktif → semua Aktif; Nonaktif → semua Nonaktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>14</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-05 sort Kode &amp; Nama Perusahaan: klik kedua membalik urutan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>15</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-06 lebih dari 10 perusahaan → Berikutnya menampilkan sisanya</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>16</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-07 Export Ke Excel → file berisi kode &amp; nama perusahaan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>17</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — daftar &gt; [Positif] PR-08 menu ⋯: Ubah Data, Nonaktifkan, Hapus Data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — form (tanpa menyimpan) &gt; [Negatif] PR-10 Simpan form kosong → 2 pesan wajib; [Positif] status default Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>19</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — form (tanpa menyimpan) &gt; [Negatif] PR-11 email tidak valid (&quot;abc@&quot;, &quot;abc.com&quot;) → ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>20</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — form (tanpa menyimpan) &gt; [Negatif] PR-12 telepon berisi huruf (&quot;08abc&quot;) → tidak bisa diketik atau ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>21</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — form (tanpa menyimpan) &gt; [Edge] PR-13 kode 30 karakter / huruf kecil / simbol &amp; nama 150 karakter → dibatasi atau ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>22</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — form (tanpa menyimpan) &gt; [Positif] PR-14 Batal: form terisi → konfirmasi → Kembali → isian tetap</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>23</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — form (tanpa menyimpan) &gt; [Positif] PR-15 Ubah Data: isian sama dengan tabel; kode perusahaan yang SUDAH DIPAKAI kapal terkunci</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>24</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — dampak &gt; [Dampak] PR-20 kolom &quot;Jumlah Kapal&quot; = jumlah kapal di master Kapal per perusahaan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>25</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — dampak &gt; [Dampak] PR-21 kolom &quot;Jumlah Cabang&quot; = jumlah cabang di menu Cabang per perusahaan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>26</td><td>UI\perusahaan.spec.ts</td><td>Perusahaan — dampak &gt; [Dampak] PR-22 pilihan &quot;Perusahaan&quot; di form Kapal = perusahaan Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Perusahaan — siklus data uji &gt; [Positif] PR-30 Tambah perusahaan → muncul Aktif dengan Jumlah Cabang 0 &amp; Jumlah Kapal 0: -</p><p>Perusahaan — siklus data uji &gt; [Dampak] PR-31 perusahaan baru (Aktif) muncul di pilihan &quot;Perusahaan&quot; form Kapal: -</p><p>Perusahaan — siklus data uji &gt; [Negatif] PR-32 kode perusahaan yang sudah dipakai → ditolak, tidak ada data ganda: -</p><p>Perusahaan — siklus data uji &gt; [Positif] PR-33 Ubah nama, telepon &amp; email → daftar ikut berubah; [Dampak] nama baru di form Kapal: -</p><p>Perusahaan — siklus data uji &gt; [Dampak] PR-34 Nonaktifkan → Status &quot;Nonaktif&quot;, menu &quot;Aktifkan&quot;, hilang dari pilihan Perusahaan form Kapal: -</p><p>Perusahaan — siklus data uji &gt; [Dampak] PR-35 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form Kapal: -</p><p>Perusahaan — siklus data uji &gt; [Dampak] PR-36 kapal baru memakai perusahaan uji → &quot;Jumlah Kapal&quot; jadi 1; kode perusahaan terkunci; hapus ditolak: -</p><p>Perusahaan — siklus data uji &gt; [Edge] PR-37 Tambah perusahaan dengan status Nonaktif sejak awal → tersimpan Nonaktif, tidak ada di form Kapal: -</p><p>Perusahaan — siklus data uji &gt; [Positif] PR-38 Hapus Data (tidak dipakai kapal lagi) → hilang dari daftar: -</p><p>Perusahaan — daftar &gt; [Positif] PR-01 halaman tampil: judul, toolbar, 6 kolom, ringkasan data: -</p><p>Perusahaan — daftar &gt; [Positif] PR-02 cari kode &amp; nama (huruf kecil) → hasil sesuai: -</p><p>Perusahaan — daftar &gt; [Negatif] PR-03 cari kata yang tidak ada → 0 data; [Edge] karakter khusus → tidak error: -</p><p>Perusahaan — daftar &gt; [Positif] PR-04 filter Status Aktif → semua Aktif; Nonaktif → semua Nonaktif: -</p><p>Perusahaan — daftar &gt; [Positif] PR-05 sort Kode &amp; Nama Perusahaan: klik kedua membalik urutan: -</p><p>Perusahaan — daftar &gt; [Positif] PR-06 lebih dari 10 perusahaan → Berikutnya menampilkan sisanya: -</p><p>Perusahaan — daftar &gt; [Positif] PR-07 Export Ke Excel → file berisi kode &amp; nama perusahaan: -</p><p>Perusahaan — daftar &gt; [Positif] PR-08 menu ⋯: Ubah Data, Nonaktifkan, Hapus Data: -</p><p>Perusahaan — form (tanpa menyimpan) &gt; [Negatif] PR-10 Simpan form kosong → 2 pesan wajib; [Positif] status default Aktif: -</p><p>Perusahaan — form (tanpa menyimpan) &gt; [Negatif] PR-11 email tidak valid (&quot;abc@&quot;, &quot;abc.com&quot;) → ditolak: -</p><p>Perusahaan — form (tanpa menyimpan) &gt; [Negatif] PR-12 telepon berisi huruf (&quot;08abc&quot;) → tidak bisa diketik atau ditolak: -</p><p>Perusahaan — form (tanpa menyimpan) &gt; [Edge] PR-13 kode 30 karakter / huruf kecil / simbol &amp; nama 150 karakter → dibatasi atau ditolak: -</p><p>Perusahaan — form (tanpa menyimpan) &gt; [Positif] PR-14 Batal: form terisi → konfirmasi → Kembali → isian tetap: -</p><p>Perusahaan — form (tanpa menyimpan) &gt; [Positif] PR-15 Ubah Data: isian sama dengan tabel; kode perusahaan yang SUDAH DIPAKAI kapal terkunci: -</p><p>Perusahaan — dampak &gt; [Dampak] PR-20 kolom &quot;Jumlah Kapal&quot; = jumlah kapal di master Kapal per perusahaan: -</p><p>Perusahaan — dampak &gt; [Dampak] PR-21 kolom &quot;Jumlah Cabang&quot; = jumlah cabang di menu Cabang per perusahaan: -</p><p>Perusahaan — dampak &gt; [Dampak] PR-22 pilihan &quot;Perusahaan&quot; di form Kapal = perusahaan Aktif: -</p>
+</body></html>

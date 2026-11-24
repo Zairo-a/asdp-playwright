@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 12-11-2026 13:30</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>12-11-2026 13:30 · 10 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">10</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">10</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">4</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">0</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — simpan &gt; [Temuan] TA-T10 Simpan di Template seharusnya TIDAK mengubah keberangkatan yang sudah ada (hari ini)</div>
+        <div class="berkas">UI\template-alokasi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T10 — Simpan di halaman Template langsung mengubah keberangkatan hari ini (bukan template)
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI, Jadwal MRK-BKH-REG-2100
+  3. Isi Mitra kelas REGULER = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  4. Buka detail keberangkatan MRK-BKH-REG-2100 tanggal 2026-11-12 → tab Alokasi
+Ekspektasi: Keberangkatan tanggal 2026-11-12 yang sudah ada TIDAK berubah (sesuai keterangan &quot;keberangkatan yang sudah ada tidak berubah&quot;); template dipakai untuk keberangkatan baru
+Aktual: Simpan mengirim PUT /api/proxy/cms/capacity/departures/2026-11-12/955/allocations; keberangkatan 2026-11-12 kini Mitra REGULER = 1 (sebelumnya 0), label &quot;Mode ubah · override untuk keberangkatan ini&quot;</p>
+        <div class="bukti"><a href="bukti/TA-T10_20261112-133024.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T10_20261112-133024.png" alt="Bukti bukti/TA-T10_20261112-133024.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T10_20261112-133024.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T10 — Simpan di halaman Template langsung mengubah keberangkatan hari ini (bukan template)
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI, Jadwal MRK-BKH-REG-2100
+  3. Isi Mitra kelas REGULER = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  4. Buka detail keberangkatan MRK-BKH-REG-2100 tanggal 2026-11-12 → tab Alokasi
+Ekspektasi: Keberangkatan tanggal 2026-11-12 yang sudah ada TIDAK berubah (sesuai keterangan &quot;keberangkatan yang sudah ada tidak berubah&quot;); template dipakai untuk keberangkatan baru
+Aktual: Simpan mengirim PUT /api/proxy/cms/capacity/departures/2026-11-12/955/allocations; keberangkatan 2026-11-12 kini Mitra REGULER = 1 (sebelumnya 0), label &quot;Mode ubah · override untuk keberangkatan ini&quot;
+(bukti: hasil\bukti\TA-T10_20261112-133024.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — read-only &gt; [Temuan] TA-T01 halaman Template seharusnya memuat data TEMPLATE, bukan keberangkatan hari ini</div>
+        <div class="berkas">UI\template-alokasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T01 — Halaman &quot;Template Alokasi Rute&quot; memuat alokasi keberangkatan hari ini, bukan template jadwal
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Lihat data yang dimuat (Network: …/allocations)
+Ekspektasi: Halaman memuat template alokasi jadwal (nilai awal, dalam %), bukan data satu keberangkatan
+Aktual: Data dimuat dari keberangkatan tanggal 2026-11-12 (id 955): /api/proxy/cms/capacity/departures/2026-11-12/955/allocations; tabel menampilkan kolom &quot;terjual&quot; milik keberangkatan itu</p>
+        <div class="bukti"><a href="bukti/TA-T01_20261112-133051.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T01_20261112-133051.png" alt="Bukti bukti/TA-T01_20261112-133051.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T01_20261112-133051.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T01 — Halaman &quot;Template Alokasi Rute&quot; memuat alokasi keberangkatan hari ini, bukan template jadwal
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Lihat data yang dimuat (Network: …/allocations)
+Ekspektasi: Halaman memuat template alokasi jadwal (nilai awal, dalam %), bukan data satu keberangkatan
+Aktual: Data dimuat dari keberangkatan tanggal 2026-11-12 (id 955): /api/proxy/cms/capacity/departures/2026-11-12/955/allocations; tabel menampilkan kolom &quot;terjual&quot; milik keberangkatan itu
+(bukti: hasil\bukti\TA-T01_20261112-133051.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — read-only &gt; [Temuan] TA-T02 nilai template seharusnya dalam % sesuai keterangan di layar [perlu konfirmasi]</div>
+        <div class="berkas">UI\template-alokasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T02 — Keterangan menyebut nilai template &quot;dalam %&quot;, tetapi tabel menampilkan kursi dan kolom &quot;terjual&quot;
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Baca keterangan di atas tabel, bandingkan dengan isi tabel
+Ekspektasi: Tabel template menampilkan persentase per kelompok channel/kelas, tanpa angka terjual
+Aktual: Keterangan: &quot;Nilai awal dari Alokasi Kuota Jadwal (dalam %), di sini dalam kursi dan bisa dioverride.&quot;; tabel tidak berisi nilai %, berisi kolom &quot;terjual&quot;</p>
+        <div class="bukti"><a href="bukti/TA-T02_20261112-133053.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T02_20261112-133053.png" alt="Bukti bukti/TA-T02_20261112-133053.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T02_20261112-133053.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T02 — Keterangan menyebut nilai template &quot;dalam %&quot;, tetapi tabel menampilkan kursi dan kolom &quot;terjual&quot;
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Baca keterangan di atas tabel, bandingkan dengan isi tabel
+Ekspektasi: Tabel template menampilkan persentase per kelompok channel/kelas, tanpa angka terjual
+Aktual: Keterangan: &quot;Nilai awal dari Alokasi Kuota Jadwal (dalam %), di sini dalam kursi dan bisa dioverride.&quot;; tabel tidak berisi nilai %, berisi kolom &quot;terjual&quot;
+(bukti: hasil\bukti\TA-T02_20261112-133053.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — read-only &gt; [Temuan] TA-T03 pilihan rute &amp; jadwal seharusnya tetap setelah reload (seperti halaman Keberangkatan)</div>
+        <div class="berkas">UI\template-alokasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T03 — Pilihan rute &amp; jadwal di Template hilang setelah reload
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Tekan F5 / reload halaman
+Ekspektasi: Rute &quot;MERAK - BAKAUHENI&quot; dan jadwal &quot;MRK-BKH-REG-2100&quot; tetap terpilih (tersimpan di URL, seperti halaman Keberangkatan &amp; Alokasi)
+Aktual: Setelah reload: Rute &quot;Pilih rute&quot;, Jadwal &quot;Semua jadwal&quot; — pilihan hilang, URL tanpa parameter</p>
+        <div class="bukti"><a href="bukti/TA-T03_20261112-133056.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T03_20261112-133056.png" alt="Bukti bukti/TA-T03_20261112-133056.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T03_20261112-133056.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T03 — Pilihan rute &amp; jadwal di Template hilang setelah reload
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Tekan F5 / reload halaman
+Ekspektasi: Rute &quot;MERAK - BAKAUHENI&quot; dan jadwal &quot;MRK-BKH-REG-2100&quot; tetap terpilih (tersimpan di URL, seperti halaman Keberangkatan &amp; Alokasi)
+Aktual: Setelah reload: Rute &quot;Pilih rute&quot;, Jadwal &quot;Semua jadwal&quot; — pilihan hilang, URL tanpa parameter
+(bukti: hasil\bukti\TA-T03_20261112-133056.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Negatif] TA-10 Mitra melebihi kuota kelas di Template → ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>8.0</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>2</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Temuan] TA-T10 Simpan di Template seharusnya TIDAK mengubah keberangkatan yang sudah ada (hari ini)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>36.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Positif] TA-01 state awal: Rute wajib, Jadwal terkunci, pesan &quot;Pilih rute terlebih dahulu&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Positif] TA-02 pilih rute → Jadwal aktif &amp; hanya berisi jadwal rute tersebut</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Positif] TA-03 pilih rute + jadwal → tabel alokasi tampil, sub-tab Penumpang &amp; Kendaraan tersedia</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Negatif] TA-04 cari rute yang tidak ada → &quot;Tidak ditemukan&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Edge] TA-05 ganti rute setelah jadwal dipilih → pilihan jadwal ter-reset</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>8</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Temuan] TA-T01 halaman Template seharusnya memuat data TEMPLATE, bukan keberangkatan hari ini</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>9</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Temuan] TA-T02 nilai template seharusnya dalam % sesuai keterangan di layar [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>10</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Temuan] TA-T03 pilihan rute &amp; jadwal seharusnya tetap setelah reload (seperti halaman Keberangkatan)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr></table>
+
+</body></html>

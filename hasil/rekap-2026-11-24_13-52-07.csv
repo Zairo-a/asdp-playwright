@@ -1,0 +1,62 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-30 Tambah pelabuhan (Per kapal + 1 dermaga) → muncul di daftar dengan zona waktu otomatis";"PEMERIKSAAN";"LULUS";"6.5";"";""
+"2";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Dampak] PL-45 pelabuhan baru (Aktif) muncul di pilihan ""Pelabuhan pangkalan"" form Kapal";"PEMERIKSAAN";"LULUS";"6.0";"";""
+"3";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Dampak] PL-46 pelabuhan baru (Aktif) tampil di halaman web ""Pelabuhan""";"PEMERIKSAAN";"LULUS";"3.8";"";""
+"4";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-31 kode yang sudah dipakai → ditolak ""sudah ada"", tidak ada data baru";"PEMERIKSAAN";"LULUS";"6.2";"";""
+"5";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-32 mode Pelabuhan 24 jam tanpa kapasitas harian → gagal simpan";"PEMERIKSAAN";"LULUS";"7.1";"";""
+"6";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-33 Ubah nama → konfirmasi menampilkan perubahan lama → baru, daftar ikut berubah";"PEMERIKSAAN";"LULUS";"6.3";"";""
+"7";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Edge] PL-34 Ubah tanpa mengubah apa pun → tidak ada perubahan yang tersimpan";"PEMERIKSAAN";"LULUS";"5.3";"";""
+"8";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-35 Nonaktifkan → status ""Nonaktif"", menu berubah jadi ""Aktifkan"", muncul di filter Nonaktif";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"9";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-36 Aktifkan → Batal → status tetap ""Nonaktif""";"PEMERIKSAAN";"LULUS";"2.8";"";""
+"10";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Dampak] PL-47 pelabuhan Nonaktif → hilang dari ""Pelabuhan pangkalan"" form Kapal & dari halaman web ""Pelabuhan""";"PEMERIKSAAN";"LULUS";"20.9";"";""
+"11";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-37 Aktifkan kembali → status ""Aktif""";"PEMERIKSAAN";"LULUS";"3.6";"";""
+"12";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Dampak] PL-48 pelabuhan Aktif lagi → muncul lagi di ""Pelabuhan pangkalan"" form Kapal";"PEMERIKSAAN";"LULUS";"5.8";"";""
+"13";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-38 Hapus Data → hilang dari daftar, total berkurang 1";"PEMERIKSAAN";"LULUS";"6.4";"";""
+"14";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-39 dampak: pelabuhan nonaktif tidak muncul di pilihan rute baru";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"15";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-40 pelabuhan yang dipakai jadwal aktif → Hapus ditolak";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"16";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Temuan] PL-T10 pesan error simpan memakai nama field bahasa Inggris";"PEMERIKSAAN";"LULUS";"7.2";"PL-T10 — Pesan error dari server memakai nama field Inggris (""Daily passenger capacity"", ""Daily vehicle sup"")
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik ""Tambah""
+  3. Isi Kode baru ""QA28GDE"", Nama, Kota
+  4. Pilih mode ""Pelabuhan 24 jam"", kapasitas harian kosong
+  5. Simpan → konfirmasi Simpan
+Ekspektasi: Pesan memakai label di layar: ""Kapasitas penumpang harian wajib diisi"", ""Kapasitas kendaraan harian (SUP) wajib diisi""
+Aktual: Toast: ""Gagal menyimpan pelabuhan Daily passenger capacity wajib diisi. Daily vehicle sup wajib diisi.""";""
+"17";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"18";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-02 cari berdasarkan kode → hanya baris yang cocok";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"19";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-03 cari berdasarkan nama (huruf kecil) → tetap ketemu";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"20";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Negatif] PL-04 cari kata yang tidak ada → tabel kosong, 0 data";"PEMERIKSAAN";"LULUS";"2.9";"";""
+"21";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Edge] PL-05 cari dengan karakter khusus → tidak error, 0 data";"PEMERIKSAAN";"LULUS";"2.9";"";""
+"22";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-06 sort Kode: klik 1x A→Z, klik 2x Z→A";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"23";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-07 Limit 25 → 25 baris & ringkasan 1-25";"PEMERIKSAAN";"LULUS";"3.4";"";""
+"24";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-08 pindah halaman: Berikutnya → 11-20, Sebelumnya aktif";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"25";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-09 filter Nonaktif → semua baris ""Nonaktif""";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"26";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-10 filter Aktif → tidak ada baris ""Nonaktif""";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"27";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-11 Tampilan: sembunyikan kolom Kota → kolom hilang";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"28";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-12 Export → file terunduh & berisi data pelabuhan";"PEMERIKSAAN";"LULUS";"7.5";"";""
+"29";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Temuan] PL-T02 tombol ""Export Ke Excel"" seharusnya menghasilkan file Excel (.xlsx)";"PEMERIKSAAN";"LULUS";"7.1";"";""
+"30";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Positif] PL-13 zona waktu sesuai provinsi (contoh: NTT = WITA, Sumut = WIB)";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"31";"UI\pelabuhan.spec.ts";"Pelabuhan — daftar > [Negatif] PL-14 Hapus massal → Batal → data tetap ada";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"32";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Negatif] PL-15 langkah 1 kosong → Selanjutnya → 3 pesan wajib diisi";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"33";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Edge] PL-16 batas panjang: Kode 50, Nama 100, Alamat 150 karakter";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"34";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Positif] PL-17 pilih kota → provinsi tampil di keterangan";"PEMERIKSAAN";"LULUS";"4.9";"";""
+"35";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Negatif] PL-18 kuota penumpang gratis negatif → ditolak";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"36";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Positif] PL-19 mode default ""Per kapal""; pilih ""Pelabuhan 24 jam"" → muncul 2 kolom kapasitas harian";"PEMERIKSAAN";"LULUS";"4.6";"";""
+"37";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Positif] PL-20 Batal menutup form tanpa menyimpan";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"38";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Negatif] PL-20b Batal → ""Batalkan Perubahan?"" → Kembali → form tetap terbuka & isian tidak hilang";"PEMERIKSAAN";"LULUS";"5.2";"";""
+"39";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Edge] PL-20c form belum diisi → Batal langsung menutup tanpa konfirmasi";"PEMERIKSAAN";"LULUS";"5.8";"";""
+"40";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Positif] PL-21 dermaga baru: kode otomatis ber-awalan kode pelabuhan, nama wajib";"PEMERIKSAAN";"LULUS";"6.6";"";""
+"41";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Positif] PL-22 Ubah Data: kode terkunci, judul memuat nama pelabuhan";"PEMERIKSAAN";"LULUS";"4.7";"";""
+"42";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Temuan] PL-T01 mode ""Pelabuhan 24 jam"": kapasitas harian kosong seharusnya ditolak di langkah 2";"PEMERIKSAAN";"LULUS";"6.9";"PL-T01 — Mode Pelabuhan 24 jam bisa lanjut ke langkah 3 walau kapasitas harian kosong
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik ""Tambah""
+  3. Isi Kode, Nama, Kota → Selanjutnya
+  4. Pilih mode ""Pelabuhan 24 jam"", biarkan kapasitas harian kosong → Selanjutnya
+Ekspektasi: Tetap di langkah 2/3 dengan pesan wajib diisi pada Kapasitas penumpang harian & Kapasitas kendaraan harian (SUP)
+Aktual: Pindah ke langkah 3/3; error baru muncul setelah klik Simpan di langkah terakhir";""
+"43";"UI\pelabuhan.spec.ts";"Pelabuhan — dampak ke web Ferizy > [Dampak] PL-41 web ""Berangkat dari"": setiap pelabuhan ada di CMS, Aktif, dengan nama & kota yang sama";"PEMERIKSAAN";"LULUS";"12.9";"";""
+"44";"UI\pelabuhan.spec.ts";"Pelabuhan — dampak ke web Ferizy > [Dampak] PL-42 zona waktu di kartu jadwal web (LEMBAR → PADANG BAI) = zona pelabuhan asal di CMS";"PEMERIKSAAN";"LULUS";"6.2";"";""
+"45";"UI\pelabuhan.spec.ts";"Pelabuhan — dampak ke web Ferizy > [Dampak] PL-43 halaman web ""Pelabuhan"" menampilkan pelabuhan Aktif dari CMS (sampel 15 pertama)";"PEMERIKSAAN";"LULUS";"6.8";"";""
+"46";"UI\pelabuhan.spec.ts";"Pelabuhan — dampak ke web Ferizy > [Negatif] PL-44 pelabuhan NONAKTIF di CMS tidak muncul di web (halaman Pelabuhan & ""Berangkat dari"")";"PEMERIKSAAN";"LULUS";"8.8";"";""

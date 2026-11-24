@@ -1,0 +1,16 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] RJ-30 Tambah rute A → B → muncul di daftar: Aktif, Online, belum ada jadwal";"PEMERIKSAAN";"LULUS";"7.4";"";""
+"2";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] RJ-31 Tambah jadwal 10:00 (kapal default) di detail rute → tampil di detail & daftar ""1 Jadwal""";"PEMERIKSAAN";"LULUS";"8.7";"";""
+"3";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] RJ-32 dampak: rute baru muncul di Keberangkatan & Alokasi dengan keberangkatan + kapal dari jadwal";"PEMERIKSAAN";"LULUS";"3.3";"";""
+"4";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Negatif] RJ-33 Hapus rute yang masih punya jadwal → ditolak, rute tetap ada";"PEMERIKSAAN";"LULUS";"3.5";"";""
+"5";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Negatif] PL-40 Hapus pelabuhan yang dipakai rute → ditolak, pelabuhan tetap ada";"PEMERIKSAAN";"LULUS";"3.2";"";""
+"6";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] PL-39 pelabuhan Nonaktif tidak ditawarkan di form Tambah rute; Aktif lagi → ditawarkan";"PEMERIKSAAN";"LULUS";"12.5";"";""
+"7";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] RJ-34 nonaktifkan rute → ""Tidak Aktif"" & hilang dari pilihan rute Keberangkatan; aktifkan lagi → kembali";"PEMERIKSAAN";"LULUS";"9.8";"";""
+"8";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] RJ-35 Hapus jadwal → detail kosong, daftar rute kembali ""Tambahkan""";"PEMERIKSAAN";"LULUS";"4.1";"";""
+"9";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Positif] RJ-36 Hapus rute tanpa jadwal → hilang dari daftar";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"10";"UI\rute-ubah.spec.ts";"Rute & Jadwal — siklus data uji > [Temuan] RJ-T10 pesan tolak hapus seharusnya bahasa pengguna, bukan nama tabel (""schedules"", ""pickupRoutes"")";"PEMERIKSAAN";"LULUS";"0.3";"RJ-T10 — Pesan penolakan hapus memakai nama tabel/relasi teknis
+Langkah:
+  1. Hapus rute uji yang masih punya jadwal (menu Jadwal Rute → ⋯ → Hapus Data → Hapus)
+  2. Hapus pelabuhan uji yang dipakai rute (menu Pelabuhan → ⋯ → Hapus Data → Hapus)
+Ekspektasi: Pesan jelas, mis. ""Rute tidak bisa dihapus karena masih punya 1 jadwal"" / ""Pelabuhan dipakai rute QA-QB""
+Aktual: Hapus rute: ""Gagal memproses rute Data tidak dapat dihapus karena masih digunakan di schedules."" | Hapus pelabuhan: ""Gagal memproses pelabuhan Data tidak dapat dihapus karena masih digunakan di pickupRoutes.""";""

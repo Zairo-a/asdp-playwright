@@ -1,0 +1,51 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data";"PEMERIKSAAN";"LULUS";"3.3";"";""
+"2";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-02 cari berdasarkan kode → hanya rute itu";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"3";"UI\rute.spec.ts";"Rute — daftar > [Negatif] RJ-03 cari kode yang tidak ada → ""Belum ada rute"", 0 data";"PEMERIKSAAN";"LULUS";"2.6";"";""
+"4";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-04 sort Kode: A→Z lalu Z→A";"PEMERIKSAAN";"LULUS";"3.1";"";""
+"5";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-05 filter Aktivasi ""Tidak Aktif"" → semua baris Tidak Aktif";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"6";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-06 klik ""n Jadwal"" → daftar jadwal rute tampil, jumlah sesuai";"PEMERIKSAAN";"LULUS";"2.2";"";""
+"7";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-07 Edit Rute & Jadwal → halaman detail berisi info rute & daftar jadwal";"PEMERIKSAAN";"LULUS";"2.8";"";""
+"8";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-10 langkah 1 kosong → Berikutnya → 3 pesan wajib diisi";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"9";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-11 pelabuhan tujuan tidak boleh sama dengan asal (tidak ditawarkan)";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"10";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-12 pilih asal & tujuan → kode & nama rute terisi otomatis";"PEMERIKSAAN";"LULUS";"4.8";"";""
+"11";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Edge] RJ-13 pasangan pelabuhan yang sudah punya rute → kode otomatis tidak bentrok (diberi akhiran)";"PEMERIKSAAN";"LULUS";"3.9";"";""
+"12";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-14 batas online & go-show negatif → ditolak di langkah 2";"PEMERIKSAAN";"LULUS";"5.4";"";""
+"13";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-15 kapasitas operasional 150% → ditolak ""Isi persen 1 sampai 100""";"PEMERIKSAAN";"LULUS";"4.6";"";""
+"14";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-16 Batal menutup form tanpa menyimpan";"PEMERIKSAAN";"LULUS";"4.2";"";""
+"15";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-17 form jadwal kosong → ""Jam keberangkatan"" & ""Unit bisnis"" wajib, tetap di langkah 1";"PEMERIKSAAN";"LULUS";"4.1";"";""
+"16";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-18 isi jam keberangkatan → kode jadwal terisi otomatis ""<kode rute>-HHMM""";"PEMERIKSAAN";"LULUS";"3.9";"";""
+"17";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-19 hari operasional dikosongkan → ""Hari operasional wajib dipilih""";"PEMERIKSAAN";"LULUS";"6.4";"";""
+"18";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-20 langkah 2 tanpa kapal & tanpa denah kursi → ""Layout kursi wajib dipilih""";"PEMERIKSAAN";"LULUS";"5.8";"";""
+"19";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-21 kapasitas jadwal 150% → ""Isi persen 1 sampai 100""; [Edge] 100% → boleh lanjut";"PEMERIKSAAN";"LULUS";"7.2";"";""
+"20";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-22a waktu tiba terisi otomatis dari jam berangkat + estimasi waktu tempuh rute";"PEMERIKSAAN";"LULUS";"7.2";"";""
+"21";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-22 langkah 5 waktu tiba dikosongkan → ""Waktu tujuan wajib diisi"", tidak muncul konfirmasi";"PEMERIKSAAN";"LULUS";"7.5";"";""
+"22";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-23 Ubah rute yang sudah punya jadwal → pelabuhan asal & tujuan terkunci dengan keterangan";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"23";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T01 menu rute yang AKTIF seharusnya ""Nonaktifkan"", bukan ""Aktifkan""";"PEMERIKSAAN";"LULUS";"2.6";"RJ-T01 — Rute aktif menampilkan menu ""Aktifkan""; mengkliknya justru MENONAKTIFKAN rute dengan pesan ""Rute berhasil diaktifkan""
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA (kolom Aktivasi: ""Aktif"")
+  3. Klik ⋯ (Buka menu) di baris itu
+Ekspektasi: Rute yang Aktif menampilkan ""Nonaktifkan"" (dan dialog/toast ""dinonaktifkan"")
+Aktual: Menu menampilkan ""Aktifkan"". Dari eksplorasi: dialog ""Aktifkan Data? … akan diaktifkan kembali"" → toast ""Rute berhasil diaktifkan"", tetapi rute menjadi Tidak Aktif";""
+"24";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T02 detail rute AKTIF seharusnya menampilkan ""Aktifasi: Aktif""";"PEMERIKSAAN";"LULUS";"3.1";"RJ-T02 — Status aktivasi di halaman detail rute berbeda dengan di daftar (selalu ""Tidak Aktif"")
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA, lihat kolom Aktivasi
+  3. Klik ⋯ → Edit Rute & Jadwal, lihat bagian Informasi
+Ekspektasi: ""Aktifasi"" di detail sama dengan daftar (""Aktif""); ejaan seharusnya ""Aktivasi""
+Aktual: Daftar: ""Aktif"", detail: ""Aktifasi Tidak Aktif""";""
+"25";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T03 pesan ""wajib diisi"" seharusnya hilang setelah kolomnya diisi";"PEMERIKSAAN";"LULUS";"5.0";"RJ-T03 — Pesan ""wajib diisi"" tetap tampil walau kolomnya sudah terisi
+Langkah:
+  1. Buka menu Jadwal Rute (/routes)
+  2. Klik ""Tambah""
+  3. Klik Berikutnya dengan form kosong (muncul 3 pesan wajib)
+  4. Pilih Pelabuhan asal LEMBAR dan tujuan PADANG BAI (kode rute terisi otomatis)
+Ekspektasi: Pesan wajib pada kolom yang sudah diisi langsung hilang
+Aktual: Masih tampil: ""Outlet asal wajib diisi"", ""Outlet tujuan wajib diisi"", ""Kode rute wajib diisi""";""
+"26";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T04 pencarian rute seharusnya juga bisa dengan nama pelabuhan [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"3.7";"RJ-T04 — Kotak ""Cari data..."" di Jadwal Rute hanya mencari kode rute, tidak nama pelabuhan
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Ketik ""LEMBAR"" di kotak Cari data...
+Ekspektasi: Rute yang asal/tujuannya LEMBAR (mis. LMB-PGA) tampil
+Aktual: Hasil pencarian: 0 data (""Belum ada rute"")";""

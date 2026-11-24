@@ -1,0 +1,8 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > pulihkan: hapus sisa data uji dari run sebelumnya dan catat cabang yang ada";"PEMERIKSAAN";"LULUS";"1.6";"";""
+"2";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > telepon: panjang berapa yang benar-benar diterima (dokumentasi: maksimal 30)";"PEMERIKSAAN";"GAGAL";"3.2";"Telepon 20, 25, 30 karakter menyebabkan error server (500), padahal dokumentasi mengizinkan sampai 30. Pesan error memuat nama tabel, kolom, dan database";"Error: telepon 20 karakter: tidak boleh error server | Error: telepon 25 karakter: tidak boleh error server | Error: telepon 30 karakter: tidak boleh error server"
+"3";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > batas tiap isian satu per satu: nama, email, alamat, kode";"PEMERIKSAAN";"GAGAL";"3.2";"Isian tepat di batas dokumentasi menyebabkan error server: name 100 karakter, address 255 karakter";"Error: name 100 karakter: tidak boleh error server | Error: address 255 karakter: tidak boleh error server"
+"4";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > port_ids berisi nol diulang tiga kali (dugaan, gagal belum tentu bug)";"DUGAAN";"LULUS";"4.1";"";""
+"5";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > kode huruf kecil yang benar-benar baru (lihat hasil)";"EKSPLORASI";"LULUS";"0.4";"";""
+"6";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > kode bekas cabang yang sudah dihapus: bisa dipakai lagi atau tidak (lihat hasil)";"EKSPLORASI";"LULUS";"0.7";"";""
+"7";"branch-lanjutan-ubah.spec.ts";"cabang lanjutan (MENGUBAH DATA) > akhir: tidak ada data uji tersisa";"PEMERIKSAAN";"LULUS";"0.3";"";""

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 09:00</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 09:00 · 84 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">84</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">0</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">84</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lewat">
+        <td>1</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-30 Tambah rute A → B → muncul di daftar: Aktif, Online, belum ada jadwal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>2</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-31 Tambah jadwal 10:00 (kapal default) di detail rute → tampil di detail &amp; daftar &quot;1 Jadwal&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>3</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-32 dampak: rute baru muncul di Keberangkatan &amp; Alokasi dengan keberangkatan + kapal dari jadwal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>4</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Edge] RJ-37 jadwal hanya hari Senin + kapasitas jadwal 100% → keberangkatan hanya di hari Senin, kuota = kapasitas fisik</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>5</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-39 Ubah rute: kapasitas 70% &amp; batas online 30 menit → konfirmasi, detail, dan kuota keberangkatan ikut berubah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>6</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Edge] RJ-40 Ubah rute: kapasitas tepat 1% (batas bawah) → tersimpan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>7</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-41 Ubah jadwal 14:00 (hanya Senin): tambah hari Minggu → keberangkatan hari Minggu ikut muncul</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>8</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Edge] RJ-42 Ubah jadwal: Tanggal Akhir = Minggu → keberangkatan Minggu masih ada (inklusif), Senin sesudahnya hilang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>9</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-46 Duplikasi jadwal 10:00 → jadwal baru &quot;&lt;kode&gt;-2&quot; tersimpan dengan jam &amp; kapal yang sama</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T14 duplikasi jadwal dengan kode yang sudah dipakai seharusnya ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T11 alokasi Reserve yang melebihi kuota kendaraan seharusnya tidak bisa disimpan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>12</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-61 nonaktifkan jadwal 10:00 → tidak ada keberangkatannya; aktifkan lagi → kembali</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>13</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-65 alokasi Reserve 1 unit + &quot;Terapkan juga ke jadwal lain&quot; → jadwal &quot;-2&quot; ikut memakai alokasi yang sama</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>14</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-66 &quot;Salin dari&quot; jadwal lain → alokasi kendaraan tersalin ke form (tidak disimpan)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>15</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-67 Sembunyikan jadwal &quot;-2&quot; → tampil di filter &quot;Tersembunyi&quot;; Hapus → masuk filter &quot;Sampah&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>16</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-58 Duplikasi rute uji → rute baru tersimpan dengan pengaturan yang sama (kapasitas operasional)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>17</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-59 Sembunyikan rute (duplikat) → muncul di filter Aktivasi &quot;Tersembunyi&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-60 Hapus rute (duplikat) → hilang dari daftar dan masuk filter &quot;Sampah&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>19</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] RJ-47 Nonaktifkan rute → Batal di konfirmasi → status tetap &quot;Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>20</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] RJ-48 Ubah rute: kode diganti dengan kode rute lain yang sudah ada → ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>21</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T05 dua jam yang sama di satu form seharusnya ditolak (bukan 2 jadwal berkode sama)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>22</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T06 waktu tiba lebih awal dari jam berangkat (hari yang sama) seharusnya ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>23</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] RJ-33 Hapus rute yang masih punya jadwal → ditolak, rute tetap ada</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>24</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] PL-40 Hapus pelabuhan yang dipakai rute → ditolak, pelabuhan tetap ada</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>25</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] PL-39 pelabuhan Nonaktif tidak ditawarkan di form Tambah rute; Aktif lagi → ditawarkan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>26</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-34 nonaktifkan rute → &quot;Nonaktif&quot; &amp; hilang dari pilihan rute Keberangkatan; aktifkan lagi → kembali</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>27</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-35 Hapus 1 jadwal (10:00) → hilang dari detail, jumlah berkurang 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>28</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-36 Hapus massal (Pilih semua → Hapus) → semua jadwal hilang, daftar rute kembali &quot;Tambahkan&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>29</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-38 Hapus rute tanpa jadwal → hilang dari daftar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>30</td><td>UI\rute-ubah.spec.ts</td><td>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T10 pesan tolak hapus seharusnya bahasa pengguna, bukan nama tabel (&quot;schedules&quot;, &quot;pickupRoutes&quot;)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>31</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>32</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-02 cari berdasarkan kode → hanya rute itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>33</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Negatif] RJ-03 cari kode yang tidak ada → &quot;Belum ada rute&quot;, 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>34</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-04 sort Kode: A→Z lalu Z→A</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>35</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-05 filter Aktivasi &quot;Nonaktif&quot; → semua baris Nonaktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>36</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-06 klik &quot;n Jadwal&quot; → daftar jadwal rute tampil, jumlah sesuai</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>37</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-07 Edit Rute &amp; Jadwal → halaman detail berisi info rute &amp; daftar jadwal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>38</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-10 langkah 1 kosong → Berikutnya → 3 pesan wajib diisi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>39</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-11 pelabuhan tujuan tidak boleh sama dengan asal (tidak ditawarkan)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>40</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-12 pilih asal &amp; tujuan → kode &amp; nama rute terisi otomatis</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>41</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Edge] RJ-13 pasangan pelabuhan yang sudah punya rute → kode otomatis tidak bentrok (diberi akhiran)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>42</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-14 batas online &amp; go-show negatif → ditolak di langkah 2</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>43</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-15 kapasitas operasional 150% → ditolak &quot;Isi persen 1 sampai 100&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>44</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-16 Batal menutup form tanpa menyimpan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>45</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-16b Batal → &quot;Batalkan Pengisian Data?&quot; → Kembali → form tetap terbuka, pelabuhan asal tetap terpilih</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>46</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Edge] RJ-16c form belum diisi → Batal langsung menutup tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>47</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-17 form jadwal kosong → &quot;Jam keberangkatan&quot; &amp; &quot;Unit bisnis&quot; wajib, tetap di langkah 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>48</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-18 isi jam keberangkatan → kode jadwal terisi otomatis &quot;&lt;kode rute&gt;-HHMM&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>49</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-19 hari operasional dikosongkan → &quot;Hari operasional wajib dipilih&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>50</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-20 langkah 2 tanpa kapal &amp; tanpa denah kursi → &quot;Layout kursi wajib dipilih&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>51</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-21 kapasitas jadwal 150% → &quot;Isi persen 1 sampai 100&quot;; [Edge] 100% → boleh lanjut</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>52</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-22a waktu tiba terisi otomatis dari jam berangkat + estimasi waktu tempuh rute</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>53</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-22 langkah 5 waktu tiba dikosongkan → &quot;Waktu tujuan wajib diisi&quot;, tidak muncul konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>54</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-23 Ubah rute yang sudah punya jadwal → pelabuhan asal &amp; tujuan terkunci dengan keterangan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>55</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T01 menu rute yang AKTIF seharusnya &quot;Nonaktifkan&quot;, bukan &quot;Aktifkan&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>56</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T02 detail rute AKTIF seharusnya menampilkan &quot;Aktifasi: Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>57</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T03 pesan &quot;wajib diisi&quot; seharusnya hilang setelah kolomnya diisi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>58</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T04 pencarian rute seharusnya juga bisa dengan nama pelabuhan [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>59</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-08 cari jadwal berdasarkan kode → hanya jadwal itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>60</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-09 cari jadwal yang tidak ada → 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>61</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-24 sort Jam Berangkat: naik lalu turun</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>62</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-25 jadwal lebih dari 10 → Berikutnya menampilkan sisanya</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>63</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-26 menu ⋯ rute berisi Edit Rute &amp; Jadwal, Duplikasi, Atur Tarif, Sembunyikan, Aktivasi, Hapus Data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>64</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-27 Atur Tarif → halaman detail rute dengan tab &quot;Tarif Dasar&quot; terbuka</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>65</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-28 Duplikasi rute → form Tambah terisi pelabuhan &amp; nama, kode kosong; [Negatif] lanjut tanpa kode → &quot;Kode rute wajib diisi&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>66</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Edge] RJ-29 Duplikasi rute menyalin pengaturan langkah 2 (batas online sama dengan rute asal)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>67</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Edge] RJ-43 Ubah rute lalu tutup tanpa mengubah apa pun → langsung tertutup tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>68</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-44 Ubah rute: kode rute dikosongkan → &quot;Kode rute wajib diisi&quot;, tetap di langkah 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>69</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-45 Ubah rute: kapasitas operasional 0% → &quot;Isi persen 1 sampai 100&quot;, tidak bisa lanjut</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>70</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-50 Edit Jadwal → form &quot;Ubah Jadwal&quot; 5 langkah berisi jam, kode, dan kapal jadwal itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>71</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-51 Edit Jadwal: kode jadwal dikosongkan → ada pesan wajib, tetap di langkah 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>72</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-52 Tanggal Akhir tidak bisa sebelum Tanggal Mulai; [Edge] tanggal yang sama boleh</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>73</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-53 Tanggal Mulai tidak bisa setelah Tanggal Akhir</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>74</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-54 alokasi kuota: golongan I tipe Reserve tanpa nilai → &quot;wajib diisi dan lebih dari 0&quot;, tetap di langkah 3</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>75</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-55 alokasi kuota: Reserve melebihi kuota kendaraan → tanda &quot;Melebihi kuota&quot; tampil</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>76</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-56 Duplikasi jadwal → jam disalin, kode otomatis &quot;&lt;kode&gt;-2&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>77</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-57 klik &quot;n Transit&quot; → dialog titik naik/turun: asal = Naik, tujuan = Turun; Simpan nonaktif tanpa perubahan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>78</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T12 konfirmasi batal di form &quot;Ubah Jadwal&quot; seharusnya bukan &quot;Batalkan Penambahan Data?&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>79</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T13 judul form duplikasi jadwal seharusnya bahasa Indonesia (&quot;Duplikasi Jadwal&quot;)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>80</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T16 menu jadwal yang AKTIF seharusnya &quot;Nonaktifkan&quot;, bukan &quot;Aktifkan&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>81</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-62 tipe Restrict → &quot;Jika habis: Tolak (tidak ambil Normal)&quot;; Reserve → &quot;Ambil dari sisa Normal&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>82</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-63 tipe Restrict tanpa nilai → pesan wajib diisi, tetap di langkah 3</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>83</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-64 basis % dengan nilai 150 → &quot;Nilai persen golongan I maksimal 100&quot;; [Edge] 100 → pesan hilang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>84</td><td>UI\rute.spec.ts</td><td>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T17 pilihan &quot;Terapkan juga ke jadwal lain&quot; seharusnya berisi SEMUA jadwal rute, bukan hanya halaman pertama</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-30 Tambah rute A → B → muncul di daftar: Aktif, Online, belum ada jadwal: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-31 Tambah jadwal 10:00 (kapal default) di detail rute → tampil di detail &amp; daftar &quot;1 Jadwal&quot;: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-32 dampak: rute baru muncul di Keberangkatan &amp; Alokasi dengan keberangkatan + kapal dari jadwal: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Edge] RJ-37 jadwal hanya hari Senin + kapasitas jadwal 100% → keberangkatan hanya di hari Senin, kuota = kapasitas fisik: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-39 Ubah rute: kapasitas 70% &amp; batas online 30 menit → konfirmasi, detail, dan kuota keberangkatan ikut berubah: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Edge] RJ-40 Ubah rute: kapasitas tepat 1% (batas bawah) → tersimpan: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-41 Ubah jadwal 14:00 (hanya Senin): tambah hari Minggu → keberangkatan hari Minggu ikut muncul: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Edge] RJ-42 Ubah jadwal: Tanggal Akhir = Minggu → keberangkatan Minggu masih ada (inklusif), Senin sesudahnya hilang: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-46 Duplikasi jadwal 10:00 → jadwal baru &quot;&lt;kode&gt;-2&quot; tersimpan dengan jam &amp; kapal yang sama: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T14 duplikasi jadwal dengan kode yang sudah dipakai seharusnya ditolak: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T11 alokasi Reserve yang melebihi kuota kendaraan seharusnya tidak bisa disimpan: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-61 nonaktifkan jadwal 10:00 → tidak ada keberangkatannya; aktifkan lagi → kembali: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-65 alokasi Reserve 1 unit + &quot;Terapkan juga ke jadwal lain&quot; → jadwal &quot;-2&quot; ikut memakai alokasi yang sama: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-66 &quot;Salin dari&quot; jadwal lain → alokasi kendaraan tersalin ke form (tidak disimpan): -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-67 Sembunyikan jadwal &quot;-2&quot; → tampil di filter &quot;Tersembunyi&quot;; Hapus → masuk filter &quot;Sampah&quot;: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-58 Duplikasi rute uji → rute baru tersimpan dengan pengaturan yang sama (kapasitas operasional): -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-59 Sembunyikan rute (duplikat) → muncul di filter Aktivasi &quot;Tersembunyi&quot;: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-60 Hapus rute (duplikat) → hilang dari daftar dan masuk filter &quot;Sampah&quot;: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] RJ-47 Nonaktifkan rute → Batal di konfirmasi → status tetap &quot;Aktif&quot;: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] RJ-48 Ubah rute: kode diganti dengan kode rute lain yang sudah ada → ditolak: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T05 dua jam yang sama di satu form seharusnya ditolak (bukan 2 jadwal berkode sama): -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T06 waktu tiba lebih awal dari jam berangkat (hari yang sama) seharusnya ditolak: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] RJ-33 Hapus rute yang masih punya jadwal → ditolak, rute tetap ada: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Negatif] PL-40 Hapus pelabuhan yang dipakai rute → ditolak, pelabuhan tetap ada: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] PL-39 pelabuhan Nonaktif tidak ditawarkan di form Tambah rute; Aktif lagi → ditawarkan: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-34 nonaktifkan rute → &quot;Nonaktif&quot; &amp; hilang dari pilihan rute Keberangkatan; aktifkan lagi → kembali: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-35 Hapus 1 jadwal (10:00) → hilang dari detail, jumlah berkurang 1: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-36 Hapus massal (Pilih semua → Hapus) → semua jadwal hilang, daftar rute kembali &quot;Tambahkan&quot;: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Positif] RJ-38 Hapus rute tanpa jadwal → hilang dari daftar: -</p><p>Rute &amp; Jadwal — siklus data uji &gt; [Temuan] RJ-T10 pesan tolak hapus seharusnya bahasa pengguna, bukan nama tabel (&quot;schedules&quot;, &quot;pickupRoutes&quot;): -</p><p>Rute — daftar &gt; [Positif] RJ-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data: -</p><p>Rute — daftar &gt; [Positif] RJ-02 cari berdasarkan kode → hanya rute itu: -</p><p>Rute — daftar &gt; [Negatif] RJ-03 cari kode yang tidak ada → &quot;Belum ada rute&quot;, 0 data: -</p><p>Rute — daftar &gt; [Positif] RJ-04 sort Kode: A→Z lalu Z→A: -</p><p>Rute — daftar &gt; [Positif] RJ-05 filter Aktivasi &quot;Nonaktif&quot; → semua baris Nonaktif: -</p><p>Rute — daftar &gt; [Positif] RJ-06 klik &quot;n Jadwal&quot; → daftar jadwal rute tampil, jumlah sesuai: -</p><p>Rute — daftar &gt; [Positif] RJ-07 Edit Rute &amp; Jadwal → halaman detail berisi info rute &amp; daftar jadwal: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-10 langkah 1 kosong → Berikutnya → 3 pesan wajib diisi: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-11 pelabuhan tujuan tidak boleh sama dengan asal (tidak ditawarkan): -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-12 pilih asal &amp; tujuan → kode &amp; nama rute terisi otomatis: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Edge] RJ-13 pasangan pelabuhan yang sudah punya rute → kode otomatis tidak bentrok (diberi akhiran): -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-14 batas online &amp; go-show negatif → ditolak di langkah 2: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-15 kapasitas operasional 150% → ditolak &quot;Isi persen 1 sampai 100&quot;: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-16 Batal menutup form tanpa menyimpan: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-16b Batal → &quot;Batalkan Pengisian Data?&quot; → Kembali → form tetap terbuka, pelabuhan asal tetap terpilih: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Edge] RJ-16c form belum diisi → Batal langsung menutup tanpa konfirmasi: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-17 form jadwal kosong → &quot;Jam keberangkatan&quot; &amp; &quot;Unit bisnis&quot; wajib, tetap di langkah 1: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-18 isi jam keberangkatan → kode jadwal terisi otomatis &quot;&lt;kode rute&gt;-HHMM&quot;: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-19 hari operasional dikosongkan → &quot;Hari operasional wajib dipilih&quot;: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-20 langkah 2 tanpa kapal &amp; tanpa denah kursi → &quot;Layout kursi wajib dipilih&quot;: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-21 kapasitas jadwal 150% → &quot;Isi persen 1 sampai 100&quot;; [Edge] 100% → boleh lanjut: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-22a waktu tiba terisi otomatis dari jam berangkat + estimasi waktu tempuh rute: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-22 langkah 5 waktu tiba dikosongkan → &quot;Waktu tujuan wajib diisi&quot;, tidak muncul konfirmasi: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-23 Ubah rute yang sudah punya jadwal → pelabuhan asal &amp; tujuan terkunci dengan keterangan: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T01 menu rute yang AKTIF seharusnya &quot;Nonaktifkan&quot;, bukan &quot;Aktifkan&quot;: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T02 detail rute AKTIF seharusnya menampilkan &quot;Aktifasi: Aktif&quot;: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T03 pesan &quot;wajib diisi&quot; seharusnya hilang setelah kolomnya diisi: -</p><p>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T04 pencarian rute seharusnya juga bisa dengan nama pelabuhan [perlu konfirmasi]: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-08 cari jadwal berdasarkan kode → hanya jadwal itu: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-09 cari jadwal yang tidak ada → 0 data: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-24 sort Jam Berangkat: naik lalu turun: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-25 jadwal lebih dari 10 → Berikutnya menampilkan sisanya: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-26 menu ⋯ rute berisi Edit Rute &amp; Jadwal, Duplikasi, Atur Tarif, Sembunyikan, Aktivasi, Hapus Data: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-27 Atur Tarif → halaman detail rute dengan tab &quot;Tarif Dasar&quot; terbuka: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-28 Duplikasi rute → form Tambah terisi pelabuhan &amp; nama, kode kosong; [Negatif] lanjut tanpa kode → &quot;Kode rute wajib diisi&quot;: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Edge] RJ-29 Duplikasi rute menyalin pengaturan langkah 2 (batas online sama dengan rute asal): -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Edge] RJ-43 Ubah rute lalu tutup tanpa mengubah apa pun → langsung tertutup tanpa konfirmasi: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-44 Ubah rute: kode rute dikosongkan → &quot;Kode rute wajib diisi&quot;, tetap di langkah 1: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-45 Ubah rute: kapasitas operasional 0% → &quot;Isi persen 1 sampai 100&quot;, tidak bisa lanjut: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-50 Edit Jadwal → form &quot;Ubah Jadwal&quot; 5 langkah berisi jam, kode, dan kapal jadwal itu: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-51 Edit Jadwal: kode jadwal dikosongkan → ada pesan wajib, tetap di langkah 1: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-52 Tanggal Akhir tidak bisa sebelum Tanggal Mulai; [Edge] tanggal yang sama boleh: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-53 Tanggal Mulai tidak bisa setelah Tanggal Akhir: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-54 alokasi kuota: golongan I tipe Reserve tanpa nilai → &quot;wajib diisi dan lebih dari 0&quot;, tetap di langkah 3: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-55 alokasi kuota: Reserve melebihi kuota kendaraan → tanda &quot;Melebihi kuota&quot; tampil: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-56 Duplikasi jadwal → jam disalin, kode otomatis &quot;&lt;kode&gt;-2&quot;: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-57 klik &quot;n Transit&quot; → dialog titik naik/turun: asal = Naik, tujuan = Turun; Simpan nonaktif tanpa perubahan: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T12 konfirmasi batal di form &quot;Ubah Jadwal&quot; seharusnya bukan &quot;Batalkan Penambahan Data?&quot;: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T13 judul form duplikasi jadwal seharusnya bahasa Indonesia (&quot;Duplikasi Jadwal&quot;): -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T16 menu jadwal yang AKTIF seharusnya &quot;Nonaktifkan&quot;, bukan &quot;Aktifkan&quot;: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Positif] RJ-62 tipe Restrict → &quot;Jika habis: Tolak (tidak ambil Normal)&quot;; Reserve → &quot;Ambil dari sisa Normal&quot;: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-63 tipe Restrict tanpa nilai → pesan wajib diisi, tetap di langkah 3: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Negatif] RJ-64 basis % dengan nilai 150 → &quot;Nilai persen golongan I maksimal 100&quot;; [Edge] 100 → pesan hilang: -</p><p>Rute &amp; Jadwal — menu lain, ubah &amp; duplikasi (tanpa menyimpan) &gt; [Temuan] RJ-T17 pilihan &quot;Terapkan juga ke jadwal lain&quot; seharusnya berisi SEMUA jadwal rute, bukan hanya halaman pertama: -</p>
+</body></html>

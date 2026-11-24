@@ -1,0 +1,7 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Positif] PL-20 Batal menutup form tanpa menyimpan";"PEMERIKSAAN";"LULUS";"6.1";"";""
+"2";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Negatif] PL-20b Batal → ""Batalkan Perubahan?"" → Kembali → form tetap terbuka & isian tidak hilang";"PEMERIKSAAN";"LULUS";"3.3";"";""
+"3";"UI\pelabuhan.spec.ts";"Pelabuhan — form Tambah (tanpa menyimpan) > [Edge] PL-20c form belum diisi → Batal langsung menutup tanpa konfirmasi";"PEMERIKSAAN";"LULUS";"4.4";"";""
+"4";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-16 Batal menutup form tanpa menyimpan";"PEMERIKSAAN";"GAGAL";"11.4";"";"Error: expect(locator).toBeHidden() failed"
+"5";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-16b Batal → ""Batalkan Perubahan?"" → Kembali → form tetap terbuka, pelabuhan asal tetap terpilih";"PEMERIKSAAN";"GAGAL";"5.6";"";"Error: expect(received).toBe(expected) // Object.is equality"
+"6";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Edge] RJ-16c form belum diisi → Batal langsung menutup tanpa konfirmasi";"PEMERIKSAAN";"LULUS";"4.4";"";""

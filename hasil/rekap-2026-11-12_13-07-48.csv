@@ -1,0 +1,4 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-login-ubah.spec.ts";"Sesi — login di tempat lain > [Negatif] KL-01 password salah → tetap di halaman login & muncul pesan kesalahan";"PEMERIKSAAN";"LULUS";"4.4";"";""
+"2";"UI\keberangkatan-login-ubah.spec.ts";"Sesi — login di tempat lain > [Positif] KL-02 login dengan akun yang benar → masuk ke CMS (keluar dari halaman login)";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"3";"UI\keberangkatan-login-ubah.spec.ts";"Sesi — login di tempat lain > [Eksplorasi] KL-03 apakah login di tempat lain mengakhiri sesi yang sedang dipakai? (satu akun satu sesi)";"EKSPLORASI";"LULUS";"4.9";"";""

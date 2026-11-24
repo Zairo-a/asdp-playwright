@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 13-11-2026 10:02</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>13-11-2026 10:02 · 12 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">12</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">10</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">1</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">2</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Pelabuhan — siklus data uji &gt; [Temuan] PL-T10 pesan error simpan memakai nama field bahasa Inggris</div>
+        <div class="berkas">UI\pelabuhan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">PL-T10 — Pesan error dari server memakai nama field Inggris (&quot;Code&quot;, &quot;Daily passenger capacity&quot;, &quot;Daily vehicle sup&quot;)
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik &quot;Tambah&quot;
+  3. Isi Kode &quot;ADN&quot; (sudah ada), Nama, Kota
+  4. Pilih mode &quot;Pelabuhan 24 jam&quot;, kapasitas harian kosong
+  5. Simpan → konfirmasi Simpan
+Ekspektasi: Pesan memakai label di layar: &quot;Kode pelabuhan sudah dipakai&quot;, &quot;Kapasitas penumpang harian wajib diisi&quot;, &quot;Kapasitas kendaraan harian (SUP) wajib diisi&quot;
+Aktual: Toast: &quot;Gagal menyimpan pelabuhan Code sudah ada sebelumnya. Daily passenger capacity wajib diisi. Daily vehicle sup wajib diisi.&quot;</p>
+        <div class="bukti"><a href="bukti/PL-T10_20261113-100209.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/PL-T10_20261113-100209.png" alt="Bukti bukti/PL-T10_20261113-100209.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/PL-T10_20261113-100209.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] PL-T10 — Pesan error dari server memakai nama field Inggris (&quot;Code&quot;, &quot;Daily passenger capacity&quot;, &quot;Daily vehicle sup&quot;)
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik &quot;Tambah&quot;
+  3. Isi Kode &quot;ADN&quot; (sudah ada), Nama, Kota
+  4. Pilih mode &quot;Pelabuhan 24 jam&quot;, kapasitas harian kosong
+  5. Simpan → konfirmasi Simpan
+Ekspektasi: Pesan memakai label di layar: &quot;Kode pelabuhan sudah dipakai&quot;, &quot;Kapasitas penumpang harian wajib diisi&quot;, &quot;Kapasitas kendaraan harian (SUP) wajib diisi&quot;
+Aktual: Toast: &quot;Gagal menyimpan pelabuhan Code sudah ada sebelumnya. Daily passenger capacity wajib diisi. Daily vehicle sup wajib diisi.&quot;
+(bukti: hasil\bukti\PL-T10_20261113-100209.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Positif] PL-30 Tambah pelabuhan (Per kapal + 1 dermaga) → muncul di daftar dengan zona waktu otomatis</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Negatif] PL-31 kode yang sudah dipakai → ditolak &quot;sudah ada&quot;, tidak ada data baru</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Negatif] PL-32 mode Pelabuhan 24 jam tanpa kapasitas harian → gagal simpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Positif] PL-33 Ubah nama → konfirmasi menampilkan perubahan lama → baru, daftar ikut berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Edge] PL-34 Ubah tanpa mengubah apa pun → tidak ada perubahan yang tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Positif] PL-35 Nonaktifkan → status &quot;Tidak Aktif&quot;, menu berubah jadi &quot;Aktifkan&quot;, muncul di filter Tidak Aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Negatif] PL-36 Aktifkan → Batal → status tetap &quot;Tidak Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Positif] PL-37 Aktifkan kembali → status &quot;Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Positif] PL-38 Hapus Data → hilang dari daftar, total berkurang 1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.6</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Positif] PL-39 dampak: pelabuhan nonaktif tidak muncul di pilihan rute baru</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Negatif] PL-40 pelabuhan yang dipakai jadwal aktif → Hapus ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>12</td><td>UI\pelabuhan-ubah.spec.ts</td><td>Pelabuhan — siklus data uji &gt; [Temuan] PL-T10 pesan error simpan memakai nama field bahasa Inggris</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.6</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Pelabuhan — siklus data uji &gt; [Positif] PL-39 dampak: pelabuhan nonaktif tidak muncul di pilihan rute baru: -</p><p>Pelabuhan — siklus data uji &gt; [Negatif] PL-40 pelabuhan yang dipakai jadwal aktif → Hapus ditolak: -</p>
+</body></html>

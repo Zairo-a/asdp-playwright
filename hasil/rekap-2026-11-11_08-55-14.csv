@@ -1,0 +1,5 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-alokasi.spec.ts";"Keberangkatan & Alokasi > state awal: empty state tampil & filter lain belum aktif";"PEMERIKSAAN";"LULUS";"5.2";"";""
+"2";"UI\keberangkatan-alokasi.spec.ts";"Keberangkatan & Alokasi > pilih rute → data keberangkatan dimuat & empty state hilang";"PEMERIKSAAN";"LULUS";"3.1";"";""
+"3";"UI\keberangkatan-alokasi.spec.ts";"Keberangkatan & Alokasi > pilih rute + jadwal → tabel hanya menampilkan jadwal terpilih";"PEMERIKSAAN";"LULUS";"3.6";"";""
+"4";"UI\keberangkatan-alokasi.spec.ts";"Keberangkatan & Alokasi > pilih rute + rentang tanggal → URL & tabel ter-filter";"PEMERIKSAAN";"LULUS";"4.0";"";""

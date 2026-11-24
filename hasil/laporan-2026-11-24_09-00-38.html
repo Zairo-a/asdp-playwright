@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 09:00</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 09:00 · 36 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">36</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">0</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">36</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lewat">
+        <td>1</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-30 Tambah golongan → muncul di daftar dengan nama, kategori, SUP &amp; status Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>2</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-31 dampak: golongan Aktif muncul di form Master Kapal langkah &quot;Kapasitas Kendaraan&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>3</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-32 kode golongan yang sudah dipakai → ditolak, tidak ada data ganda</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>4</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Temuan] GK-T03 Nilai SUP 0 untuk kategori kendaraan seharusnya ditolak (keterangan: &quot;Wajib &gt; 0 untuk golongan kendaraan&quot;)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>5</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-33 Ubah nama &amp; Nilai SUP → daftar ikut berubah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>6</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-41 dampak: Nilai SUP baru (2,25) tampil di kolom &quot;SUP golongan&quot; form Master Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>7</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-34 Ubah: Nilai SUP dikosongkan → &quot;Nilai SUP wajib diisi&quot;, data lama tetap</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>8</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-35 Nonaktifkan → Status &quot;Nonaktif&quot;, menu jadi &quot;Aktifkan&quot;, muncul di filter Nonaktif, hilang dari form kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>9</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-36 Aktifkan → Batal di konfirmasi → tetap Nonaktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-37 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form kapal; [Edge] nama &amp; SUP tidak berubah setelah nonaktif → aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-40 Hapus golongan yang DIPAKAI kapal → ditolak, golongan tetap ada</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>12</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-38 Hapus → Batal di konfirmasi → data tetap ada</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>13</td><td>UI\golongan-ubah.spec.ts</td><td>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-39 Hapus Data → hilang dari daftar, total berkurang 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>14</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>15</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-02 cari berdasarkan kode → hanya golongan itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>16</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>17</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Negatif] GK-04 cari kata yang tidak ada → 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-05 sort Nilai SUP: naik lalu turun</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>19</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-06 filter Status &quot;Nonaktif&quot; → semua baris Nonaktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>20</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-07 filter Kategori &quot;Kendaraan Barang&quot; → semua baris kategori itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>21</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-08 lebih dari 10 golongan → Berikutnya menampilkan sisanya</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>22</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — daftar &gt; [Positif] GK-09 menu ⋯: golongan Aktif → &quot;Nonaktifkan&quot;, golongan Nonaktif → &quot;Aktifkan&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>23</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-10 Simpan form kosong → 4 pesan wajib diisi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>24</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-11 kode huruf kecil &amp; simbol → otomatis kapital, maks 10 karakter, pesan format</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>25</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-12 SUP -1, panjang -3 → &quot;angka 0 sampai 999,99&quot;; max penumpang -2 → &quot;bilangan bulat minimal 1&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>26</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-13 SUP 1000 → ditolak; [Edge] SUP 999,99 (batas atas) → pesan hilang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>27</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-14 SUP dengan 3 desimal (1,234) → ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>28</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Edge] GK-15 nama 51 karakter → dibatasi 50 (atau ada pesan maks 50)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>29</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-16 Batal: form kosong langsung tertutup; form terisi → &quot;Batalkan Perubahan?&quot; → Kembali → isian tetap</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>30</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-17 Ubah Data: kode terkunci, isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>31</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Edge] GK-18 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>32</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-19 dampak: &quot;SUP / unit&quot; di alokasi kendaraan JADWAL rute = Nilai SUP di master Golongan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>33</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-20 dampak: &quot;SUP / unit&quot; di Keberangkatan (sub-tab Kendaraan) = Nilai SUP di master Golongan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>34</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Temuan] GK-T04 golongan NONAKTIF seharusnya tidak muncul di alokasi kendaraan jadwal [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>35</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Temuan] GK-T01 nama kategori di form (Indonesia) seharusnya sama dengan di tabel &amp; filter (Inggris)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>36</td><td>UI\golongan.spec.ts</td><td>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Temuan] GK-T02 pesan wajib untuk field &quot;Golongan&quot; seharusnya menyebut &quot;Golongan&quot;, bukan &quot;Kode&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-30 Tambah golongan → muncul di daftar dengan nama, kategori, SUP &amp; status Aktif: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-31 dampak: golongan Aktif muncul di form Master Kapal langkah &quot;Kapasitas Kendaraan&quot;: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-32 kode golongan yang sudah dipakai → ditolak, tidak ada data ganda: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Temuan] GK-T03 Nilai SUP 0 untuk kategori kendaraan seharusnya ditolak (keterangan: &quot;Wajib &gt; 0 untuk golongan kendaraan&quot;): -</p><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-33 Ubah nama &amp; Nilai SUP → daftar ikut berubah: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-41 dampak: Nilai SUP baru (2,25) tampil di kolom &quot;SUP golongan&quot; form Master Kapal: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-34 Ubah: Nilai SUP dikosongkan → &quot;Nilai SUP wajib diisi&quot;, data lama tetap: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-35 Nonaktifkan → Status &quot;Nonaktif&quot;, menu jadi &quot;Aktifkan&quot;, muncul di filter Nonaktif, hilang dari form kapal: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-36 Aktifkan → Batal di konfirmasi → tetap Nonaktif: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-37 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form kapal; [Edge] nama &amp; SUP tidak berubah setelah nonaktif → aktif: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-40 Hapus golongan yang DIPAKAI kapal → ditolak, golongan tetap ada: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Negatif] GK-38 Hapus → Batal di konfirmasi → data tetap ada: -</p><p>Golongan Kendaraan — siklus data uji &gt; [Positif] GK-39 Hapus Data → hilang dari daftar, total berkurang 1: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-02 cari berdasarkan kode → hanya golongan itu: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu: -</p><p>Golongan Kendaraan — daftar &gt; [Negatif] GK-04 cari kata yang tidak ada → 0 data: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-05 sort Nilai SUP: naik lalu turun: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-06 filter Status &quot;Nonaktif&quot; → semua baris Nonaktif: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-07 filter Kategori &quot;Kendaraan Barang&quot; → semua baris kategori itu: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-08 lebih dari 10 golongan → Berikutnya menampilkan sisanya: -</p><p>Golongan Kendaraan — daftar &gt; [Positif] GK-09 menu ⋯: golongan Aktif → &quot;Nonaktifkan&quot;, golongan Nonaktif → &quot;Aktifkan&quot;: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-10 Simpan form kosong → 4 pesan wajib diisi: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-11 kode huruf kecil &amp; simbol → otomatis kapital, maks 10 karakter, pesan format: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-12 SUP -1, panjang -3 → &quot;angka 0 sampai 999,99&quot;; max penumpang -2 → &quot;bilangan bulat minimal 1&quot;: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-13 SUP 1000 → ditolak; [Edge] SUP 999,99 (batas atas) → pesan hilang: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Negatif] GK-14 SUP dengan 3 desimal (1,234) → ditolak: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Edge] GK-15 nama 51 karakter → dibatasi 50 (atau ada pesan maks 50): -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-16 Batal: form kosong langsung tertutup; form terisi → &quot;Batalkan Perubahan?&quot; → Kembali → isian tetap: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-17 Ubah Data: kode terkunci, isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Edge] GK-18 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-19 dampak: &quot;SUP / unit&quot; di alokasi kendaraan JADWAL rute = Nilai SUP di master Golongan: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Positif] GK-20 dampak: &quot;SUP / unit&quot; di Keberangkatan (sub-tab Kendaraan) = Nilai SUP di master Golongan: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Temuan] GK-T04 golongan NONAKTIF seharusnya tidak muncul di alokasi kendaraan jadwal [perlu konfirmasi]: -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Temuan] GK-T01 nama kategori di form (Indonesia) seharusnya sama dengan di tabel &amp; filter (Inggris): -</p><p>Golongan Kendaraan — form (tanpa menyimpan) &gt; [Temuan] GK-T02 pesan wajib untuk field &quot;Golongan&quot; seharusnya menyebut &quot;Golongan&quot;, bukan &quot;Kode&quot;: -</p>
+</body></html>

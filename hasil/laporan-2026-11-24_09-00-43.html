@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 09:00</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 09:00 · 58 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">58</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">0</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">58</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lewat">
+        <td>1</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Positif] KP-40 Tambah kapal lengkap 5 langkah → muncul di daftar dengan nilai yang benar &amp; Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>2</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Dampak] KP-41 kapal baru (Aktif, pangkalan Lembar) muncul di pilihan &quot;Kapal default&quot; form Jadwal rute LMB-PGA</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>3</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Negatif] KP-42 kode kapal yang sudah dipakai → ditolak, tidak ada data ganda</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>4</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Positif] KP-43 Ubah nama (karakter khusus), GRT &amp; kuota → tabel ikut berubah; [Edge] nama dengan &amp; ' # tersimpan utuh</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>5</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Negatif] KP-44 Ubah lalu Batal (X) → konfirmasi → Ya, Batalkan → data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>6</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Dampak] KP-45 Nonaktifkan → status Nonaktif &amp; hilang dari &quot;Kapal default&quot; Jadwal; Aktifkan → muncul lagi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>7</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Positif] KP-46 Hapus Data → hilang dari daftar; [Dampak] tidak bisa dipilih lagi di Jadwal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>8</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Temuan] KP-T08 kode kapal yang sudah dihapus seharusnya bisa dipakai lagi [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>9</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — siklus data uji &gt; [Positif] KP-47 Hapus massal 2 kapal uji (Pilih semua → Hapus (2)) → keduanya hilang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\kapal-ubah.spec.ts</td><td>Kapal — dampak ke web Ferizy &gt; [Dampak] KP-49 ganti nama kapal di CMS → nama di web Ferizy ikut berubah (nama dikembalikan setelahnya)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-01 halaman tampil: judul, toolbar, 11 kolom tabel, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>12</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-02 cari berdasarkan kode → hanya kapal itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>13</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>14</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Negatif] KP-04 cari kata yang tidak ada → 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>15</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Edge] KP-05 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>16</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-06 filter Status &quot;Nonaktif&quot; → semua baris Nonaktif; &quot;Aktif&quot; → semua Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>17</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-07 sort GRT naik lalu turun</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-08 sort Kode &amp; Nama Kapal: klik kedua membalik urutan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>19</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-09 limit 10 → pindah halaman Berikutnya menampilkan 11-20</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>20</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-10 Tampilan: sembunyikan kolom IMO → hilang; tampilkan lagi → muncul</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>21</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-11 Export Ke Excel (hasil cari) → file berisi kode &amp; nama kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>22</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-12 menu ⋯: kapal Aktif → Ubah Data, Nonaktifkan, Hapus Data; kapal Nonaktif → Aktifkan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>23</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Negatif] KP-13 Hapus massal → Batal → data tetap ada</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>24</td><td>UI\kapal.spec.ts</td><td>Kapal — daftar &gt; [Positif] KP-14 isi tabel sama dengan data kapal (API): nama, ABK, pelampung, Kap. SUP, SKKP</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>25</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-15 langkah 1 kosong → Berikutnya → 6 pesan &quot;Wajib diisi&quot;, tetap di 1/5</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>26</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-16 GRT -5 / 0 / huruf → &quot;Harus berupa angka lebih dari 0&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>27</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-17 IMO 6 digit / berisi huruf → &quot;Nomor IMO harus 7 digit&quot;; [Edge] 8 digit dipotong jadi 7; 7 digit → pesan hilang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>28</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Edge] KP-18 kode 25 karakter → dibatasi maks 20</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>29</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Positif] KP-19 combobox berisi data master: Jenis kapal, Perusahaan, Pelabuhan pangkalan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>30</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-20 langkah 2 kosong → 5 pesan &quot;Wajib diisi&quot; (ABK, pelampung, No/maks/tanggal SKKP)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>31</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-21 ABK / pelampung / maks SKKP negatif atau huruf → ditolak, tetap di 2/5</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>32</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Positif] KP-22 Kembali antar langkah → isian langkah 1 &amp; 2 tidak hilang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>33</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Positif] KP-23 Batal: form kosong langsung tertutup; form terisi → konfirmasi → Kembali → isian tetap</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>34</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Edge] KP-24 langkah 3: kuota melebihi pelampung &amp; maks SKKP → muncul peringatan batas keselamatan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>35</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-25 langkah 4: Total SUP kosong → wajib diisi; maks unit golongan negatif → ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>36</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Edge] KP-26 langkah 4: &quot;Setara SUP&quot; = maks unit × SUP golongan, total ikut berubah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>37</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-27 langkah 5: maks barang/hewan negatif → ditolak; [Edge] 0 → diterima</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>38</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-28 langkah 3 mode Seat tanpa memilih layout kursi → tidak bisa lanjut</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>39</td><td>UI\kapal.spec.ts</td><td>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-31 langkah 3 semua kuota kosong (total 0) → tidak bisa lanjut ke langkah 4; [Edge] kuota 1 → bisa</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>40</td><td>UI\kapal.spec.ts</td><td>Kapal — form Ubah (tanpa menyimpan) &gt; [Positif] KP-29 Ubah Data: isian 5 langkah sama dengan data kapal (API); tutup tanpa perubahan → tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>41</td><td>UI\kapal.spec.ts</td><td>Kapal — form Ubah (tanpa menyimpan) &gt; [Dampak] KP-30 langkah 4 hanya menampilkan golongan AKTIF dari master Golongan Kendaraan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>42</td><td>UI\kapal.spec.ts</td><td>Kapal — temuan &gt; [Temuan] KP-T01 filter &quot;Jenis Kapal&quot; seharusnya berisi daftar jenis kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>43</td><td>UI\kapal.spec.ts</td><td>Kapal — temuan &gt; [Temuan] KP-T02 kode kapal huruf kecil/spasi/simbol seharusnya ditolak (atau dijadikan kapital) [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>44</td><td>UI\kapal.spec.ts</td><td>Kapal — temuan &gt; [Temuan] KP-T03 tahun pembuatan di masa depan / tidak wajar seharusnya ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>45</td><td>UI\kapal.spec.ts</td><td>Kapal — temuan &gt; [Temuan] KP-T04 kapal dengan SKKP kedaluwarsa seharusnya ditandai di daftar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>46</td><td>UI\kapal.spec.ts</td><td>Kapal — temuan &gt; [Temuan] KP-T05 masa berlaku SKKP tanggal lampau seharusnya ditolak/diberi peringatan [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>47</td><td>UI\kapal.spec.ts</td><td>Kapal — temuan &gt; [Temuan] KP-T06 kode kapal di form Ubah seharusnya terkunci [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>48</td><td>UI\kapal.spec.ts</td><td>Kapal — dampak ke web Ferizy (hanya membaca) &gt; [Dampak] KP-32 web Ferizy LMB→PGA: nama &amp; jenis kapal di kartu jadwal = data master Kapal di CMS</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>49</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Positif] KA-K10 ganti kapal → kapasitas fisik, kuota, SUP, mode, &amp; list ikut berubah; lalu kembali ke default</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>50</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Temuan] KA-K11 setelah ganti kapal, jumlah kuota semua kelas di Alokasi seharusnya = Total kuota</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>51</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Positif] KA-K12 kembali ke kapal default → alokasi per kelas pulih seperti awal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>52</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Edge] KA-K13 kapal default jadwal tidak ditawarkan lagi sebagai kapal pengganti (hanya lewat &quot;Pakai kapal default jadwal&quot;)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>53</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Negatif] KA-K14 ganti kapal saat alokasi Mitra tersimpan lebih besar dari kuota kapal baru → seharusnya ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>54</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K01 dropdown Kapal hanya berisi kapal AKTIF dari master Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>55</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K02 ganti kapal tanpa Simpan → angka belum berubah; Batal mengembalikan kapal default</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>56</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Negatif] KA-K03 cari kapal yang tidak ada → tidak ada opsi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>57</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K04 kapasitas fisik = min(SKKP − ABK, pelampung) sesuai keterangan di layar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>58</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Temuan] KA-K05 kapasitas fisik di keberangkatan seharusnya sama dengan &quot;Kap. Penumpang&quot; di master Kapal [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Kapal — siklus data uji &gt; [Positif] KP-40 Tambah kapal lengkap 5 langkah → muncul di daftar dengan nilai yang benar &amp; Aktif: -</p><p>Kapal — siklus data uji &gt; [Dampak] KP-41 kapal baru (Aktif, pangkalan Lembar) muncul di pilihan &quot;Kapal default&quot; form Jadwal rute LMB-PGA: -</p><p>Kapal — siklus data uji &gt; [Negatif] KP-42 kode kapal yang sudah dipakai → ditolak, tidak ada data ganda: -</p><p>Kapal — siklus data uji &gt; [Positif] KP-43 Ubah nama (karakter khusus), GRT &amp; kuota → tabel ikut berubah; [Edge] nama dengan &amp; ' # tersimpan utuh: -</p><p>Kapal — siklus data uji &gt; [Negatif] KP-44 Ubah lalu Batal (X) → konfirmasi → Ya, Batalkan → data tidak berubah: -</p><p>Kapal — siklus data uji &gt; [Dampak] KP-45 Nonaktifkan → status Nonaktif &amp; hilang dari &quot;Kapal default&quot; Jadwal; Aktifkan → muncul lagi: -</p><p>Kapal — siklus data uji &gt; [Positif] KP-46 Hapus Data → hilang dari daftar; [Dampak] tidak bisa dipilih lagi di Jadwal: -</p><p>Kapal — siklus data uji &gt; [Temuan] KP-T08 kode kapal yang sudah dihapus seharusnya bisa dipakai lagi [perlu konfirmasi]: -</p><p>Kapal — siklus data uji &gt; [Positif] KP-47 Hapus massal 2 kapal uji (Pilih semua → Hapus (2)) → keduanya hilang: -</p><p>Kapal — dampak ke web Ferizy &gt; [Dampak] KP-49 ganti nama kapal di CMS → nama di web Ferizy ikut berubah (nama dikembalikan setelahnya): -</p><p>Kapal — daftar &gt; [Positif] KP-01 halaman tampil: judul, toolbar, 11 kolom tabel, ringkasan data: -</p><p>Kapal — daftar &gt; [Positif] KP-02 cari berdasarkan kode → hanya kapal itu: -</p><p>Kapal — daftar &gt; [Positif] KP-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu: -</p><p>Kapal — daftar &gt; [Negatif] KP-04 cari kata yang tidak ada → 0 data: -</p><p>Kapal — daftar &gt; [Edge] KP-05 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data: -</p><p>Kapal — daftar &gt; [Positif] KP-06 filter Status &quot;Nonaktif&quot; → semua baris Nonaktif; &quot;Aktif&quot; → semua Aktif: -</p><p>Kapal — daftar &gt; [Positif] KP-07 sort GRT naik lalu turun: -</p><p>Kapal — daftar &gt; [Positif] KP-08 sort Kode &amp; Nama Kapal: klik kedua membalik urutan: -</p><p>Kapal — daftar &gt; [Positif] KP-09 limit 10 → pindah halaman Berikutnya menampilkan 11-20: -</p><p>Kapal — daftar &gt; [Positif] KP-10 Tampilan: sembunyikan kolom IMO → hilang; tampilkan lagi → muncul: -</p><p>Kapal — daftar &gt; [Positif] KP-11 Export Ke Excel (hasil cari) → file berisi kode &amp; nama kapal: -</p><p>Kapal — daftar &gt; [Positif] KP-12 menu ⋯: kapal Aktif → Ubah Data, Nonaktifkan, Hapus Data; kapal Nonaktif → Aktifkan: -</p><p>Kapal — daftar &gt; [Negatif] KP-13 Hapus massal → Batal → data tetap ada: -</p><p>Kapal — daftar &gt; [Positif] KP-14 isi tabel sama dengan data kapal (API): nama, ABK, pelampung, Kap. SUP, SKKP: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-15 langkah 1 kosong → Berikutnya → 6 pesan &quot;Wajib diisi&quot;, tetap di 1/5: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-16 GRT -5 / 0 / huruf → &quot;Harus berupa angka lebih dari 0&quot;: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-17 IMO 6 digit / berisi huruf → &quot;Nomor IMO harus 7 digit&quot;; [Edge] 8 digit dipotong jadi 7; 7 digit → pesan hilang: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Edge] KP-18 kode 25 karakter → dibatasi maks 20: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Positif] KP-19 combobox berisi data master: Jenis kapal, Perusahaan, Pelabuhan pangkalan: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-20 langkah 2 kosong → 5 pesan &quot;Wajib diisi&quot; (ABK, pelampung, No/maks/tanggal SKKP): -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-21 ABK / pelampung / maks SKKP negatif atau huruf → ditolak, tetap di 2/5: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Positif] KP-22 Kembali antar langkah → isian langkah 1 &amp; 2 tidak hilang: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Positif] KP-23 Batal: form kosong langsung tertutup; form terisi → konfirmasi → Kembali → isian tetap: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Edge] KP-24 langkah 3: kuota melebihi pelampung &amp; maks SKKP → muncul peringatan batas keselamatan: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-25 langkah 4: Total SUP kosong → wajib diisi; maks unit golongan negatif → ditolak: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Edge] KP-26 langkah 4: &quot;Setara SUP&quot; = maks unit × SUP golongan, total ikut berubah: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-27 langkah 5: maks barang/hewan negatif → ditolak; [Edge] 0 → diterima: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-28 langkah 3 mode Seat tanpa memilih layout kursi → tidak bisa lanjut: -</p><p>Kapal — form Tambah (tanpa menyimpan) &gt; [Negatif] KP-31 langkah 3 semua kuota kosong (total 0) → tidak bisa lanjut ke langkah 4; [Edge] kuota 1 → bisa: -</p><p>Kapal — form Ubah (tanpa menyimpan) &gt; [Positif] KP-29 Ubah Data: isian 5 langkah sama dengan data kapal (API); tutup tanpa perubahan → tanpa konfirmasi: -</p><p>Kapal — form Ubah (tanpa menyimpan) &gt; [Dampak] KP-30 langkah 4 hanya menampilkan golongan AKTIF dari master Golongan Kendaraan: -</p><p>Kapal — temuan &gt; [Temuan] KP-T01 filter &quot;Jenis Kapal&quot; seharusnya berisi daftar jenis kapal: -</p><p>Kapal — temuan &gt; [Temuan] KP-T02 kode kapal huruf kecil/spasi/simbol seharusnya ditolak (atau dijadikan kapital) [perlu konfirmasi]: -</p><p>Kapal — temuan &gt; [Temuan] KP-T03 tahun pembuatan di masa depan / tidak wajar seharusnya ditolak: -</p><p>Kapal — temuan &gt; [Temuan] KP-T04 kapal dengan SKKP kedaluwarsa seharusnya ditandai di daftar: -</p><p>Kapal — temuan &gt; [Temuan] KP-T05 masa berlaku SKKP tanggal lampau seharusnya ditolak/diberi peringatan [perlu konfirmasi]: -</p><p>Kapal — temuan &gt; [Temuan] KP-T06 kode kapal di form Ubah seharusnya terkunci [perlu konfirmasi]: -</p><p>Kapal — dampak ke web Ferizy (hanya membaca) &gt; [Dampak] KP-32 web Ferizy LMB→PGA: nama &amp; jenis kapal di kartu jadwal = data master Kapal di CMS: -</p><p>Keberangkatan — Kapal override (ubah data + restore) &gt; [Positif] KA-K10 ganti kapal → kapasitas fisik, kuota, SUP, mode, &amp; list ikut berubah; lalu kembali ke default: -</p><p>Keberangkatan — Kapal override (ubah data + restore) &gt; [Temuan] KA-K11 setelah ganti kapal, jumlah kuota semua kelas di Alokasi seharusnya = Total kuota: -</p><p>Keberangkatan — Kapal override (ubah data + restore) &gt; [Positif] KA-K12 kembali ke kapal default → alokasi per kelas pulih seperti awal: -</p><p>Keberangkatan — Kapal override (ubah data + restore) &gt; [Edge] KA-K13 kapal default jadwal tidak ditawarkan lagi sebagai kapal pengganti (hanya lewat &quot;Pakai kapal default jadwal&quot;): -</p><p>Keberangkatan — Kapal override (ubah data + restore) &gt; [Negatif] KA-K14 ganti kapal saat alokasi Mitra tersimpan lebih besar dari kuota kapal baru → seharusnya ditolak: -</p><p>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K01 dropdown Kapal hanya berisi kapal AKTIF dari master Kapal: -</p><p>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K02 ganti kapal tanpa Simpan → angka belum berubah; Batal mengembalikan kapal default: -</p><p>Keberangkatan — Kapal override (read-only) &gt; [Negatif] KA-K03 cari kapal yang tidak ada → tidak ada opsi: -</p><p>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K04 kapasitas fisik = min(SKKP − ABK, pelampung) sesuai keterangan di layar: -</p><p>Keberangkatan — Kapal override (read-only) &gt; [Temuan] KA-K05 kapasitas fisik di keberangkatan seharusnya sama dengan &quot;Kap. Penumpang&quot; di master Kapal [perlu konfirmasi]: -</p>
+</body></html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 12-11-2026 08:43</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>12-11-2026 08:43 · 13 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">13</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">13</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">3</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">0</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T02 (Penumpang) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</div>
+        <div class="berkas">UI\keberangkatan-korporasi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T02 — Override alokasi yang sudah tersimpan hilang diam-diam saat Simpan berikutnya (Penumpang)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;) → reload: Korporasi = 3
+  5. Isi Mitra kelas EXPRESS = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  6. Reload halaman, lihat baris Korporasi
+Ekspektasi: Korporasi REGULER tetap 3 dan Mitra EXPRESS = 1 (kedua override tersimpan)
+Aktual: Korporasi REGULER = 0, Mitra EXPRESS = 1 — override sebelumnya terhapus tanpa pemberitahuan</p>
+        <div class="bukti"><a href="bukti/KK-T02_20261112-084220.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T02_20261112-084220.png" alt="Bukti bukti/KK-T02_20261112-084220.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T02_20261112-084220.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T02 — Override alokasi yang sudah tersimpan hilang diam-diam saat Simpan berikutnya (Penumpang)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;) → reload: Korporasi = 3
+  5. Isi Mitra kelas EXPRESS = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  6. Reload halaman, lihat baris Korporasi
+Ekspektasi: Korporasi REGULER tetap 3 dan Mitra EXPRESS = 1 (kedua override tersimpan)
+Aktual: Korporasi REGULER = 0, Mitra EXPRESS = 1 — override sebelumnya terhapus tanpa pemberitahuan
+(bukti: hasil\bukti\KK-T02_20261112-084220.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T03 (Kendaraan) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</div>
+        <div class="berkas">UI\keberangkatan-korporasi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T03 — Override alokasi kendaraan yang sudah tersimpan hilang diam-diam saat Simpan berikutnya
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100 → tab Alokasi
+  4. Buka sub-tab Kendaraan
+  5. Isi Mitra golongan I = 1 → Simpan → reload: Mitra = 1
+  6. Isi Korporasi golongan II = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  7. Reload halaman, lihat baris Mitra
+Ekspektasi: Mitra golongan I tetap 1 dan Korporasi golongan II = 1
+Aktual: Mitra golongan I = 0, Korporasi golongan II = 1 — override sebelumnya terhapus tanpa pemberitahuan</p>
+        <div class="bukti"><a href="bukti/KK-T03_20261112-084258.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T03_20261112-084258.png" alt="Bukti bukti/KK-T03_20261112-084258.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T03_20261112-084258.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T03 — Override alokasi kendaraan yang sudah tersimpan hilang diam-diam saat Simpan berikutnya
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100 → tab Alokasi
+  4. Buka sub-tab Kendaraan
+  5. Isi Mitra golongan I = 1 → Simpan → reload: Mitra = 1
+  6. Isi Korporasi golongan II = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  7. Reload halaman, lihat baris Mitra
+Ekspektasi: Mitra golongan I tetap 1 dan Korporasi golongan II = 1
+Aktual: Mitra golongan I = 0, Korporasi golongan II = 1 — override sebelumnya terhapus tanpa pemberitahuan
+(bukti: hasil\bukti\KK-T03_20261112-084258.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Korporasi (read-only) &gt; [Temuan] KK-T01 preview Korporasi valid (Penumpang) seharusnya mengurangi Retail sebelum disimpan</div>
+        <div class="berkas">UI\keberangkatan-korporasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T01 — Preview alokasi salah saat Korporasi diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 (kuota kelas 8), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis jadi 5, total kelas tetap 8, status &quot;Sesuai kuota&quot;
+Aktual: Retail REGULER tetap 8, total kelas jadi 11 dari kuota 8 (⚠), status &quot;Tidak sesuai kuota&quot;</p>
+        <div class="bukti"><a href="bukti/KK-T01_20261112-084325.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T01_20261112-084325.png" alt="Bukti bukti/KK-T01_20261112-084325.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T01_20261112-084325.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T01 — Preview alokasi salah saat Korporasi diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 (kuota kelas 8), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis jadi 5, total kelas tetap 8, status &quot;Sesuai kuota&quot;
+Aktual: Retail REGULER tetap 8, total kelas jadi 11 dari kuota 8 (⚠), status &quot;Tidak sesuai kuota&quot;
+(bukti: hasil\bukti\KK-T01_20261112-084325.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Positif] KK-10 simpan Korporasi 3 → Retail berkurang 3, sumber &quot;Override&quot;, bertahan setelah reload</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>39.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Edge] KK-11 Korporasi = tepat kuota kelas (batas) → tersimpan, Retail kelas 0</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>34.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Positif] KK-12 Mitra 2 + Korporasi 3 dalam SEKALI Simpan → keduanya tersimpan, Retail berkurang 5</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>35.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Negatif] KK-13 Mitra + Korporasi melebihi kuota kelas (sekali Simpan) → tidak boleh tersimpan melebihi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>39.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Positif] KK-14 Kendaraan: simpan Korporasi golongan 1 unit → Retail golongan berkurang 1, bertahan setelah reload</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>36.0</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>6</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T02 (Penumpang) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>36.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>7</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T03 (Kendaraan) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>33.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-01 baris Korporasi (Penumpang) punya input untuk setiap kelas &amp; sumber awal &quot;Jadwal&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-02 aturan kelompok channel tampil di layar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>10</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Negatif] KK-03 input Korporasi (Penumpang): negatif &amp; huruf tidak menghasilkan nilai negatif/teks</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-04 Kendaraan: isi Korporasi 1 → Retail golongan langsung berkurang 1 (preview)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>12</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-05 Buang Perubahan mengembalikan Korporasi (Penumpang)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>13</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Temuan] KK-T01 preview Korporasi valid (Penumpang) seharusnya mengurangi Retail sebelum disimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.2</td>
+      </tr></table>
+
+</body></html>

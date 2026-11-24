@@ -1,0 +1,3 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"branch-balapan-ubah.spec.ts";"cabang balapan (MENGUBAH DATA) > permintaan bersamaan dengan kode yang sama tidak boleh membuat cabang kembar";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"2";"branch-balapan-ubah.spec.ts";"cabang balapan (MENGUBAH DATA) > akhir: tidak ada data uji tersisa";"PEMERIKSAAN";"DILEWATI";"0.0";"";""

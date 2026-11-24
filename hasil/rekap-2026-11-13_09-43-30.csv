@@ -1,0 +1,13 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-30 Tambah pelabuhan (Per kapal + 1 dermaga) → muncul di daftar dengan zona waktu otomatis";"PEMERIKSAAN";"LULUS SETELAH ULANG";"5.7";"";""
+"2";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-31 kode yang sudah dipakai → ditolak ""sudah ada"", tidak ada data baru";"PEMERIKSAAN";"LULUS";"5.6";"";""
+"3";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-32 mode Pelabuhan 24 jam tanpa kapasitas harian → gagal simpan";"PEMERIKSAAN";"GAGAL (waktu habis)";"60.9";"";"Test timeout of 60000ms exceeded. | Error: locator.click: Test timeout of 60000ms exceeded."
+"4";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-33 Ubah nama → konfirmasi menampilkan perubahan lama → baru, daftar ikut berubah";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"5";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Edge] PL-34 Ubah tanpa mengubah apa pun → tidak ada perubahan yang tersimpan";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"6";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-35 Nonaktifkan → status ""Tidak Aktif"", menu berubah jadi ""Aktifkan"", muncul di filter Tidak Aktif";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"7";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-36 Aktifkan → Batal → status tetap ""Tidak Aktif""";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"8";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-37 Aktifkan kembali → status ""Aktif""";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"9";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-38 Hapus Data → hilang dari daftar, total berkurang 1";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"10";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Positif] PL-39 dampak: pelabuhan nonaktif tidak muncul di pilihan rute baru";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"11";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Negatif] PL-40 pelabuhan yang dipakai jadwal aktif → Hapus ditolak";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"12";"UI\pelabuhan-ubah.spec.ts";"Pelabuhan — siklus data uji > [Temuan] PL-T10 pesan error simpan memakai nama field bahasa Inggris";"PEMERIKSAAN";"DILEWATI";"0.0";"";""

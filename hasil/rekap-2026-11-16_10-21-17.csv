@@ -1,0 +1,7 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-18 isi jam keberangkatan → kode jadwal terisi otomatis ""<kode rute>-HHMM""";"PEMERIKSAAN";"LULUS";"8.2";"";""
+"2";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-19 hari operasional dikosongkan → ""Hari operasional wajib dipilih""";"PEMERIKSAAN";"LULUS";"9.0";"";""
+"3";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-20 langkah 2 tanpa kapal & tanpa denah kursi → ""Layout kursi wajib dipilih""";"PEMERIKSAAN";"LULUS";"9.4";"";""
+"4";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-21 kapasitas jadwal 150% → ""Isi persen 1 sampai 100""; [Edge] 100% → boleh lanjut";"PEMERIKSAAN";"LULUS";"10.8";"";""
+"5";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-22a waktu tiba terisi otomatis dari jam berangkat + estimasi waktu tempuh rute";"PEMERIKSAAN";"LULUS";"10.9";"";""
+"6";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-22 langkah 5 waktu tiba dikosongkan → ""Waktu tujuan wajib diisi"", tidak muncul konfirmasi";"PEMERIKSAAN";"LULUS";"9.9";"";""

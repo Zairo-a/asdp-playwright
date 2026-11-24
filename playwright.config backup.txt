@@ -1,0 +1,24 @@
+import { defineConfig } from '@playwright/test';
+import dotenv from 'dotenv';
+dotenv.config();
+
+// Test yang mengubah data hanya jalan kalau ALLOW_WRITE=1
+const bolehUbahData = process.env.ALLOW_WRITE === '1';
+
+export default defineConfig({
+  testDir: './tests',
+  testIgnore: bolehUbahData ? [] : ['**/*-ubah.spec.ts'],
+  workers: 1,
+  retries: 1,
+  timeout: 60_000,
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['./rekap-reporter.ts'],
+    ['./laporan-reporter.ts'],
+  ],
+  use: {
+    baseURL: 'https://dev.api.asdp.garudakreasi.com/api/',
+    trace: 'retain-on-failure',
+  },
+});

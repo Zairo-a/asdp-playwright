@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 06-11-2026 16:10</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>06-11-2026 16:10 · 117 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (16 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">117</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">111</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">6</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">5</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">0</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> cabang balapan (MENGUBAH DATA) &gt; permintaan bersamaan dengan kode yang sama tidak boleh membuat cabang kembar</div>
+        <div class="berkas">branch-balapan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">Permintaan bersamaan dengan kode yang sama menghasilkan cabang kembar (kode ganda) pada 5 dari 10 percobaan</p>
+        <p class="pesan">Error: 2 permintaan bersamaan, putaran 2: jumlah cabang dengan kode AUTOSK002 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 2 permintaan bersamaan, putaran 3: jumlah cabang dengan kode AUTOSK003 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 2 permintaan bersamaan, putaran 4: jumlah cabang dengan kode AUTOSK004 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 5 permintaan bersamaan, putaran 1: jumlah cabang dengan kode AUTOSK007 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 5 permintaan bersamaan, putaran 3: jumlah cabang dengan kode AUTOSK009 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p>
+        <details open><summary>Cetakan test</summary><pre>[2 permintaan bersamaan, putaran 1] status 200, 422 | cabang dengan kode itu: 1
+[2 permintaan bersamaan, putaran 2] status 200, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[2 permintaan bersamaan, putaran 3] status 200, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[2 permintaan bersamaan, putaran 4] status 200, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[2 permintaan bersamaan, putaran 5] status 200, 422 | cabang dengan kode itu: 1
+[2 permintaan bersamaan, putaran 6] status 200, 422 | cabang dengan kode itu: 1
+[5 permintaan bersamaan, putaran 1] status 200, 200, 422, 422, 422 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[5 permintaan bersamaan, putaran 2] status 422, 200, 422, 200, 200 | cabang dengan kode itu: 1
+[5 permintaan bersamaan, putaran 3] status 200, 200, 422, 422, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[5 permintaan bersamaan, putaran 4] status 200, 200, 422, 422, 422 | cabang dengan kode itu: 1
+Putaran yang menghasilkan cabang kembar: 5 dari 10</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> cabang lanjutan (MENGUBAH DATA) &gt; telepon: panjang berapa yang benar-benar diterima (dokumentasi: maksimal 30)</div>
+        <div class="berkas">branch-lanjutan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">Telepon 20, 25, 30 karakter menyebabkan error server (500), padahal dokumentasi mengizinkan sampai 30. Pesan error memuat nama tabel, kolom, dan database</p>
+        <p class="pesan">Error: telepon 20 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p><p class="pesan">Error: telepon 25 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p><p class="pesan">Error: telepon 30 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p>
+        <details open><summary>Cetakan test</summary><pre>[telepon 10 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[telepon 15 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[telepon 20 karakter] status 500 | kolom bermasalah: Telp | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for 
+[telepon 25 karakter] status 500 | kolom bermasalah: Telp | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for 
+[telepon 30 karakter] status 500 | kolom bermasalah: Telp | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> cabang lanjutan (MENGUBAH DATA) &gt; batas tiap isian satu per satu: nama, email, alamat, kode</div>
+        <div class="berkas">branch-lanjutan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">Isian tepat di batas dokumentasi menyebabkan error server: address 255 karakter</p>
+        <p class="pesan">Error: address 255 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p>
+        <details open><summary>Cetakan test</summary><pre>[name 100 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[email 100 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[address 255 karakter] status 500 | kolom bermasalah: Alamat | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for 
+[code 10 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> cabang gagal: limit abc</div>
+        <div class="berkas">branch-list.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">limit abc: pesan &quot;The limit field must be at least 1.&quot; tidak menyebut bahwa nilainya harus angka (pesan kurang tepat, tingkat rendah)</p>
+        
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> cabang gagal: page abc</div>
+        <div class="berkas">branch-list.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">page abc: pesan &quot;The page field must be at least 1.&quot; tidak menyebut bahwa nilainya harus angka (pesan kurang tepat, tingkat rendah)</p>
+        
+        
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> cabang balapan (MENGUBAH DATA) &gt; permintaan bersamaan dengan kode yang sama tidak boleh membuat cabang kembar</div>
+        <div class="berkas">branch-balapan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">Permintaan bersamaan dengan kode yang sama menghasilkan cabang kembar (kode ganda) pada 5 dari 10 percobaan</p>
+        <p class="pesan">Error: 2 permintaan bersamaan, putaran 2: jumlah cabang dengan kode AUTOSK002 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 2 permintaan bersamaan, putaran 3: jumlah cabang dengan kode AUTOSK003 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 2 permintaan bersamaan, putaran 4: jumlah cabang dengan kode AUTOSK004 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 5 permintaan bersamaan, putaran 1: jumlah cabang dengan kode AUTOSK007 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p><p class="pesan">Error: 5 permintaan bersamaan, putaran 3: jumlah cabang dengan kode AUTOSK009 | expect(received).toBeLessThanOrEqual(expected) | Expected: &lt;= 1 | Received:    2</p>
+        <details open><summary>Cetakan test</summary><pre>[2 permintaan bersamaan, putaran 1] status 200, 422 | cabang dengan kode itu: 1
+[2 permintaan bersamaan, putaran 2] status 200, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[2 permintaan bersamaan, putaran 3] status 200, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[2 permintaan bersamaan, putaran 4] status 200, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[2 permintaan bersamaan, putaran 5] status 200, 422 | cabang dengan kode itu: 1
+[2 permintaan bersamaan, putaran 6] status 200, 422 | cabang dengan kode itu: 1
+[5 permintaan bersamaan, putaran 1] status 200, 200, 422, 422, 422 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[5 permintaan bersamaan, putaran 2] status 422, 200, 422, 200, 200 | cabang dengan kode itu: 1
+[5 permintaan bersamaan, putaran 3] status 200, 200, 422, 422, 200 | cabang dengan kode itu: 2 &lt;-- KEMBAR
+[5 permintaan bersamaan, putaran 4] status 200, 200, 422, 422, 422 | cabang dengan kode itu: 1
+Putaran yang menghasilkan cabang kembar: 5 dari 10</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus cabang yang pelabuhannya punya rute aktif ditolak 409</div>
+        <div class="berkas">branch-edit-hapus-ubah.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: kode penolakan | expect(received).toContain(expected) // indexOf | Expected substring: &quot;FCAP-MASTER-IN-USE&quot; | Received string:    &quot;The branch cannot be deleted because it still has active routes.&quot;</p>
+        <details open><summary>Cetakan test</summary><pre>[hapus, pelabuhan 1 punya rute aktif] status 409 | message: The branch cannot be deleted because it still has active routes.
+   errors: {&quot;AUTO4SK28&quot;:{&quot;routes&quot;:1}}</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> cabang lanjutan (MENGUBAH DATA) &gt; telepon: panjang berapa yang benar-benar diterima (dokumentasi: maksimal 30)</div>
+        <div class="berkas">branch-lanjutan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">Telepon 20, 25, 30 karakter menyebabkan error server (500), padahal dokumentasi mengizinkan sampai 30. Pesan error memuat nama tabel, kolom, dan database</p>
+        <p class="pesan">Error: telepon 20 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p><p class="pesan">Error: telepon 25 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p><p class="pesan">Error: telepon 30 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p>
+        <details open><summary>Cetakan test</summary><pre>[telepon 10 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[telepon 15 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[telepon 20 karakter] status 500 | kolom bermasalah: Telp | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for 
+[telepon 25 karakter] status 500 | kolom bermasalah: Telp | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for 
+[telepon 30 karakter] status 500 | kolom bermasalah: Telp | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> cabang lanjutan (MENGUBAH DATA) &gt; batas tiap isian satu per satu: nama, email, alamat, kode</div>
+        <div class="berkas">branch-lanjutan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">Isian tepat di batas dokumentasi menyebabkan error server: address 255 karakter</p>
+        <p class="pesan">Error: address 255 karakter: tidak boleh error server | expect(received).toBe(expected) // Object.is equality | Expected: false | Received: true</p>
+        <details open><summary>Cetakan test</summary><pre>[name 100 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[email 100 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully
+[address 255 karakter] status 500 | kolom bermasalah: Alamat | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for 
+[code 10 karakter] status 200 | kolom bermasalah: - | message: Data saved successfully</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> cabang tambah (MENGUBAH DATA) &gt; tambah: semua isian tepat di batas panjang diterima (dugaan, gagal belum tentu bug)</div>
+        <div class="berkas">branch-tambah-ubah.spec.ts · DUGAAN</div>
+        
+        <p class="pesan">Error: expect(received).toBe(expected) // Object.is equality | Expected: 200 | Received: 500</p>
+        <details open><summary>Cetakan test</summary><pre>[batas panjang] status 500 | message: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'Telp' at row 1 (Connection: mysql, Host: 127.0.0.1, Port: 12816, Database: dev_asdp_api, SQL: insert into `tbl_md_outlet` (`KodeOutlet`, `NamaOutlet`, `KodePerusahaan`, `Telp`, `Email`, `Alamat`, `ListPelabuhan`, `IsPelabuhan`, `IsAktif`, `JenisOutlet`, `IsOnline`, `IsTravel`, `IsPaket`, `IsHide`, `FeeSales`, `FeeSalesTuslah`, `FeeSalesPaket`, `FeeBoarding`, `FeeBoardingTuslah`) values (AUTOLKPB09, AUTO nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn, GKM, 000000000000000000000000000000, ***@***, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, 3, 0, 1, C, 1, 1, 1, 0, 0, 0, 0, 0, 0))</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> cabang tambah (MENGUBAH DATA) &gt; tambah: dua permintaan bersamaan dengan kode yang sama (dugaan, gagal belum tentu bug)</div>
+        <div class="berkas">branch-tambah-ubah.spec.ts · DUGAAN</div>
+        
+        <p class="pesan">Error: hanya satu cabang dengan kode itu | expect(received).toBe(expected) // Object.is equality | Expected: 1 | Received: 2</p><p class="pesan">Error: hanya satu permintaan yang berhasil | expect(received).toBe(expected) // Object.is equality | Expected: 1 | Received: 2</p>
+        <details open><summary>Cetakan test</summary><pre>[bersamaan] status 200 dan 200</pre></details>
+      </div>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: id yang tidak ada (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[edit id tidak ada AUTO4SK15] status 422 | message: The selected id is invalid. | berubah jadi cabang baru: false</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; nonaktifkan cabang yang pelabuhannya punya rute aktif (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[nonaktifkan, pelabuhan 1 punya rute aktif] status 200 | message: Data saved successfully | status cabang sesudahnya: Inactive
+   errors: null</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: cabang yang sama dihapus dua kali (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus dua kali] status pertama 200 | status kedua 422 | message kedua: The selected ids.0 is invalid.</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: id yang tidak ada (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus id tidak ada] status 422 | message: The selected ids.0 is invalid.</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu id ada dan satu id tidak ada dalam satu permintaan (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus campur ada dan tidak ada] status 422 | message: The selected ids.1 is invalid. | cabang yang valid masih ada: true</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu cabang aman dan satu cabang berrute aktif dalam satu permintaan (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus campur aman dan berrute] status 409 | cabang aman masih ada: true | cabang berrute masih ada: true</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang lanjutan (MENGUBAH DATA) &gt; kode huruf kecil yang benar-benar baru (lihat hasil)</div><div class="berkas">branch-lanjutan-ubah.spec.ts</div><pre>[kode huruf kecil autowo7l04] status 200 | message: Data saved successfully | tersimpan sebagai: AUTOWO7L04</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang lanjutan (MENGUBAH DATA) &gt; kode bekas cabang yang sudah dihapus: bisa dipakai lagi atau tidak (lihat hasil)</div><div class="berkas">branch-lanjutan-ubah.spec.ts</div><pre>[hapus AUTOWO706] terhapus
+[buat lagi dengan kode yang sama setelah dihapus] status 422 | message: The code has already been taken.</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: filter yang dikirim server</div><div class="berkas">branch-list.spec.ts</div><pre>(tidak ada cetakan)</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: isi kolom, filter, dan baris (lihat nilai)</div><div class="berkas">branch-list.spec.ts</div><pre>Total di API: 11 | per_page 10 | from 1 | to 10 | baris di halaman: 10
+Kolom: code(Code, sortable true) | name(Branch Name, sortable true) | company_name(Company, sortable false) | phone(Phone, sortable true) | email(Email, sortable true) | ports(Ports, sortable false) | status(Status, sortable true)
+Filter search: -
+Filter companies: ASDP=PT ASDP Indonesia Ferry | GKM=PT GARUDA KREASI MAHARDHIKA | TBL=PT. HONDA PROSPECT MOTOR (HPM)
+Filter status: active=Active | inactive=Inactive
+Baris 1: 077 | Tes cabang | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 4
+Baris 2: 7 | test7 | ASDP | PT ASDP Indonesia Ferry | Active | aktif 1 | pelabuhan 5
+Baris 3: ABCD | hyuk | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 1
+Baris 4: JKS | testajalagi | TBL | PT. HONDA PROSPECT MOTOR (HPM) | Active | aktif 1 | pelabuhan 1
+Baris 5: QA01 | QA Cabang Test 01 | ASDP | PT ASDP Indonesia Ferry | Active | aktif 1 | pelabuhan 2
+Baris 6: QA02 | &lt;b&gt;QA HTML&lt;/b&gt; | ASDP | PT ASDP Indonesia Ferry | Inactive | aktif 0 | pelabuhan 1
+Baris 7: QACL2 | QA Claude Cabang 2 | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 1
+Baris 8: QACLD1 | QA Claude Cabang 1 Edit | TBL | PT. HONDA PROSPECT MOTOR (HPM) | Inactive | aktif 0 | pelabuhan 2
+Baris 9: TES65 | ess5656 | GKM | PT GARUDA KREASI MAHARDHIKA | Inactive | aktif 0 | pelabuhan 1
+Baris 10: TESS65 | tess | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 2
+Pasangan status/is_active: Active/1, Inactive/0
+Contoh row_color: null | contoh actions: {&quot;edit&quot;:true,&quot;delete&quot;:true}</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: urutan hasil untuk tiap kolom yang bisa diurutkan (lihat urutan)</div><div class="berkas">branch-list.spec.ts</div><pre>Kolom yang bisa diurutkan: code, name, phone, email, status
+Urutan awal (kode): 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort code] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort -code] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort code:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort code:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort name] status 200 | kode: QA02 &gt; TES65 &gt; ABCD &gt; QA01 &gt; QACLD1 &gt; QACL2 &gt; 077 &gt; TESS65 &gt; TESSS456T &gt; 7 &gt; JKS
+[sort -name] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort name:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort name:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort phone] status 200 | kode: TES65 &gt; QA02 &gt; 077 &gt; 7 &gt; QACLD1 &gt; TESS65 &gt; TESSS456T &gt; ABCD &gt; QA01 &gt; JKS &gt; QACL2
+[sort -phone] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort phone:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort phone:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort email] status 200 | kode: TES65 &gt; QA02 &gt; QACL2 &gt; ABCD &gt; JKS &gt; TESS65 &gt; TESSS456T &gt; QA01 &gt; QACLD1 &gt; 077 &gt; 7
+[sort -email] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort email:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort email:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort status] status 200 | kode: TES65 &gt; QA02 &gt; QACLD1 &gt; 077 &gt; 7 &gt; TESS65 &gt; TESSS456T &gt; ABCD &gt; QA01 &gt; JKS &gt; QACL2
+[sort -status] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort status:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort status:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: batas ekstrem (lihat nilai)</div><div class="berkas">branch-list.spec.ts</div><pre>[limit 101] status 200 | per_page 101 | baris 11 | total 11
+[limit 1000000] status 200 | per_page 1000000 | baris 11 | total 11
+[search 300 karakter] status 200 | per_page 10 | baris 0 | total 0
+[search kosong] status 200 | per_page 10 | baris 10 | total 11</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: spasi di awal dan akhir nama (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>[spasi di nama] status 200 | nama tersimpan: &quot;AUTO spasi&quot;</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: karakter khusus dan emoji pada nama (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>[nama &quot;AUTO &lt;b&gt;x&lt;/b&gt;&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO 'kutip' \&quot;ganda\&quot;&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO emoji 😀&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO %_ \\ /&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO &lt;script&gt;x&lt;/script&gt;&quot;] status 403 | tersimpan sama persis: -</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: pelabuhan yang sama dua kali dalam satu permintaan (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>Perusahaan uji: GKM (PT GARUDA KREASI MAHARDHIKA) | cabang awal: 11
+Kandidat pelabuhan: 120 dari cms/option/port | bentuk satu pelabuhan di daftar: &quot;ADONARA&quot;
+Pelabuhan tanpa rute aktif: 3, 5, 6 | dicoba 6 | cabang uji ditolak hapus (409): 3
+[port_ids ganda] status 422 | port_ids tersimpan: undefined</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: telepon berisi huruf (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>[telepon huruf] status 200 | message: Data saved successfully | tersimpan: &quot;abc-telepon&quot;</pre></div><h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: id yang tidak ada (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[edit id tidak ada AUTO4SK15] status 422 | message: The selected id is invalid. | berubah jadi cabang baru: false</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; nonaktifkan cabang yang pelabuhannya punya rute aktif (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[nonaktifkan, pelabuhan 1 punya rute aktif] status 200 | message: Data saved successfully | status cabang sesudahnya: Inactive
+   errors: null</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: cabang yang sama dihapus dua kali (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus dua kali] status pertama 200 | status kedua 422 | message kedua: The selected ids.0 is invalid.</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: id yang tidak ada (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus id tidak ada] status 422 | message: The selected ids.0 is invalid.</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu id ada dan satu id tidak ada dalam satu permintaan (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus campur ada dan tidak ada] status 422 | message: The selected ids.1 is invalid. | cabang yang valid masih ada: true</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu cabang aman dan satu cabang berrute aktif dalam satu permintaan (lihat hasil)</div><div class="berkas">branch-edit-hapus-ubah.spec.ts</div><pre>[hapus campur aman dan berrute] status 409 | cabang aman masih ada: true | cabang berrute masih ada: true</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang lanjutan (MENGUBAH DATA) &gt; kode huruf kecil yang benar-benar baru (lihat hasil)</div><div class="berkas">branch-lanjutan-ubah.spec.ts</div><pre>[kode huruf kecil autowo7l04] status 200 | message: Data saved successfully | tersimpan sebagai: AUTOWO7L04</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang lanjutan (MENGUBAH DATA) &gt; kode bekas cabang yang sudah dihapus: bisa dipakai lagi atau tidak (lihat hasil)</div><div class="berkas">branch-lanjutan-ubah.spec.ts</div><pre>[hapus AUTOWO706] terhapus
+[buat lagi dengan kode yang sama setelah dihapus] status 422 | message: The code has already been taken.</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: filter yang dikirim server</div><div class="berkas">branch-list.spec.ts</div><pre>(tidak ada cetakan)</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: isi kolom, filter, dan baris (lihat nilai)</div><div class="berkas">branch-list.spec.ts</div><pre>Total di API: 11 | per_page 10 | from 1 | to 10 | baris di halaman: 10
+Kolom: code(Code, sortable true) | name(Branch Name, sortable true) | company_name(Company, sortable false) | phone(Phone, sortable true) | email(Email, sortable true) | ports(Ports, sortable false) | status(Status, sortable true)
+Filter search: -
+Filter companies: ASDP=PT ASDP Indonesia Ferry | GKM=PT GARUDA KREASI MAHARDHIKA | TBL=PT. HONDA PROSPECT MOTOR (HPM)
+Filter status: active=Active | inactive=Inactive
+Baris 1: 077 | Tes cabang | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 4
+Baris 2: 7 | test7 | ASDP | PT ASDP Indonesia Ferry | Active | aktif 1 | pelabuhan 5
+Baris 3: ABCD | hyuk | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 1
+Baris 4: JKS | testajalagi | TBL | PT. HONDA PROSPECT MOTOR (HPM) | Active | aktif 1 | pelabuhan 1
+Baris 5: QA01 | QA Cabang Test 01 | ASDP | PT ASDP Indonesia Ferry | Active | aktif 1 | pelabuhan 2
+Baris 6: QA02 | &lt;b&gt;QA HTML&lt;/b&gt; | ASDP | PT ASDP Indonesia Ferry | Inactive | aktif 0 | pelabuhan 1
+Baris 7: QACL2 | QA Claude Cabang 2 | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 1
+Baris 8: QACLD1 | QA Claude Cabang 1 Edit | TBL | PT. HONDA PROSPECT MOTOR (HPM) | Inactive | aktif 0 | pelabuhan 2
+Baris 9: TES65 | ess5656 | GKM | PT GARUDA KREASI MAHARDHIKA | Inactive | aktif 0 | pelabuhan 1
+Baris 10: TESS65 | tess | GKM | PT GARUDA KREASI MAHARDHIKA | Active | aktif 1 | pelabuhan 2
+Pasangan status/is_active: Active/1, Inactive/0
+Contoh row_color: null | contoh actions: {&quot;edit&quot;:true,&quot;delete&quot;:true}</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: urutan hasil untuk tiap kolom yang bisa diurutkan (lihat urutan)</div><div class="berkas">branch-list.spec.ts</div><pre>Kolom yang bisa diurutkan: code, name, phone, email, status
+Urutan awal (kode): 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort code] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort -code] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort code:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort code:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort name] status 200 | kode: QA02 &gt; TES65 &gt; ABCD &gt; QA01 &gt; QACLD1 &gt; QACL2 &gt; 077 &gt; TESS65 &gt; TESSS456T &gt; 7 &gt; JKS
+[sort -name] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort name:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort name:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort phone] status 200 | kode: TES65 &gt; QA02 &gt; 077 &gt; 7 &gt; QACLD1 &gt; TESS65 &gt; TESSS456T &gt; ABCD &gt; QA01 &gt; JKS &gt; QACL2
+[sort -phone] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort phone:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort phone:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort email] status 200 | kode: TES65 &gt; QA02 &gt; QACL2 &gt; ABCD &gt; JKS &gt; TESS65 &gt; TESSS456T &gt; QA01 &gt; QACLD1 &gt; 077 &gt; 7
+[sort -email] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort email:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort email:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort status] status 200 | kode: TES65 &gt; QA02 &gt; QACLD1 &gt; 077 &gt; 7 &gt; TESS65 &gt; TESSS456T &gt; ABCD &gt; QA01 &gt; JKS &gt; QACL2
+[sort -status] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort status:asc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T
+[sort status:desc] status 200 | kode: 077 &gt; 7 &gt; ABCD &gt; JKS &gt; QA01 &gt; QA02 &gt; QACL2 &gt; QACLD1 &gt; TES65 &gt; TESS65 &gt; TESSS456T</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang: batas ekstrem (lihat nilai)</div><div class="berkas">branch-list.spec.ts</div><pre>[limit 101] status 200 | per_page 101 | baris 11 | total 11
+[limit 1000000] status 200 | per_page 1000000 | baris 11 | total 11
+[search 300 karakter] status 200 | per_page 10 | baris 0 | total 0
+[search kosong] status 200 | per_page 10 | baris 10 | total 11</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: spasi di awal dan akhir nama (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>[spasi di nama] status 200 | nama tersimpan: &quot;AUTO spasi&quot;</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: karakter khusus dan emoji pada nama (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>[nama &quot;AUTO &lt;b&gt;x&lt;/b&gt;&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO 'kutip' \&quot;ganda\&quot;&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO emoji 😀&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO %_ \\ /&quot;] status 200 | tersimpan sama persis: true
+[nama &quot;AUTO &lt;script&gt;x&lt;/script&gt;&quot;] status 403 | tersimpan sama persis: -</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: pelabuhan yang sama dua kali dalam satu permintaan (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>Perusahaan uji: GKM (PT GARUDA KREASI MAHARDHIKA) | cabang awal: 11
+Kandidat pelabuhan: 120 dari cms/option/port | bentuk satu pelabuhan di daftar: &quot;ADONARA&quot;
+Pelabuhan tanpa rute aktif: 3, 5, 6 | dicoba 6 | cabang uji ditolak hapus (409): 3
+[port_ids ganda] status 422 | port_ids tersimpan: undefined</pre></div><div class="bug" style="border-left-color:#8250df"><div class="judul">cabang tambah (MENGUBAH DATA) &gt; tambah: telepon berisi huruf (lihat hasil)</div><div class="berkas">branch-tambah-ubah.spec.ts</div><pre>[telepon huruf] status 200 | message: Data saved successfully | tersimpan: &quot;abc-telepon&quot;</pre></div><h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="gagal">
+        <td>1</td><td>branch-balapan-ubah.spec.ts</td><td>cabang balapan (MENGUBAH DATA) &gt; permintaan bersamaan dengan kode yang sama tidak boleh membuat cabang kembar</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>13.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>branch-balapan-ubah.spec.ts</td><td>cabang balapan (MENGUBAH DATA) &gt; akhir: tidak ada data uji tersisa</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; siap: bersihkan sisa data uji dan catat keadaan awal cabang</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: nama, telepon, email, dan alamat tersimpan dan terbaca di daftar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: kode tidak bisa diubah (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: ganti pelabuhan menggantikan seluruh daftar pelabuhan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: nonaktifkan dan aktifkan lagi lewat edit</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: dua kali dengan data yang sama tidak membuat duplikat</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: name kosong, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>10</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: name 101 karakter, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: company_code tidak ada, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>12</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: port_ids kosong, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>13</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: port_ids tidak ada, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>14</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: email format salah, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>15</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: phone 31 karakter, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>16</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: is_active 2, dan data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>17</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit: id yang tidak ada (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>18</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; edit gagal: tanpa token ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>19</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: body kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>20</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: tanpa action</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>21</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: tanpa ids</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>22</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: ids kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>23</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: ids bukan daftar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>24</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: action ngawur</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>25</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: tanpa token ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>26</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aksi gagal: token ngawur ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>27</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aktifkan dan nonaktifkan: action activation membalik status (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>28</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; aktifkan dan nonaktifkan: dua cabang sekaligus (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>1.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>29</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; nonaktifkan cabang yang pelabuhannya punya rute aktif (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>1.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>30</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu cabang hilang dari daftar, pencarian, dan jumlahnya berkurang satu</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>31</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: tiga cabang sekaligus dalam satu permintaan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>32</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: cabang nonaktif bisa dihapus (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>33</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: cabang yang sama dihapus dua kali (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>34</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: id yang tidak ada (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>35</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu id ada dan satu id tidak ada dalam satu permintaan (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="gagal">
+        <td>36</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus cabang yang pelabuhannya punya rute aktif ditolak 409</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>0.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>37</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; hapus: satu cabang aman dan satu cabang berrute aktif dalam satu permintaan (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>38</td><td>branch-edit-hapus-ubah.spec.ts</td><td>cabang edit, aktifkan dan nonaktifkan, hapus (MENGUBAH DATA) &gt; akhir: tidak ada data uji tersisa dan cabang asli utuh</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>39</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; pulihkan: hapus sisa data uji dari run sebelumnya dan catat cabang yang ada</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="gagal">
+        <td>40</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; telepon: panjang berapa yang benar-benar diterima (dokumentasi: maksimal 30)</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>3.3</td>
+      </tr>
+      <tr class="gagal">
+        <td>41</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; batas tiap isian satu per satu: nama, email, alamat, kode</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>42</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; port_ids berisi nol diulang tiga kali (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>43</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; kode huruf kecil yang benar-benar baru (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>44</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; kode bekas cabang yang sudah dihapus: bisa dipakai lagi atau tidak (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>45</td><td>branch-lanjutan-ubah.spec.ts</td><td>cabang lanjutan (MENGUBAH DATA) &gt; akhir: tidak ada data uji tersisa</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>46</td><td>branch-list.spec.ts</td><td>cabang: bentuk balasan benar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>47</td><td>branch-list.spec.ts</td><td>cabang: jumlah baris cocok dengan pagination (halaman pertama)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>48</td><td>branch-list.spec.ts</td><td>cabang: filter yang dikirim server</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>49</td><td>branch-list.spec.ts</td><td>cabang: perusahaan di tabel ada di daftar filter (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>50</td><td>branch-list.spec.ts</td><td>cabang: isi kolom, filter, dan baris (lihat nilai)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>51</td><td>branch-list.spec.ts</td><td>cabang: limit membatasi jumlah baris</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>52</td><td>branch-list.spec.ts</td><td>cabang: halaman kedua berisi data yang berbeda dari halaman pertama</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>53</td><td>branch-list.spec.ts</td><td>cabang: halaman di luar jangkauan memberi daftar kosong (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>54</td><td>branch-list.spec.ts</td><td>cabang: pencarian yang tidak ada hasilnya memberi daftar kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>55</td><td>branch-list.spec.ts</td><td>cabang: pencarian kode yang ada menemukan cabang itu (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>4.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>56</td><td>branch-list.spec.ts</td><td>cabang: pencarian tidak membedakan huruf besar dan kecil (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>57</td><td>branch-list.spec.ts</td><td>cabang: pencarian kosong sama dengan tanpa pencarian (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>58</td><td>branch-list.spec.ts</td><td>cabang: filter status memisahkan aktif dan nonaktif (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>59</td><td>branch-list.spec.ts</td><td>cabang: filter perusahaan memberi cabang milik perusahaan itu (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>60</td><td>branch-list.spec.ts</td><td>cabang: urutan hasil untuk tiap kolom yang bisa diurutkan (lihat urutan)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>10.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>61</td><td>branch-list.spec.ts</td><td>cabang gagal: limit 0</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>62</td><td>branch-list.spec.ts</td><td>cabang gagal: limit -1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>63</td><td>branch-list.spec.ts</td><td>cabang gagal: limit abc</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>64</td><td>branch-list.spec.ts</td><td>cabang gagal: page 0</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>65</td><td>branch-list.spec.ts</td><td>cabang gagal: page abc</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>66</td><td>branch-list.spec.ts</td><td>cabang gagal: status ngawur</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>67</td><td>branch-list.spec.ts</td><td>cabang: batas ekstrem (lihat nilai)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>1.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>68</td><td>branch-list.spec.ts</td><td>cabang: karakter khusus pada pencarian tidak membuat error server</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>69</td><td>branch-list.spec.ts</td><td>cabang gagal: tanpa token ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>70</td><td>branch-list.spec.ts</td><td>cabang gagal: token ngawur ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>71</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; siap: syarat awal dan pelabuhan untuk data uji</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>72</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: data minimal valid berhasil dan muncul di daftar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>73</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: semua isian (telepon, email, alamat) tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>74</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: beberapa pelabuhan sekaligus</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>75</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: nonaktif (is_active 0) muncul sebagai Inactive dan terfilter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>76</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: kode dengan garis bawah dan strip diterima</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.5</td>
+      </tr>
+      <tr class="gagal">
+        <td>77</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: semua isian tepat di batas panjang diterima (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>GAGAL</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>78</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: telepon dan email boleh sama dengan cabang lain (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>4.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>79</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: pelabuhan yang sama boleh dipakai beberapa cabang</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>80</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: kode yang hanya beda angka nol di depan dianggap berbeda</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>81</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: spasi di awal dan akhir nama (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>82</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: karakter khusus dan emoji pada nama (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>83</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: kode yang sama dikirim dua kali, yang kedua ditolak dan tidak menimpa</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.7</td>
+      </tr>
+      <tr class="gagal">
+        <td>84</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: dua permintaan bersamaan dengan kode yang sama (dugaan, gagal belum tentu bug)</td>
+        <td>DUGAAN</td><td>GAGAL</td><td>0.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>85</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: pelabuhan yang sama dua kali dalam satu permintaan (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>4.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>86</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah: telepon berisi huruf (lihat hasil)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>0.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>87</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: tanpa code</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>88</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: code kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>89</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: code 11 karakter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>90</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: code huruf kecil</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>91</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: code berisi spasi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>92</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: code karakter khusus</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>93</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: tanpa name</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>94</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: name kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>95</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: name hanya spasi (dugaan)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>96</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: name 101 karakter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>97</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: tanpa company_code</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>98</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: company_code kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>99</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: company_code tidak ada</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>100</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: phone 31 karakter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>101</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: email format salah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>102</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: email 101 karakter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>103</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: address 256 karakter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>104</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: tanpa is_active</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>105</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: is_active 2</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>106</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: is_active huruf</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>107</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: is_active -1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>108</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: tanpa port_ids</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>109</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: port_ids kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>110</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: port_ids bukan daftar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>111</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: port_ids berisi huruf</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>112</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: port_ids tidak ada</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>113</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: port_ids nol (dugaan)</td>
+        <td>DUGAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>114</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: body kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>115</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: tanpa token ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>116</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; tambah gagal: token ngawur ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>117</td><td>branch-tambah-ubah.spec.ts</td><td>cabang tambah (MENGUBAH DATA) &gt; akhir: tidak ada data uji tersisa dan cabang awal utuh</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>0.1</td>
+      </tr></table>
+
+</body></html>

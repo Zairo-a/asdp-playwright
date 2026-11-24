@@ -1,0 +1,2 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-kendaraan-ubah.spec.ts";"Keberangkatan — Alokasi Kendaraan (ubah data + restore) > [Positif] KV-16 ""Kembalikan semua ke jadwal"" dari sub-tab Kendaraan juga memulihkan override Penumpang";"PEMERIKSAAN";"LULUS";"45.6";"";""

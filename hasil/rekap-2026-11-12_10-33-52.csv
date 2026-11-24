@@ -1,0 +1,20 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-sesi-ubah.spec.ts";"Keberangkatan — sesi login habis saat mengedit > [Positif] KS-01 Simpan saat sesi habis → muncul pemberitahuan sesi berakhir, bukan ""berhasil""";"PEMERIKSAAN";"LULUS";"4.0";"";""
+"2";"UI\keberangkatan-sesi-ubah.spec.ts";"Keberangkatan — sesi login habis saat mengedit > [Positif] KS-02 perubahan yang dikirim saat sesi habis TIDAK tersimpan di server";"PEMERIKSAAN";"LULUS";"8.4";"";""
+"3";"UI\keberangkatan-sesi-ubah.spec.ts";"Keberangkatan — sesi login habis saat mengedit > [Positif] KS-03 membuka halaman saat sesi habis → dialog sesi berakhir, data tidak ditampilkan";"PEMERIKSAAN";"LULUS";"3.6";"";""
+"4";"UI\keberangkatan-sesi-ubah.spec.ts";"Keberangkatan — sesi login habis saat mengedit > [Positif] KS-04 tombol Login di dialog sesi berakhir membuka halaman login";"PEMERIKSAAN";"LULUS";"4.4";"";""
+"5";"UI\keberangkatan-sesi-ubah.spec.ts";"Keberangkatan — sesi login habis saat mengedit > [Temuan] KS-T01 saat sesi habis, pengguna seharusnya diberi tahu bahwa perubahannya BELUM tersimpan [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"3.5";"KS-T01 — Dialog sesi berakhir tidak memberi tahu bahwa perubahan alokasi belum tersimpan
+Langkah:
+  1. Buka detail keberangkatan MRK-BKH-REG-2100 tanggal 2027-05-02 → tab Alokasi
+  2. Isi Mitra kelas REGULER = 1 (belum Simpan)
+  3. Sesi login berakhir (mis. login di perangkat lain / token kedaluwarsa)
+  4. Klik Simpan
+Ekspektasi: Dialog menyebut bahwa perubahan belum tersimpan (atau menyimpan draf), supaya petugas tahu harus mengisi ulang setelah login
+Aktual: Dialog: ""Sesi Berakhir Sesi login Anda telah berakhir. Silakan login kembali untuk melanjutkan. Login"" — tidak ada keterangan soal perubahan yang belum tersimpan";""
+"6";"UI\keberangkatan-sesi-ubah.spec.ts";"Keberangkatan — sesi login habis saat mengedit > [Temuan] KS-T02 setelah login ulang, pengguna seharusnya kembali ke halaman yang sedang dibuka [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"4.7";"KS-T02 — Halaman login tidak mengingat halaman terakhir (setelah login, petugas tidak kembali ke keberangkatan yang sedang diedit)
+Langkah:
+  1. Buka detail keberangkatan MRK-BKH-REG-2100
+  2. Sesi login berakhir → muncul dialog ""Sesi Berakhir""
+  3. Klik Login
+Ekspektasi: URL halaman login membawa alamat tujuan (mis. ?redirect=/capacity-departures/2027-05-02/955) supaya setelah login kembali ke halaman ini
+Aktual: URL login: /login — tidak membawa alamat halaman terakhir";""

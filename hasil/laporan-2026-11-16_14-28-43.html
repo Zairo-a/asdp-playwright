@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 16-11-2026 14:28</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>16-11-2026 14:28 · 136 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (1 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">136</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">130</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">1</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">26</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">5</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Edge] KB-14 target 0 → tersimpan sebagai 0 (bukan dianggap kosong / tanpa batas)</div>
+        <div class="berkas">UI\keberangkatan-barang-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KB-T04 — Target barang/hewan 0 tidak tersimpan sebagai 0 [perlu konfirmasi]
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Isi Target informasi &quot;Hewan kecil (kucing, anjing)&quot; = 0 → Simpan
+  5. Muat ulang halaman, buka lagi sub-tab Barang &amp; Hewan
+Ekspektasi: Target tersimpan 0 (tidak ada kuota untuk kategori ini), berbeda dengan kosong yang berarti tidak dibatasi
+Aktual: HTTP 200; setelah reload target = &quot;&quot;, status &quot;Di bawah target&quot;</p>
+        <div class="bukti"><a href="bukti/KB-T04_20261116-140832.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KB-T04_20261116-140832.png" alt="Bukti bukti/KB-T04_20261116-140832.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KB-T04_20261116-140832.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KB-T04 — Target barang/hewan 0 tidak tersimpan sebagai 0 [perlu konfirmasi]
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Isi Target informasi &quot;Hewan kecil (kucing, anjing)&quot; = 0 → Simpan
+  5. Muat ulang halaman, buka lagi sub-tab Barang &amp; Hewan
+Ekspektasi: Target tersimpan 0 (tidak ada kuota untuk kategori ini), berbeda dengan kosong yang berarti tidak dibatasi
+Aktual: HTTP 200; setelah reload target = &quot;&quot;, status &quot;Di bawah target&quot;
+(bukti: hasil\bukti\KB-T04_20261116-140832.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Temuan] KB-T02 target sangat besar seharusnya ditolak dengan pesan validasi, bukan error server (HTTP 500)</div>
+        <div class="berkas">UI\keberangkatan-barang-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KB-T02 — Target barang/hewan sangat besar menyebabkan error server (HTTP 500)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Isi Target informasi &quot;Hewan kecil (kucing, anjing)&quot; = 999999999999
+  5. Klik Simpan
+Ekspektasi: Ditolak dengan pesan validasi yang jelas (mis. &quot;Target maksimal …&quot;), server membalas 4xx (bukan 500)
+Aktual: Server membalas HTTP 500, toast: &quot;Gagal menyimpan alokasi / Gagal menyimpan alokasi&quot; (tanpa alasan)</p>
+        <div class="bukti"><a href="bukti/KB-T02_20261116-140911.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KB-T02_20261116-140911.png" alt="Bukti bukti/KB-T02_20261116-140911.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KB-T02_20261116-140911.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KB-T02 — Target barang/hewan sangat besar menyebabkan error server (HTTP 500)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Isi Target informasi &quot;Hewan kecil (kucing, anjing)&quot; = 999999999999
+  5. Klik Simpan
+Ekspektasi: Ditolak dengan pesan validasi yang jelas (mis. &quot;Target maksimal …&quot;), server membalas 4xx (bukan 500)
+Aktual: Server membalas HTTP 500, toast: &quot;Gagal menyimpan alokasi / Gagal menyimpan alokasi&quot; (tanpa alasan)
+(bukti: hasil\bukti\KB-T02_20261116-140911.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Temuan] KB-T03 Simpan berikutnya seharusnya TIDAK menghapus target yang sudah tersimpan</div>
+        <div class="berkas">UI\keberangkatan-barang-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KB-T03 — Target barang/hewan yang sudah tersimpan hilang diam-diam saat Simpan berikutnya
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Isi target &quot;Hewan kecil (kucing, anjing)&quot; = 10 → Simpan → reload: target = 10
+  5. Isi target &quot;Barang bawaan&quot; = 5 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  6. Reload halaman
+Ekspektasi: Target &quot;Hewan kecil (kucing, anjing)&quot; tetap 10 dan &quot;Barang bawaan&quot; = 5
+Aktual: Target &quot;Hewan kecil (kucing, anjing)&quot; = &quot;(kosong)&quot;, &quot;Barang bawaan&quot; = &quot;5&quot; — target sebelumnya terhapus tanpa pemberitahuan</p>
+        <div class="bukti"><a href="bukti/KB-T03_20261116-140953.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KB-T03_20261116-140953.png" alt="Bukti bukti/KB-T03_20261116-140953.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KB-T03_20261116-140953.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KB-T03 — Target barang/hewan yang sudah tersimpan hilang diam-diam saat Simpan berikutnya
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Isi target &quot;Hewan kecil (kucing, anjing)&quot; = 10 → Simpan → reload: target = 10
+  5. Isi target &quot;Barang bawaan&quot; = 5 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  6. Reload halaman
+Ekspektasi: Target &quot;Hewan kecil (kucing, anjing)&quot; tetap 10 dan &quot;Barang bawaan&quot; = 5
+Aktual: Target &quot;Hewan kecil (kucing, anjing)&quot; = &quot;(kosong)&quot;, &quot;Barang bawaan&quot; = &quot;5&quot; — target sebelumnya terhapus tanpa pemberitahuan
+(bukti: hasil\bukti\KB-T03_20261116-140953.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Barang &amp; Hewan (read-only) &gt; [Temuan] KB-T01 kategori &quot;Barang curah&quot; seharusnya mengikuti aturan curah (go-show loket, tanpa target) [perlu konfirmasi]</div>
+        <div class="berkas">UI\keberangkatan-barang.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KB-T01 — Kategori &quot;Barang curah&quot; tidak mengikuti aturan barang curah
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Lihat baris kategori &quot;Barang curah&quot;
+  5. Baca keterangan &quot;Barang curah hanya dijual go-show di loket dan bersifat loss&quot;
+Ekspektasi: Channel jual &quot;Loket (go-show)&quot;, tanpa target (&quot;— (curah, tidak ada target)&quot;), status &quot;Loss · tidak dibatasi&quot;
+Aktual: Channel jual &quot;Semua channel&quot;, ada input target, status &quot;Di bawah target&quot;</p>
+        <div class="bukti"><a href="bukti/KB-T01_20261116-141022.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KB-T01_20261116-141022.png" alt="Bukti bukti/KB-T01_20261116-141022.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KB-T01_20261116-141022.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KB-T01 — Kategori &quot;Barang curah&quot; tidak mengikuti aturan barang curah
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Barang &amp; Hewan
+  4. Lihat baris kategori &quot;Barang curah&quot;
+  5. Baca keterangan &quot;Barang curah hanya dijual go-show di loket dan bersifat loss&quot;
+Ekspektasi: Channel jual &quot;Loket (go-show)&quot;, tanpa target (&quot;— (curah, tidak ada target)&quot;), status &quot;Loss · tidak dibatasi&quot;
+Aktual: Channel jual &quot;Semua channel&quot;, ada input target, status &quot;Di bawah target&quot;
+(bukti: hasil\bukti\KB-T01_20261116-141022.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — edit bersamaan 2 petugas &gt; [Temuan] KC-T01 alokasi: simpanan B (halaman lama) seharusnya tidak menghapus perubahan A tanpa peringatan</div>
+        <div class="berkas">UI\keberangkatan-bersamaan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KC-T01 — Dua petugas mengedit alokasi bersamaan: perubahan petugas pertama hilang tanpa peringatan
+Langkah:
+  1. Petugas A dan Petugas B sama-sama membuka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 (dua browser/tab)
+  2. Keduanya membuka tab Alokasi
+  3. Petugas A: isi Mitra kelas REGULER = 2 → Simpan (berhasil)
+  4. Petugas B (tanpa reload): isi Korporasi kelas REGULER = 1 → Simpan
+  5. Reload halaman
+Ekspektasi: Mitra REGULER tetap 2 dan Korporasi REGULER = 1, ATAU Petugas B diberi peringatan &quot;data sudah diubah, muat ulang&quot;
+Aktual: Toast B: &quot;Alokasi berhasil disimpan&quot;; setelah reload Mitra REGULER = 0, Korporasi REGULER = 1 — perubahan A hilang</p>
+        <div class="bukti"><a href="bukti/KC-T01_20261116-141110.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KC-T01_20261116-141110.png" alt="Bukti bukti/KC-T01_20261116-141110.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KC-T01_20261116-141110.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KC-T01 — Dua petugas mengedit alokasi bersamaan: perubahan petugas pertama hilang tanpa peringatan
+Langkah:
+  1. Petugas A dan Petugas B sama-sama membuka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 (dua browser/tab)
+  2. Keduanya membuka tab Alokasi
+  3. Petugas A: isi Mitra kelas REGULER = 2 → Simpan (berhasil)
+  4. Petugas B (tanpa reload): isi Korporasi kelas REGULER = 1 → Simpan
+  5. Reload halaman
+Ekspektasi: Mitra REGULER tetap 2 dan Korporasi REGULER = 1, ATAU Petugas B diberi peringatan &quot;data sudah diubah, muat ulang&quot;
+Aktual: Toast B: &quot;Alokasi berhasil disimpan&quot;; setelah reload Mitra REGULER = 0, Korporasi REGULER = 1 — perubahan A hilang
+(bukti: hasil\bukti\KC-T01_20261116-141110.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — edit bersamaan 2 petugas &gt; [Temuan] KC-T02 kapasitas: B ganti kapal di halaman lama seharusnya tidak menimpa kapasitas % yang baru disimpan A</div>
+        <div class="berkas">UI\keberangkatan-bersamaan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KC-T02 — Dua petugas mengedit kapasitas bersamaan: kapasitas % dari petugas pertama tertimpa nilai lama
+Langkah:
+  1. Petugas A dan Petugas B sama-sama membuka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 (dua browser/tab)
+  2. Petugas A: ubah Kapasitas operasional 80% → 50% → Simpan (berhasil)
+  3. Petugas B (tanpa reload, layar masih 80%): hanya ganti Kapal ke &quot;KMP Naraya&quot; → Simpan
+  4. Reload halaman
+Ekspektasi: Kapasitas tetap 50% (hanya kapal yang berubah), ATAU Petugas B diberi peringatan konflik
+Aktual: Toast B: &quot;Override kapasitas berhasil disimpan&quot;; setelah reload kapasitas 80%, kapal &quot;KMP Naraya (NARAYA)&quot; — kapasitas dari A tertimpa 80%</p>
+        <div class="bukti"><a href="bukti/KC-T02_20261116-141131.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KC-T02_20261116-141131.png" alt="Bukti bukti/KC-T02_20261116-141131.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KC-T02_20261116-141131.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KC-T02 — Dua petugas mengedit kapasitas bersamaan: kapasitas % dari petugas pertama tertimpa nilai lama
+Langkah:
+  1. Petugas A dan Petugas B sama-sama membuka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 (dua browser/tab)
+  2. Petugas A: ubah Kapasitas operasional 80% → 50% → Simpan (berhasil)
+  3. Petugas B (tanpa reload, layar masih 80%): hanya ganti Kapal ke &quot;KMP Naraya&quot; → Simpan
+  4. Reload halaman
+Ekspektasi: Kapasitas tetap 50% (hanya kapal yang berubah), ATAU Petugas B diberi peringatan konflik
+Aktual: Toast B: &quot;Override kapasitas berhasil disimpan&quot;; setelah reload kapasitas 80%, kapal &quot;KMP Naraya (NARAYA)&quot; — kapasitas dari A tertimpa 80%
+(bukti: hasil\bukti\KC-T02_20261116-141131.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T01 preview alokasi valid (Mitra 1 ≤ kuota kelas) seharusnya &quot;Sesuai kuota&quot; sebelum disimpan</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-T01 — Preview alokasi salah saat Mitra diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100, lalu buka tab Alokasi
+  4. Isi Mitra kelas REGULER = 1 (kuota kelas 340), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis berkurang jadi 339, total kelas tetap 340, status &quot;Sesuai kuota&quot;
+Aktual: Retail REGULER tetap 340, total kelas jadi 341 dari kuota 340 (tanda ⚠), status &quot;Tidak sesuai kuota&quot;</p>
+        <div class="bukti"><a href="bukti/KA-T01_20261116-141246.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-T01_20261116-141246.png" alt="Bukti bukti/KA-T01_20261116-141246.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-T01_20261116-141246.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-T01 — Preview alokasi salah saat Mitra diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100, lalu buka tab Alokasi
+  4. Isi Mitra kelas REGULER = 1 (kuota kelas 340), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis berkurang jadi 339, total kelas tetap 340, status &quot;Sesuai kuota&quot;
+Aktual: Retail REGULER tetap 340, total kelas jadi 341 dari kuota 340 (tanda ⚠), status &quot;Tidak sesuai kuota&quot;
+(bukti: hasil\bukti\KA-T01_20261116-141246.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T02 Mitra melebihi kuota kelas → seharusnya Simpan terkunci / ada pesan di form</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-T02 — Tombol Simpan tetap aktif walau alokasi melebihi kuota
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100, lalu buka tab Alokasi
+  4. Isi Mitra kelas REGULER = 345 (kuota kelas hanya 340)
+Ekspektasi: Tombol Simpan terkunci atau muncul pesan error di form sebelum disimpan
+Aktual: Tombol Simpan tetap aktif dan bisa diklik; penolakan baru muncul dari server setelah diklik</p>
+        <div class="bukti"><a href="bukti/KA-T02_20261116-141253.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-T02_20261116-141253.png" alt="Bukti bukti/KA-T02_20261116-141253.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-T02_20261116-141253.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-T02 — Tombol Simpan tetap aktif walau alokasi melebihi kuota
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100, lalu buka tab Alokasi
+  4. Isi Mitra kelas REGULER = 345 (kuota kelas hanya 340)
+Ekspektasi: Tombol Simpan terkunci atau muncul pesan error di form sebelum disimpan
+Aktual: Tombol Simpan tetap aktif dan bisa diklik; penolakan baru muncul dari server setelah diklik
+(bukti: hasil\bukti\KA-T02_20261116-141253.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T03 rentang tanggal terbalik di URL → seharusnya ditukar otomatis atau muncul validasi</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-T03 — Rentang tanggal terbalik diterima tanpa validasi
+Langkah:
+  1. Buka URL: /capacity-departures?route_id=82&amp;date_from=2027-05-07&amp;date_to=2027-05-01
+  2. (tanggal mulai lebih besar dari tanggal akhir)
+Ekspektasi: Tanggal otomatis ditukar jadi 01/05/2027 - 07/05/2027, atau muncul pesan validasi tanggal
+Aktual: Kolom Tanggal menampilkan &quot;07/05/2027 - 01/05/2027&quot;, tidak ada pesan validasi, tabel kosong</p>
+        <div class="bukti"><a href="bukti/KA-T03_20261116-141259.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-T03_20261116-141259.png" alt="Bukti bukti/KA-T03_20261116-141259.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-T03_20261116-141259.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-T03 — Rentang tanggal terbalik diterima tanpa validasi
+Langkah:
+  1. Buka URL: /capacity-departures?route_id=82&amp;date_from=2027-05-07&amp;date_to=2027-05-01
+  2. (tanggal mulai lebih besar dari tanggal akhir)
+Ekspektasi: Tanggal otomatis ditukar jadi 01/05/2027 - 07/05/2027, atau muncul pesan validasi tanggal
+Aktual: Kolom Tanggal menampilkan &quot;07/05/2027 - 01/05/2027&quot;, tidak ada pesan validasi, tabel kosong
+(bukti: hasil\bukti\KA-T03_20261116-141259.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T04 route_id tidak valid → seharusnya tampil state &quot;Pilih rute…&quot; / pesan rute tidak ditemukan</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-T04 — Rute tidak valid di URL tidak memunculkan pesan yang jelas
+Langkah:
+  1. Buka URL: /capacity-departures?route_id=999999 (rute tidak ada)
+Ekspektasi: Muncul tampilan &quot;Pilih rute untuk menampilkan data&quot; atau pesan &quot;rute tidak ditemukan&quot;
+Aktual: Dropdown Rute &quot;Pilih rute&quot;, tabel tampil dengan pesan &quot;Tidak ada keberangkatan untuk filter ini.&quot; (seolah rute valid tapi kosong)</p>
+        <div class="bukti"><a href="bukti/KA-T04_20261116-141305.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-T04_20261116-141305.png" alt="Bukti bukti/KA-T04_20261116-141305.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-T04_20261116-141305.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-T04 — Rute tidak valid di URL tidak memunculkan pesan yang jelas
+Langkah:
+  1. Buka URL: /capacity-departures?route_id=999999 (rute tidak ada)
+Ekspektasi: Muncul tampilan &quot;Pilih rute untuk menampilkan data&quot; atau pesan &quot;rute tidak ditemukan&quot;
+Aktual: Dropdown Rute &quot;Pilih rute&quot;, tabel tampil dengan pesan &quot;Tidak ada keberangkatan untuk filter ini.&quot; (seolah rute valid tapi kosong)
+(bukti: hasil\bukti\KA-T04_20261116-141305.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Temuan] KA-T06 popover Filter seharusnya muat di layar / bisa di-scroll (tombol &quot;Reset filter&quot; terjangkau)</div>
+        <div class="berkas">UI\keberangkatan-filter.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-T06 — Popover Filter lebih tinggi dari layar dan tidak bisa di-scroll — &quot;Reset filter&quot; &amp; sebagian kapal tidak terjangkau
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi di layar laptop (1366×768)
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-01 s.d. 2027-05-07
+  3. Klik tombol &quot;Filter: Kapal, Status, Mode&quot;
+  4. Coba scroll ke tombol &quot;Reset filter&quot; di bagian bawah popover
+Ekspektasi: Seluruh isi popover terlihat atau popover bisa di-scroll, sehingga semua kapal dan tombol &quot;Reset filter&quot; bisa diklik
+Aktual: Popover berisi 20 pilihan; tombol &quot;Reset filter&quot; berada di y=955px, di luar layar (tinggi 768px), dan popover TIDAK bisa di-scroll</p>
+        <div class="bukti"><a href="bukti/KA-T06_20261116-141358.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-T06_20261116-141358.png" alt="Bukti bukti/KA-T06_20261116-141358.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-T06_20261116-141358.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-T06 — Popover Filter lebih tinggi dari layar dan tidak bisa di-scroll — &quot;Reset filter&quot; &amp; sebagian kapal tidak terjangkau
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi di layar laptop (1366×768)
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-01 s.d. 2027-05-07
+  3. Klik tombol &quot;Filter: Kapal, Status, Mode&quot;
+  4. Coba scroll ke tombol &quot;Reset filter&quot; di bagian bawah popover
+Ekspektasi: Seluruh isi popover terlihat atau popover bisa di-scroll, sehingga semua kapal dan tombol &quot;Reset filter&quot; bisa diklik
+Aktual: Popover berisi 20 pilihan; tombol &quot;Reset filter&quot; berada di y=955px, di luar layar (tinggi 768px), dan popover TIDAK bisa di-scroll
+(bukti: hasil\bukti\KA-T06_20261116-141358.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Kapal override (ubah data + restore) &gt; [Temuan] KA-K11 setelah ganti kapal, jumlah kuota semua kelas di Alokasi seharusnya = Total kuota</div>
+        <div class="berkas">UI\keberangkatan-kapal-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-K11 — Setelah ganti kapal, kuota per kelas tidak menjumlah ke Total kuota
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02
+  2. Tab Kapasitas Operasional → Kapal (override harian) pilih &quot;KMP Naraya&quot; → Simpan
+  3. Buka tab Alokasi, jumlahkan &quot;kuota&quot; di judul setiap kolom kelas
+Ekspektasi: Jumlah kuota semua kelas = Total kuota (340)
+Aktual: Jumlah kuota kelas 276, Total kuota 340 (selisih 64 kursi tidak teralokasi), status tetap &quot;Sesuai kuota&quot;</p>
+        <div class="bukti"><a href="bukti/KA-K11_20261116-141432.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-K11_20261116-141432.png" alt="Bukti bukti/KA-K11_20261116-141432.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-K11_20261116-141432.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-K11 — Setelah ganti kapal, kuota per kelas tidak menjumlah ke Total kuota
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02
+  2. Tab Kapasitas Operasional → Kapal (override harian) pilih &quot;KMP Naraya&quot; → Simpan
+  3. Buka tab Alokasi, jumlahkan &quot;kuota&quot; di judul setiap kolom kelas
+Ekspektasi: Jumlah kuota semua kelas = Total kuota (340)
+Aktual: Jumlah kuota kelas 276, Total kuota 340 (selisih 64 kursi tidak teralokasi), status tetap &quot;Sesuai kuota&quot;
+(bukti: hasil\bukti\KA-K11_20261116-141432.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T01 kuota golongan melebihi kuota operasional SUP → seharusnya Simpan terkunci</div>
+        <div class="berkas">UI\keberangkatan-kendaraan.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KV-T01 — Tombol Simpan tetap aktif walau alokasi kendaraan melebihi kuota operasional SUP
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Isi Kuota golongan IX = 10 unit
+Ekspektasi: Tombol Simpan terkunci / ada pesan, karena total 77.70 SUP &gt; kuota operasional 40.00 SUP
+Aktual: Total jadi 77.70 SUP (tanda ⚠), tombol Simpan tetap aktif; baru ditolak server (&quot;FCAP-ALLOCATION-EXCEEDS-QUOTA&quot;) setelah diklik</p>
+        <div class="bukti"><a href="bukti/KV-T01_20261116-142004.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KV-T01_20261116-142004.png" alt="Bukti bukti/KV-T01_20261116-142004.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KV-T01_20261116-142004.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KV-T01 — Tombol Simpan tetap aktif walau alokasi kendaraan melebihi kuota operasional SUP
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Isi Kuota golongan IX = 10 unit
+Ekspektasi: Tombol Simpan terkunci / ada pesan, karena total 77.70 SUP &gt; kuota operasional 40.00 SUP
+Aktual: Total jadi 77.70 SUP (tanda ⚠), tombol Simpan tetap aktif; baru ditolak server (&quot;FCAP-ALLOCATION-EXCEEDS-QUOTA&quot;) setelah diklik
+(bukti: hasil\bukti\KV-T01_20261116-142004.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T02 tipe Restrict: kolom &quot;Jika habis&quot; seharusnya langsung &quot;Tolak&quot; sebelum disimpan</div>
+        <div class="berkas">UI\keberangkatan-kendaraan.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KV-T02 — Kolom &quot;Jika habis&quot; tidak ikut berubah saat Tipe diganti (sebelum Simpan)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Ubah Tipe golongan IX menjadi Restrict (belum klik Simpan)
+Ekspektasi: Kolom &quot;Jika habis&quot; langsung menampilkan &quot;Tolak (tidak ambil Normal)&quot; sesuai keterangan &quot;Restrict … habis → ditolak&quot;
+Aktual: Kolom &quot;Jika habis&quot; masih &quot;Ambil sisa golongan Normal lain&quot; (baru berubah setelah disimpan)</p>
+        <div class="bukti"><a href="bukti/KV-T02_20261116-142007.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KV-T02_20261116-142007.png" alt="Bukti bukti/KV-T02_20261116-142007.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KV-T02_20261116-142007.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KV-T02 — Kolom &quot;Jika habis&quot; tidak ikut berubah saat Tipe diganti (sebelum Simpan)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Ubah Tipe golongan IX menjadi Restrict (belum klik Simpan)
+Ekspektasi: Kolom &quot;Jika habis&quot; langsung menampilkan &quot;Tolak (tidak ambil Normal)&quot; sesuai keterangan &quot;Restrict … habis → ditolak&quot;
+Aktual: Kolom &quot;Jika habis&quot; masih &quot;Ambil sisa golongan Normal lain&quot; (baru berubah setelah disimpan)
+(bukti: hasil\bukti\KV-T02_20261116-142007.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T03 total alokasi SUP seharusnya = kuota operasional kendaraan [perlu konfirmasi]</div>
+        <div class="berkas">UI\keberangkatan-kendaraan.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KV-T03 — Total alokasi kendaraan lebih kecil dari kuota operasional SUP
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Bandingkan baris ringkasan &quot;Normal + Reserve + Restrict&quot; dengan &quot;Kuota operasional … SUP&quot;
+Ekspektasi: Total alokasi = kuota operasional (40.00 SUP), atau sisa SUP ditampilkan/dijelaskan
+Aktual: Total alokasi 37.20 SUP, kuota operasional 40.00 SUP → 2.80 SUP tidak teralokasi ke golongan mana pun</p>
+        <div class="bukti"><a href="bukti/KV-T03_20261116-142010.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KV-T03_20261116-142010.png" alt="Bukti bukti/KV-T03_20261116-142010.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KV-T03_20261116-142010.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KV-T03 — Total alokasi kendaraan lebih kecil dari kuota operasional SUP
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Bandingkan baris ringkasan &quot;Normal + Reserve + Restrict&quot; dengan &quot;Kuota operasional … SUP&quot;
+Ekspektasi: Total alokasi = kuota operasional (40.00 SUP), atau sisa SUP ditampilkan/dijelaskan
+Aktual: Total alokasi 37.20 SUP, kuota operasional 40.00 SUP → 2.80 SUP tidak teralokasi ke golongan mana pun
+(bukti: hasil\bukti\KV-T03_20261116-142010.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T04 keterangan &quot;golongan disatukan (VA/VB …)&quot; seharusnya sesuai isi tabel [perlu konfirmasi]</div>
+        <div class="berkas">UI\keberangkatan-kendaraan.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KV-T04 — Keterangan menyebut golongan disatukan, tapi tabel menampilkannya terpisah
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Baca keterangan &quot;Golongan disatukan per angka romawi … (IVA/IVB, VA/VB, VIA/VIB)&quot;
+  5. Lihat daftar golongan di tabel
+Ekspektasi: Pasangan golongan dengan SUP sama tampil sebagai satu baris (mis. &quot;VA/VB&quot;)
+Aktual: Tabel berisi I, II, III, IVA, IVB, VA, VB, VIA, VIB, VIII, IX; pasangan yang tampil terpisah: IVA &amp; IVB, VA &amp; VB, VIA &amp; VIB</p>
+        <div class="bukti"><a href="bukti/KV-T04_20261116-142013.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KV-T04_20261116-142013.png" alt="Bukti bukti/KV-T04_20261116-142013.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KV-T04_20261116-142013.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KV-T04 — Keterangan menyebut golongan disatukan, tapi tabel menampilkannya terpisah
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi → sub-tab Kendaraan
+  4. Baca keterangan &quot;Golongan disatukan per angka romawi … (IVA/IVB, VA/VB, VIA/VIB)&quot;
+  5. Lihat daftar golongan di tabel
+Ekspektasi: Pasangan golongan dengan SUP sama tampil sebagai satu baris (mis. &quot;VA/VB&quot;)
+Aktual: Tabel berisi I, II, III, IVA, IVB, VA, VB, VIA, VIB, VIII, IX; pasangan yang tampil terpisah: IVA &amp; IVB, VA &amp; VB, VIA &amp; VIB
+(bukti: hasil\bukti\KV-T04_20261116-142013.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T02 (Penumpang) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</div>
+        <div class="berkas">UI\keberangkatan-korporasi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T02 — Override alokasi yang sudah tersimpan hilang diam-diam saat Simpan berikutnya (Penumpang)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;) → reload: Korporasi = 3
+  5. Isi Mitra kelas REGULER = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  6. Reload halaman, lihat baris Korporasi
+Ekspektasi: Korporasi REGULER tetap 3 dan Mitra REGULER = 1 (kedua override tersimpan)
+Aktual: Korporasi REGULER = 0, Mitra REGULER = 1 — override sebelumnya terhapus tanpa pemberitahuan</p>
+        <div class="bukti"><a href="bukti/KK-T02_20261116-142338.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T02_20261116-142338.png" alt="Bukti bukti/KK-T02_20261116-142338.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T02_20261116-142338.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T02 — Override alokasi yang sudah tersimpan hilang diam-diam saat Simpan berikutnya (Penumpang)
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;) → reload: Korporasi = 3
+  5. Isi Mitra kelas REGULER = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  6. Reload halaman, lihat baris Korporasi
+Ekspektasi: Korporasi REGULER tetap 3 dan Mitra REGULER = 1 (kedua override tersimpan)
+Aktual: Korporasi REGULER = 0, Mitra REGULER = 1 — override sebelumnya terhapus tanpa pemberitahuan
+(bukti: hasil\bukti\KK-T02_20261116-142338.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T03 (Kendaraan) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</div>
+        <div class="berkas">UI\keberangkatan-korporasi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T03 — Override alokasi kendaraan yang sudah tersimpan hilang diam-diam saat Simpan berikutnya
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi
+  4. Buka sub-tab Kendaraan
+  5. Isi Mitra golongan I = 1 → Simpan → reload: Mitra = 1
+  6. Isi Korporasi golongan II = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  7. Reload halaman, lihat baris Mitra
+Ekspektasi: Mitra golongan I tetap 1 dan Korporasi golongan II = 1
+Aktual: Mitra golongan I = 0, Korporasi golongan II = 1 — override sebelumnya terhapus tanpa pemberitahuan</p>
+        <div class="bukti"><a href="bukti/KK-T03_20261116-142415.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T03_20261116-142415.png" alt="Bukti bukti/KK-T03_20261116-142415.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T03_20261116-142415.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T03 — Override alokasi kendaraan yang sudah tersimpan hilang diam-diam saat Simpan berikutnya
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi
+  4. Buka sub-tab Kendaraan
+  5. Isi Mitra golongan I = 1 → Simpan → reload: Mitra = 1
+  6. Isi Korporasi golongan II = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  7. Reload halaman, lihat baris Mitra
+Ekspektasi: Mitra golongan I tetap 1 dan Korporasi golongan II = 1
+Aktual: Mitra golongan I = 0, Korporasi golongan II = 1 — override sebelumnya terhapus tanpa pemberitahuan
+(bukti: hasil\bukti\KK-T03_20261116-142415.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — Alokasi Korporasi (read-only) &gt; [Temuan] KK-T01 preview Korporasi valid (Penumpang) seharusnya mengurangi Retail sebelum disimpan</div>
+        <div class="berkas">UI\keberangkatan-korporasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T01 — Preview alokasi salah saat Korporasi diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 (kuota kelas 340), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis jadi 337, total kelas tetap 340, status &quot;Sesuai kuota&quot;
+Aktual: Retail REGULER tetap 340, total kelas jadi 343 dari kuota 340 (⚠), status &quot;Tidak sesuai kuota&quot;</p>
+        <div class="bukti"><a href="bukti/KK-T01_20261116-142448.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T01_20261116-142448.png" alt="Bukti bukti/KK-T01_20261116-142448.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T01_20261116-142448.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T01 — Preview alokasi salah saat Korporasi diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan &amp; Alokasi
+  2. Pilih rute LEMBAR - PADANG BAI, tanggal 2027-05-02
+  3. Klik jadwal LMB-PGA-2100 → tab Alokasi
+  4. Isi Korporasi kelas REGULER = 3 (kuota kelas 340), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis jadi 337, total kelas tetap 340, status &quot;Sesuai kuota&quot;
+Aktual: Retail REGULER tetap 340, total kelas jadi 343 dari kuota 340 (⚠), status &quot;Tidak sesuai kuota&quot;
+(bukti: hasil\bukti\KK-T01_20261116-142448.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — sesi login habis saat mengedit &gt; [Temuan] KS-T01 saat sesi habis, pengguna seharusnya diberi tahu bahwa perubahannya BELUM tersimpan [perlu konfirmasi]</div>
+        <div class="berkas">UI\keberangkatan-sesi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KS-T01 — Dialog sesi berakhir tidak memberi tahu bahwa perubahan alokasi belum tersimpan
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 → tab Alokasi
+  2. Isi Mitra kelas REGULER = 1 (belum Simpan)
+  3. Sesi login berakhir (mis. login di perangkat lain / token kedaluwarsa)
+  4. Klik Simpan
+Ekspektasi: Dialog menyebut bahwa perubahan belum tersimpan (atau menyimpan draf), supaya petugas tahu harus mengisi ulang setelah login
+Aktual: Dialog: &quot;Sesi Berakhir Sesi login Anda telah berakhir. Silakan login kembali untuk melanjutkan. Login&quot; — tidak ada keterangan soal perubahan yang belum tersimpan</p>
+        <div class="bukti"><a href="bukti/KS-T01_20261116-142536.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KS-T01_20261116-142536.png" alt="Bukti bukti/KS-T01_20261116-142536.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KS-T01_20261116-142536.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KS-T01 — Dialog sesi berakhir tidak memberi tahu bahwa perubahan alokasi belum tersimpan
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100 tanggal 2027-05-02 → tab Alokasi
+  2. Isi Mitra kelas REGULER = 1 (belum Simpan)
+  3. Sesi login berakhir (mis. login di perangkat lain / token kedaluwarsa)
+  4. Klik Simpan
+Ekspektasi: Dialog menyebut bahwa perubahan belum tersimpan (atau menyimpan draf), supaya petugas tahu harus mengisi ulang setelah login
+Aktual: Dialog: &quot;Sesi Berakhir Sesi login Anda telah berakhir. Silakan login kembali untuk melanjutkan. Login&quot; — tidak ada keterangan soal perubahan yang belum tersimpan
+(bukti: hasil\bukti\KS-T01_20261116-142536.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan — sesi login habis saat mengedit &gt; [Temuan] KS-T02 setelah login ulang, pengguna seharusnya kembali ke halaman yang sedang dibuka [perlu konfirmasi]</div>
+        <div class="berkas">UI\keberangkatan-sesi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KS-T02 — Halaman login tidak mengingat halaman terakhir (setelah login, petugas tidak kembali ke keberangkatan yang sedang diedit)
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100
+  2. Sesi login berakhir → muncul dialog &quot;Sesi Berakhir&quot;
+  3. Klik Login
+Ekspektasi: URL halaman login membawa alamat tujuan (mis. ?redirect=/capacity-departures/2027-05-02/1011) supaya setelah login kembali ke halaman ini
+Aktual: URL login: /login — tidak membawa alamat halaman terakhir</p>
+        <div class="bukti"><a href="bukti/KS-T02_20261116-142540.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KS-T02_20261116-142540.png" alt="Bukti bukti/KS-T02_20261116-142540.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KS-T02_20261116-142540.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KS-T02 — Halaman login tidak mengingat halaman terakhir (setelah login, petugas tidak kembali ke keberangkatan yang sedang diedit)
+Langkah:
+  1. Buka detail keberangkatan LMB-PGA-2100
+  2. Sesi login berakhir → muncul dialog &quot;Sesi Berakhir&quot;
+  3. Klik Login
+Ekspektasi: URL halaman login membawa alamat tujuan (mis. ?redirect=/capacity-departures/2027-05-02/1011) supaya setelah login kembali ke halaman ini
+Aktual: URL login: /login — tidak membawa alamat halaman terakhir
+(bukti: hasil\bukti\KS-T02_20261116-142540.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Temuan] KA-U12 pesan gagal simpan alokasi seharusnya bahasa manusia, bukan kode &quot;FCAP-…&quot;</div>
+        <div class="berkas">UI\keberangkatan-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KA-U12 — Pesan gagal simpan alokasi berupa kode teknis
+Langkah:
+  1. Buka detail keberangkatan, tab Alokasi
+  2. Isi Mitra kelas REGULER melebihi kuota kelas
+  3. Klik Simpan
+Ekspektasi: Pesan yang mudah dipahami, mis. &quot;Alokasi melebihi kuota kelas REGULER (maks. 8)&quot;
+Aktual: Toast menampilkan &quot;Gagal menyimpan alokasi / FCAP-ALLOCATION-EXCEEDS-QUOTA&quot;</p>
+        <div class="bukti"><a href="bukti/KA-U12_20261116-142702.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KA-U12_20261116-142702.png" alt="Bukti bukti/KA-U12_20261116-142702.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KA-U12_20261116-142702.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KA-U12 — Pesan gagal simpan alokasi berupa kode teknis
+Langkah:
+  1. Buka detail keberangkatan, tab Alokasi
+  2. Isi Mitra kelas REGULER melebihi kuota kelas
+  3. Klik Simpan
+Ekspektasi: Pesan yang mudah dipahami, mis. &quot;Alokasi melebihi kuota kelas REGULER (maks. 8)&quot;
+Aktual: Toast menampilkan &quot;Gagal menyimpan alokasi / FCAP-ALLOCATION-EXCEEDS-QUOTA&quot;
+(bukti: hasil\bukti\KA-U12_20261116-142702.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — simpan &gt; [Temuan] TA-T10 Simpan di Template seharusnya TIDAK mengubah keberangkatan yang sudah ada (hari ini)</div>
+        <div class="berkas">UI\template-alokasi-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T10 — Simpan di halaman Template langsung mengubah keberangkatan hari ini (bukan template)
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI, Jadwal LMB-PGA-2100
+  3. Isi Mitra kelas REGULER = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  4. Buka detail keberangkatan LMB-PGA-2100 tanggal 2026-11-16 → tab Alokasi
+Ekspektasi: Keberangkatan tanggal 2026-11-16 yang sudah ada TIDAK berubah (sesuai keterangan &quot;keberangkatan yang sudah ada tidak berubah&quot;); template dipakai untuk keberangkatan baru
+Aktual: Simpan mengirim PUT /api/proxy/cms/capacity/departures/2026-11-16/1011/allocations; keberangkatan 2026-11-16 kini Mitra REGULER = 1 (sebelumnya 0), label &quot;Mode ubah · override untuk keberangkatan ini&quot;</p>
+        <div class="bukti"><a href="bukti/TA-T10_20261116-142728.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T10_20261116-142728.png" alt="Bukti bukti/TA-T10_20261116-142728.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T10_20261116-142728.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T10 — Simpan di halaman Template langsung mengubah keberangkatan hari ini (bukan template)
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI, Jadwal LMB-PGA-2100
+  3. Isi Mitra kelas REGULER = 1 → Simpan (toast &quot;Alokasi berhasil disimpan&quot;)
+  4. Buka detail keberangkatan LMB-PGA-2100 tanggal 2026-11-16 → tab Alokasi
+Ekspektasi: Keberangkatan tanggal 2026-11-16 yang sudah ada TIDAK berubah (sesuai keterangan &quot;keberangkatan yang sudah ada tidak berubah&quot;); template dipakai untuk keberangkatan baru
+Aktual: Simpan mengirim PUT /api/proxy/cms/capacity/departures/2026-11-16/1011/allocations; keberangkatan 2026-11-16 kini Mitra REGULER = 1 (sebelumnya 0), label &quot;Mode ubah · override untuk keberangkatan ini&quot;
+(bukti: hasil\bukti\TA-T10_20261116-142728.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — read-only &gt; [Temuan] TA-T01 halaman Template seharusnya memuat data TEMPLATE, bukan keberangkatan hari ini</div>
+        <div class="berkas">UI\template-alokasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T01 — Halaman &quot;Template Alokasi Rute&quot; memuat alokasi keberangkatan hari ini, bukan template jadwal
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI
+  3. Pilih Jadwal LMB-PGA-2100
+  4. Lihat data yang dimuat (Network: …/allocations)
+Ekspektasi: Halaman memuat template alokasi jadwal (nilai awal, dalam %), bukan data satu keberangkatan
+Aktual: Data dimuat dari keberangkatan tanggal 2026-11-16 (id 1011): /api/proxy/cms/capacity/departures/2026-11-16/1011/allocations; tabel menampilkan kolom &quot;terjual&quot; milik keberangkatan itu</p>
+        <div class="bukti"><a href="bukti/TA-T01_20261116-142834.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T01_20261116-142834.png" alt="Bukti bukti/TA-T01_20261116-142834.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T01_20261116-142834.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T01 — Halaman &quot;Template Alokasi Rute&quot; memuat alokasi keberangkatan hari ini, bukan template jadwal
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI
+  3. Pilih Jadwal LMB-PGA-2100
+  4. Lihat data yang dimuat (Network: …/allocations)
+Ekspektasi: Halaman memuat template alokasi jadwal (nilai awal, dalam %), bukan data satu keberangkatan
+Aktual: Data dimuat dari keberangkatan tanggal 2026-11-16 (id 1011): /api/proxy/cms/capacity/departures/2026-11-16/1011/allocations; tabel menampilkan kolom &quot;terjual&quot; milik keberangkatan itu
+(bukti: hasil\bukti\TA-T01_20261116-142834.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — read-only &gt; [Temuan] TA-T02 nilai template seharusnya dalam % sesuai keterangan di layar [perlu konfirmasi]</div>
+        <div class="berkas">UI\template-alokasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T02 — Keterangan menyebut nilai template &quot;dalam %&quot;, tetapi tabel menampilkan kursi dan kolom &quot;terjual&quot;
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI
+  3. Pilih Jadwal LMB-PGA-2100
+  4. Baca keterangan di atas tabel, bandingkan dengan isi tabel
+Ekspektasi: Tabel template menampilkan persentase per kelompok channel/kelas, tanpa angka terjual
+Aktual: Keterangan: &quot;Nilai awal dari Alokasi Kuota Jadwal (dalam %), di sini dalam kursi dan bisa dioverride.&quot;; tabel tidak berisi nilai %, berisi kolom &quot;terjual&quot;</p>
+        <div class="bukti"><a href="bukti/TA-T02_20261116-142836.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T02_20261116-142836.png" alt="Bukti bukti/TA-T02_20261116-142836.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T02_20261116-142836.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T02 — Keterangan menyebut nilai template &quot;dalam %&quot;, tetapi tabel menampilkan kursi dan kolom &quot;terjual&quot;
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI
+  3. Pilih Jadwal LMB-PGA-2100
+  4. Baca keterangan di atas tabel, bandingkan dengan isi tabel
+Ekspektasi: Tabel template menampilkan persentase per kelompok channel/kelas, tanpa angka terjual
+Aktual: Keterangan: &quot;Nilai awal dari Alokasi Kuota Jadwal (dalam %), di sini dalam kursi dan bisa dioverride.&quot;; tabel tidak berisi nilai %, berisi kolom &quot;terjual&quot;
+(bukti: hasil\bukti\TA-T02_20261116-142836.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Template Alokasi Rute — read-only &gt; [Temuan] TA-T03 pilihan rute &amp; jadwal seharusnya tetap setelah reload (seperti halaman Keberangkatan)</div>
+        <div class="berkas">UI\template-alokasi.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">TA-T03 — Pilihan rute &amp; jadwal di Template hilang setelah reload
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI
+  3. Pilih Jadwal LMB-PGA-2100
+  4. Tekan F5 / reload halaman
+Ekspektasi: Rute &quot;LEMBAR - PADANG BAI&quot; dan jadwal &quot;LMB-PGA-2100&quot; tetap terpilih (tersimpan di URL, seperti halaman Keberangkatan &amp; Alokasi)
+Aktual: Setelah reload: Rute &quot;Pilih rute&quot;, Jadwal &quot;Semua jadwal&quot; — pilihan hilang, URL tanpa parameter</p>
+        <div class="bukti"><a href="bukti/TA-T03_20261116-142839.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/TA-T03_20261116-142839.png" alt="Bukti bukti/TA-T03_20261116-142839.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/TA-T03_20261116-142839.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] TA-T03 — Pilihan rute &amp; jadwal di Template hilang setelah reload
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute LEMBAR - PADANG BAI
+  3. Pilih Jadwal LMB-PGA-2100
+  4. Tekan F5 / reload halaman
+Ekspektasi: Rute &quot;LEMBAR - PADANG BAI&quot; dan jadwal &quot;LMB-PGA-2100&quot; tetap terpilih (tersimpan di URL, seperti halaman Keberangkatan &amp; Alokasi)
+Aktual: Setelah reload: Rute &quot;Pilih rute&quot;, Jadwal &quot;Semua jadwal&quot; — pilihan hilang, URL tanpa parameter
+(bukti: hasil\bukti\TA-T03_20261116-142839.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan — Kapal override (ubah data + restore) &gt; [Edge] KA-K13 pilih kapal yang SAMA dengan kapal default sebagai override → tersimpan, angka tidak berubah</div>
+        <div class="berkas">UI\keberangkatan-kapal-ubah.spec.ts · PEMERIKSAAN</div>
+        
+        
+        <p class="pesan">Error: expect(locator).toBeVisible() failed | Locator: locator('[data-slot=&quot;popover-content&quot;]').getByRole('option', { name: /^KMP Dharma Ferry IX\b/ }).first() | Expected: visible | Timeout: 5000ms | Error: element(s) not found</p>
+        
+      </div>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><div class="bug" style="border-left-color:#8250df"><div class="judul">Sesi — login di tempat lain &gt; [Eksplorasi] KL-03 apakah login di tempat lain mengakhiri sesi yang sedang dipakai? (satu akun satu sesi)</div><div class="berkas">UI\keberangkatan-login-ubah.spec.ts</div><pre>[EKSPLORASI] KL-03: Sesi lama TETAP AKTIF setelah login di tempat lain → akun yang sama bisa dipakai bersamaan (tidak ada aturan satu sesi).</pre></div>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Positif] KB-10 simpan target 10 → label &quot;override&quot;, Sisa target 10, bertahan setelah reload</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>39.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Positif] KB-11 kosongkan target lalu Simpan → kembali ke nilai jadwal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>41.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Edge] KB-12 target 1 (nilai terkecil yang bermakna) → tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>37.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Negatif] KB-13 target negatif (-5) lalu Simpan → yang tersimpan tidak boleh negatif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>39.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>5</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Edge] KB-14 target 0 → tersimpan sebagai 0 (bukan dianggap kosong / tanpa batas)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>40.1</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>6</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Temuan] KB-T02 target sangat besar seharusnya ditolak dengan pesan validasi, bukan error server (HTTP 500)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>39.5</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>7</td><td>UI\keberangkatan-barang-ubah.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (ubah data + restore) &gt; [Temuan] KB-T03 Simpan berikutnya seharusnya TIDAK menghapus target yang sudah tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>38.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>UI\keberangkatan-barang.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (read-only) &gt; [Positif] KB-01 tabel &amp; aturan tampil lengkap</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\keberangkatan-barang.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (read-only) &gt; [Positif] KB-02 kategori curah (loket go-show): tanpa input target &amp; status &quot;Loss · tidak dibatasi&quot;; kategori lain punya input</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>10</td><td>UI\keberangkatan-barang.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (read-only) &gt; [Positif] KB-03 isi target 10 → Sisa target = 10 − terjual (preview), Simpan aktif; Buang mengembalikan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>UI\keberangkatan-barang.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (read-only) &gt; [Negatif] KB-04 input target: negatif → 0, desimal → bilangan bulat, huruf ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.4</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>12</td><td>UI\keberangkatan-barang.spec.ts</td><td>Keberangkatan — Barang &amp; Hewan (read-only) &gt; [Temuan] KB-T01 kategori &quot;Barang curah&quot; seharusnya mengikuti aturan curah (go-show loket, tanpa target) [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>13</td><td>UI\keberangkatan-bersamaan-ubah.spec.ts</td><td>Keberangkatan — edit bersamaan 2 petugas &gt; [Positif] KC-01 setelah A menyimpan, B yang me-reload melihat data terbaru</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>20.0</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>14</td><td>UI\keberangkatan-bersamaan-ubah.spec.ts</td><td>Keberangkatan — edit bersamaan 2 petugas &gt; [Temuan] KC-T01 alokasi: simpanan B (halaman lama) seharusnya tidak menghapus perubahan A tanpa peringatan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>20.6</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>15</td><td>UI\keberangkatan-bersamaan-ubah.spec.ts</td><td>Keberangkatan — edit bersamaan 2 petugas &gt; [Temuan] KC-T02 kapasitas: B ganti kapal di halaman lama seharusnya tidak menimpa kapasitas % yang baru disimpan A</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>26.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>16</td><td>UI\keberangkatan-dampak-ubah.spec.ts</td><td>Dampak ke Alokasi Kuota Jadwal (template) &gt; [Positif] KA-X01 ubah template jadwal TIDAK mengubah keberangkatan tanggal lain (tanggal uji)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>8.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>17</td><td>UI\keberangkatan-dampak-ubah.spec.ts</td><td>Dampak ke Alokasi Kuota Jadwal (template) &gt; [Negatif] KA-X02 template: Mitra melebihi kuota kelas → ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.2</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\keberangkatan-dampak-ubah.spec.ts</td><td>Dampak ke web reservasi Ferizy &gt; [Positif] KA-X10 keberangkatan Aktif + Online di CMS → muncul di pencarian Ferizy</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>19</td><td>UI\keberangkatan-dampak-ubah.spec.ts</td><td>Dampak ke web reservasi Ferizy &gt; [Positif] KA-X11 Set Offline di CMS → hilang dari Ferizy; Online lagi → muncul lagi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>20</td><td>UI\keberangkatan-dampak-ubah.spec.ts</td><td>Dampak ke web reservasi Ferizy &gt; [Positif] KA-X12 Nonaktifkan di CMS → hilang dari Ferizy; Aktifkan → muncul lagi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>21</td><td>UI\keberangkatan-dampak-ubah.spec.ts</td><td>Dampak ke web reservasi Ferizy &gt; [Edge] KA-X13 kapasitas diturunkan di CMS → sisa kuota di Ferizy ikut turun</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>22</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D01 klik jadwal → buka detail; Kuota di list = Total kuota di detail</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>23</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D02 rumus kuota: Total kuota = bulat(kapasitas fisik × % operasional)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>24</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D03 tab Alokasi: jumlah kuota semua kelas = Total kuota &amp; status &quot;Sesuai kuota&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>25</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D04 Retail otomatis berisi sisa: Retail = kuota kelas − Mitra − Korporasi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>26</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D05 Teralokasi 0 → tab Transaksi menampilkan &quot;Belum ada transaksi&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>27</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D06 status Aktif &amp; Penjualan di list sama dengan di detail</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>28</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D07 tombol Back browser → kembali ke list dengan filter tetap</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>29</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V01 kapasitas 0 → otomatis jadi 1 (batas bawah)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>30</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V02 kapasitas 150 → otomatis jadi 100 (batas atas)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>31</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V03 kapasitas huruf &quot;abc&quot; → ditolak, nilai tetap angka</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>32</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-V04 tombol Batal mengembalikan nilai awal &amp; mengunci Simpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>33</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V05 Nonaktifkan tanpa alasan / alasan spasi saja → tombol &quot;Ya, lanjutkan&quot; terkunci</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>34</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-V06 dialog Set Offline: alasan opsional, Batal → tetap Online</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>35</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-V07 dropdown Kapal override hanya berisi opsi default + kapal (bisa dicari)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>36</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Edge] KA-V08 Buang Perubahan di tab Alokasi → nilai Mitra kembali seperti awal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>37</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T01 preview alokasi valid (Mitra 1 ≤ kuota kelas) seharusnya &quot;Sesuai kuota&quot; sebelum disimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>38</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T02 Mitra melebihi kuota kelas → seharusnya Simpan terkunci / ada pesan di form</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>39</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T03 rentang tanggal terbalik di URL → seharusnya ditukar otomatis atau muncul validasi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>40</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T04 route_id tidak valid → seharusnya tampil state &quot;Pilih rute…&quot; / pesan rute tidak ditemukan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>41</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan &gt; [Temuan] KA-T05 nama kelas di tabel alokasi seharusnya unik (tidak ada kelas kembar)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>42</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F01 state awal: empty state, Jadwal terkunci, placeholder benar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>43</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F02 pilih rute → data tampil, route_id tersimpan di URL, Jadwal aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>44</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F03 deep link URL (rute + tanggal) → filter terisi otomatis &amp; data sesuai tanggal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>45</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F04 filter Jadwal → hanya jadwal terpilih yang tampil</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>46</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F05 rentang tanggal lewat kalender → URL date_from &amp; date_to</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>47</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F06 filter Status &quot;Open&quot; → semua baris berstatus Open, badge filter = 1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>48</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F07 Reset filter → badge hilang &amp; jumlah data kembali seperti awal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>49</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F08 filter Mode &quot;Pax&quot; → semua baris mode Pax</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>50</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F09 filter Penjualan &quot;Online&quot; → semua baris Online</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>51</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Negatif] KA-F10 cari rute yang tidak ada → &quot;Tidak ditemukan&quot;, tidak ada opsi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>52</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F11 cari rute huruf kecil semua → tetap ketemu (tidak case-sensitive)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>53</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F12 kombinasi filter yang mustahil (Nonaktif + Online) → 0 data &amp; pesan kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>54</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F13 rute tanpa jadwal → pesan kosong &quot;0 data&quot;, tidak error</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>55</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F14 pagination: Sebelumnya terkunci di hal. 1, Berikutnya pindah ke hal. 2, terakhir terkunci</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>56</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F15 ubah filter saat di halaman 2 → kembali ke halaman 1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>57</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F16 ganti rute → pilihan Jadwal ter-reset ke &quot;Semua jadwal&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>58</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F17 reload halaman → rute, tanggal, &amp; filter tetap (tersimpan di URL)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>59</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F18 pilih semua → bar aksi massal muncul dengan jumlah benar; Batal pilih menutupnya</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>60</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Negatif] KA-F19 route_id tidak valid di URL → tidak crash, tidak ada data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.1</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>61</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Temuan] KA-T06 popover Filter seharusnya muat di layar / bisa di-scroll (tombol &quot;Reset filter&quot; terjangkau)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>62</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Positif] KA-K10 ganti kapal → kapasitas fisik, kuota, SUP, mode, &amp; list ikut berubah; lalu kembali ke default</td>
+        <td>PEMERIKSAAN</td><td>LULUS SETELAH ULANG</td><td>13.1</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>63</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Temuan] KA-K11 setelah ganti kapal, jumlah kuota semua kelas di Alokasi seharusnya = Total kuota</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>64</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Positif] KA-K12 kembali ke kapal default → alokasi per kelas pulih seperti awal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.8</td>
+      </tr>
+      <tr class="gagal">
+        <td>65</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Edge] KA-K13 pilih kapal yang SAMA dengan kapal default sebagai override → tersimpan, angka tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>9.2</td>
+      </tr>
+      <tr class="lewat">
+        <td>66</td><td>UI\keberangkatan-kapal-ubah.spec.ts</td><td>Keberangkatan — Kapal override (ubah data + restore) &gt; [Negatif] KA-K14 ganti kapal saat alokasi Mitra tersimpan lebih besar dari kuota kapal baru → seharusnya ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>67</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K01 dropdown Kapal hanya berisi kapal AKTIF dari master Kapal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>68</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K02 ganti kapal tanpa Simpan → angka belum berubah; Batal mengembalikan kapal default</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>69</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Negatif] KA-K03 cari kapal yang tidak ada → tidak ada opsi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>70</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Positif] KA-K04 kapasitas fisik = min(SKKP − ABK, pelampung) sesuai keterangan di layar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>71</td><td>UI\keberangkatan-kapal.spec.ts</td><td>Keberangkatan — Kapal override (read-only) &gt; [Temuan] KA-K05 kapasitas fisik di keberangkatan seharusnya sama dengan &quot;Kap. Penumpang&quot; di master Kapal [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>72</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Positif] KV-10 simpan Mitra 1 → Retail berkurang, label &quot;override&quot;, bertahan setelah reload; Kembalikan semua → pulih</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>35.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>73</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Edge] KV-11 Mitra = tepat kuota golongan (batas) → tersimpan, Retail golongan jadi 0</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>33.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>74</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Negatif] KV-12 Mitra melebihi kuota golongan → tidak boleh tersimpan melebihi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>41.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>75</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Negatif] KV-13 kuota golongan melebihi kuota operasional SUP → ditolak server, data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>41.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>76</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Positif] KV-14 kurangi kuota golongan 1 unit → Setara SUP &amp; total turun sebesar SUP/unit</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>35.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>77</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Positif] KV-15 tipe Restrict disimpan → &quot;Jika habis&quot; = Tolak; Normal → &quot;Ambil sisa golongan Normal lain&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>35.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>78</td><td>UI\keberangkatan-kendaraan-ubah.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (ubah data + restore) &gt; [Positif] KV-16 &quot;Kembalikan semua ke jadwal&quot; dari sub-tab Kendaraan juga memulihkan override Penumpang</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>41.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>79</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Positif] KV-01 Setara SUP = kuota unit × SUP/unit untuk setiap golongan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>80</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Positif] KV-02 ringkasan Normal + Reserve + Restrict = jumlah Setara SUP semua golongan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>81</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Positif] KV-03 Retail = kuota golongan − Mitra − Korporasi; Total kolom = kuota golongan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>82</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Positif] KV-04 preview: isi Mitra 1 → Retail golongan langsung berkurang 1 (belum disimpan)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>83</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Negatif] KV-05 input Mitra: negatif → 0, desimal → bilangan bulat, huruf ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>84</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Positif] KV-06 ubah Tipe ke Reserve/Restrict → ringkasan SUP berpindah kategori (belum disimpan)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>85</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Positif] KV-07 Buang Perubahan mengembalikan kuota golongan &amp; ringkasan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>86</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T01 kuota golongan melebihi kuota operasional SUP → seharusnya Simpan terkunci</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>87</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T02 tipe Restrict: kolom &quot;Jika habis&quot; seharusnya langsung &quot;Tolak&quot; sebelum disimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.1</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>88</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T03 total alokasi SUP seharusnya = kuota operasional kendaraan [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>89</td><td>UI\keberangkatan-kendaraan.spec.ts</td><td>Keberangkatan — Alokasi Kendaraan (read-only) &gt; [Temuan] KV-T04 keterangan &quot;golongan disatukan (VA/VB …)&quot; seharusnya sesuai isi tabel [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>90</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Positif] KK-10 simpan Korporasi 3 → Retail berkurang 3, sumber &quot;Override&quot;, bertahan setelah reload</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>34.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>91</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Edge] KK-11 Korporasi = tepat kuota kelas (batas) → tersimpan, Retail kelas 0</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>34.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>92</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Positif] KK-12 Mitra 2 + Korporasi 3 dalam SEKALI Simpan → keduanya tersimpan, Retail berkurang 5</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>34.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>93</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Negatif] KK-13 Mitra + Korporasi melebihi kuota kelas (sekali Simpan) → tidak boleh tersimpan melebihi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>39.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>94</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Positif] KK-14 Kendaraan: simpan Korporasi golongan 1 unit → Retail golongan berkurang 1, bertahan setelah reload</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>36.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>95</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T02 (Penumpang) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>36.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>96</td><td>UI\keberangkatan-korporasi-ubah.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (ubah data + restore) &gt; [Temuan] KK-T03 (Kendaraan) Simpan berikutnya seharusnya TIDAK menghapus override yang sudah tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>37.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>97</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-01 baris Korporasi (Penumpang) punya input untuk setiap kelas &amp; sumber awal &quot;Jadwal&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>98</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-02 aturan kelompok channel tampil di layar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>99</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Negatif] KK-03 input Korporasi (Penumpang): negatif &amp; huruf tidak menghasilkan nilai negatif/teks</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>100</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-04 Kendaraan: isi Korporasi 1 → Retail golongan langsung berkurang 1 (preview)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>101</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Positif] KK-05 Buang Perubahan mengembalikan Korporasi (Penumpang)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>102</td><td>UI\keberangkatan-korporasi.spec.ts</td><td>Keberangkatan — Alokasi Korporasi (read-only) &gt; [Temuan] KK-T01 preview Korporasi valid (Penumpang) seharusnya mengurangi Retail sebelum disimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>103</td><td>UI\keberangkatan-login-ubah.spec.ts</td><td>Sesi — login di tempat lain &gt; [Negatif] KL-01 password salah → tetap di halaman login &amp; muncul pesan kesalahan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>104</td><td>UI\keberangkatan-login-ubah.spec.ts</td><td>Sesi — login di tempat lain &gt; [Positif] KL-02 login dengan akun yang benar → masuk ke CMS (keluar dari halaman login)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>105</td><td>UI\keberangkatan-login-ubah.spec.ts</td><td>Sesi — login di tempat lain &gt; [Eksplorasi] KL-03 apakah login di tempat lain mengakhiri sesi yang sedang dipakai? (satu akun satu sesi)</td>
+        <td>EKSPLORASI</td><td>LULUS</td><td>5.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>106</td><td>UI\keberangkatan-sesi-ubah.spec.ts</td><td>Keberangkatan — sesi login habis saat mengedit &gt; [Positif] KS-01 Simpan saat sesi habis → muncul pemberitahuan sesi berakhir, bukan &quot;berhasil&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>107</td><td>UI\keberangkatan-sesi-ubah.spec.ts</td><td>Keberangkatan — sesi login habis saat mengedit &gt; [Positif] KS-02 perubahan yang dikirim saat sesi habis TIDAK tersimpan di server</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>108</td><td>UI\keberangkatan-sesi-ubah.spec.ts</td><td>Keberangkatan — sesi login habis saat mengedit &gt; [Positif] KS-03 membuka halaman saat sesi habis → dialog sesi berakhir, data tidak ditampilkan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>109</td><td>UI\keberangkatan-sesi-ubah.spec.ts</td><td>Keberangkatan — sesi login habis saat mengedit &gt; [Positif] KS-04 tombol Login di dialog sesi berakhir membuka halaman login</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.4</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>110</td><td>UI\keberangkatan-sesi-ubah.spec.ts</td><td>Keberangkatan — sesi login habis saat mengedit &gt; [Temuan] KS-T01 saat sesi habis, pengguna seharusnya diberi tahu bahwa perubahannya BELUM tersimpan [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.4</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>111</td><td>UI\keberangkatan-sesi-ubah.spec.ts</td><td>Keberangkatan — sesi login habis saat mengedit &gt; [Temuan] KS-T02 setelah login ulang, pengguna seharusnya kembali ke halaman yang sedang dibuka [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>112</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Positif] KA-U01 Nonaktifkan dengan alasan → status Nonaktif, otomatis Offline, alasan tampil; lalu Aktifkan kembali</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>113</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Positif] KA-U02 Set Offline (tanpa alasan) → Penjualan Offline di list &amp; detail; lalu Online kembali</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>114</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Positif] KA-U03 aksi massal: pilih 2 keberangkatan → Set Offline → keduanya Offline; lalu Set Online</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>115</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Edge] KA-U04 Offline → Nonaktifkan → Aktifkan: Penjualan seharusnya kembali ke Offline (keadaan sebelum) [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>116</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Positif] KA-U05 kapasitas 50% → Total kuota, Alokasi, dan Kuota di list ikut berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>117</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Edge] KA-U06 kapasitas 100% (batas atas) → kuota = kapasitas fisik</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>118</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Edge] KA-U07 kapasitas 1% (batas bawah) → kuota = bulat(fisik × 1%)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>119</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Positif] KA-U08 alokasi Mitra 1 → tersimpan, Retail berkurang 1, sumber &quot;Override&quot;; data bertahan setelah reload</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>120</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Edge] KA-U09 alokasi Mitra = tepat kuota kelas (batas) → tersimpan, Retail kelas jadi 0</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>121</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Negatif] KA-U10 alokasi Mitra melebihi kuota kelas → ditolak server, data tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>122</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Negatif] KA-U11 alokasi Mitra negatif (-1) → tidak boleh tersimpan negatif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.7</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>123</td><td>UI\keberangkatan-ubah.spec.ts</td><td>Keberangkatan &amp; Alokasi — ubah data (dengan restore) &gt; [Temuan] KA-U12 pesan gagal simpan alokasi seharusnya bahasa manusia, bukan kode &quot;FCAP-…&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>124</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Negatif] TA-10 Mitra melebihi kuota kelas di Template → ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>125</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Temuan] TA-T10 Simpan di Template seharusnya TIDAK mengubah keberangkatan yang sudah ada (hari ini)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>34.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>126</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Positif] TA-11 Simpan Mitra di Template → &quot;Alokasi berhasil disimpan&quot;, nilai bertahan saat Template dibuka lagi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>18.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>127</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Edge] TA-12 Mitra di Template = tepat kuota kelas (batas atas) → tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>19.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>128</td><td>UI\template-alokasi-ubah.spec.ts</td><td>Template Alokasi Rute — simpan &gt; [Positif] TA-13 ubah Mitra di Template lalu &quot;Buang Perubahan&quot; → nilai kembali, tidak ada yang tersimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>129</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Positif] TA-01 state awal: Rute wajib, Jadwal terkunci, pesan &quot;Pilih rute terlebih dahulu&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>130</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Positif] TA-02 pilih rute → Jadwal aktif &amp; hanya berisi jadwal rute tersebut</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>131</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Positif] TA-03 pilih rute + jadwal → tabel alokasi tampil, sub-tab Penumpang &amp; Kendaraan tersedia</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>132</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Negatif] TA-04 cari rute yang tidak ada → &quot;Tidak ditemukan&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>133</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Edge] TA-05 ganti rute setelah jadwal dipilih → pilihan jadwal ter-reset</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>134</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Temuan] TA-T01 halaman Template seharusnya memuat data TEMPLATE, bukan keberangkatan hari ini</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>135</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Temuan] TA-T02 nilai template seharusnya dalam % sesuai keterangan di layar [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>136</td><td>UI\template-alokasi.spec.ts</td><td>Template Alokasi Rute — read-only &gt; [Temuan] TA-T03 pilihan rute &amp; jadwal seharusnya tetap setelah reload (seperti halaman Keberangkatan)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Dampak ke web reservasi Ferizy &gt; [Positif] KA-X10 keberangkatan Aktif + Online di CMS → muncul di pencarian Ferizy: Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap</p><p>Dampak ke web reservasi Ferizy &gt; [Positif] KA-X11 Set Offline di CMS → hilang dari Ferizy; Online lagi → muncul lagi: Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap</p><p>Dampak ke web reservasi Ferizy &gt; [Positif] KA-X12 Nonaktifkan di CMS → hilang dari Ferizy; Aktifkan → muncul lagi: Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap</p><p>Dampak ke web reservasi Ferizy &gt; [Edge] KA-X13 kapasitas diturunkan di CMS → sisa kuota di Ferizy ikut turun: Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap</p><p>Keberangkatan — Kapal override (ubah data + restore) &gt; [Negatif] KA-K14 ganti kapal saat alokasi Mitra tersimpan lebih besar dari kuota kapal baru → seharusnya ditolak: -</p>
+</body></html>

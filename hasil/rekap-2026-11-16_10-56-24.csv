@@ -1,0 +1,95 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data";"PEMERIKSAAN";"LULUS";"5.3";"";""
+"2";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-02 cari berdasarkan kode → hanya rute itu";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"3";"UI\rute.spec.ts";"Rute — daftar > [Negatif] RJ-03 cari kode yang tidak ada → ""Belum ada rute"", 0 data";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"4";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-04 sort Kode: A→Z lalu Z→A";"PEMERIKSAAN";"LULUS";"3.1";"";""
+"5";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-05 filter Aktivasi ""Tidak Aktif"" → semua baris Tidak Aktif";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"6";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-06 klik ""n Jadwal"" → daftar jadwal rute tampil, jumlah sesuai";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"7";"UI\rute.spec.ts";"Rute — daftar > [Positif] RJ-07 Edit Rute & Jadwal → halaman detail berisi info rute & daftar jadwal";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"8";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-10 langkah 1 kosong → Berikutnya → 3 pesan wajib diisi";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"9";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-11 pelabuhan tujuan tidak boleh sama dengan asal (tidak ditawarkan)";"PEMERIKSAAN";"LULUS";"4.2";"";""
+"10";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-12 pilih asal & tujuan → kode & nama rute terisi otomatis";"PEMERIKSAAN";"LULUS";"3.6";"";""
+"11";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Edge] RJ-13 pasangan pelabuhan yang sudah punya rute → kode otomatis tidak bentrok (diberi akhiran)";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"12";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-14 batas online & go-show negatif → ditolak di langkah 2";"PEMERIKSAAN";"LULUS";"4.6";"";""
+"13";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-15 kapasitas operasional 150% → ditolak ""Isi persen 1 sampai 100""";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"14";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-16 Batal menutup form tanpa menyimpan";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"15";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-16b Batal → ""Batalkan Pengisian Data?"" → Kembali → form tetap terbuka, pelabuhan asal tetap terpilih";"PEMERIKSAAN";"LULUS";"4.3";"";""
+"16";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Edge] RJ-16c form belum diisi → Batal langsung menutup tanpa konfirmasi";"PEMERIKSAAN";"LULUS";"4.1";"";""
+"17";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-17 form jadwal kosong → ""Jam keberangkatan"" & ""Unit bisnis"" wajib, tetap di langkah 1";"PEMERIKSAAN";"LULUS";"5.2";"";""
+"18";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-18 isi jam keberangkatan → kode jadwal terisi otomatis ""<kode rute>-HHMM""";"PEMERIKSAAN";"LULUS";"3.6";"";""
+"19";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-19 hari operasional dikosongkan → ""Hari operasional wajib dipilih""";"PEMERIKSAAN";"LULUS";"5.3";"";""
+"20";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-20 langkah 2 tanpa kapal & tanpa denah kursi → ""Layout kursi wajib dipilih""";"PEMERIKSAAN";"LULUS";"5.0";"";""
+"21";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-21 kapasitas jadwal 150% → ""Isi persen 1 sampai 100""; [Edge] 100% → boleh lanjut";"PEMERIKSAAN";"LULUS";"6.5";"";""
+"22";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-22a waktu tiba terisi otomatis dari jam berangkat + estimasi waktu tempuh rute";"PEMERIKSAAN";"LULUS";"6.2";"";""
+"23";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Negatif] RJ-22 langkah 5 waktu tiba dikosongkan → ""Waktu tujuan wajib diisi"", tidak muncul konfirmasi";"PEMERIKSAAN";"LULUS";"6.9";"";""
+"24";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Positif] RJ-23 Ubah rute yang sudah punya jadwal → pelabuhan asal & tujuan terkunci dengan keterangan";"PEMERIKSAAN";"LULUS";"5.6";"";""
+"25";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T01 menu rute yang AKTIF seharusnya ""Nonaktifkan"", bukan ""Aktifkan""";"PEMERIKSAAN";"LULUS";"2.3";"RJ-T01 — Rute aktif menampilkan menu ""Aktifkan""; mengkliknya justru MENONAKTIFKAN rute dengan pesan ""Rute berhasil diaktifkan""
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA (kolom Aktivasi: ""Aktif"")
+  3. Klik ⋯ (Buka menu) di baris itu
+Ekspektasi: Rute yang Aktif menampilkan ""Nonaktifkan"" (dan dialog/toast ""dinonaktifkan"")
+Aktual: Menu menampilkan ""Aktifkan"". Dari eksplorasi: dialog ""Aktifkan Data? … akan diaktifkan kembali"" → toast ""Rute berhasil diaktifkan"", tetapi rute menjadi Tidak Aktif";""
+"26";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T02 detail rute AKTIF seharusnya menampilkan ""Aktifasi: Aktif""";"PEMERIKSAAN";"LULUS";"3.1";"RJ-T02 — Status aktivasi di halaman detail rute berbeda dengan di daftar (selalu ""Tidak Aktif"")
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA, lihat kolom Aktivasi
+  3. Klik ⋯ → Edit Rute & Jadwal, lihat bagian Informasi
+Ekspektasi: ""Aktifasi"" di detail sama dengan daftar (""Aktif""); ejaan seharusnya ""Aktivasi""
+Aktual: Daftar: ""Aktif"", detail: ""Aktifasi Tidak Aktif""";""
+"27";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T03 pesan ""wajib diisi"" seharusnya hilang setelah kolomnya diisi";"PEMERIKSAAN";"LULUS";"4.9";"RJ-T03 — Pesan ""wajib diisi"" tetap tampil walau kolomnya sudah terisi
+Langkah:
+  1. Buka menu Jadwal Rute (/routes)
+  2. Klik ""Tambah""
+  3. Klik Berikutnya dengan form kosong (muncul 3 pesan wajib)
+  4. Pilih Pelabuhan asal LEMBAR dan tujuan PADANG BAI (kode rute terisi otomatis)
+Ekspektasi: Pesan wajib pada kolom yang sudah diisi langsung hilang
+Aktual: Masih tampil: ""Outlet asal wajib diisi"", ""Outlet tujuan wajib diisi"", ""Kode rute wajib diisi""";""
+"28";"UI\rute.spec.ts";"Rute — form Tambah (tanpa menyimpan) > [Temuan] RJ-T04 pencarian rute seharusnya juga bisa dengan nama pelabuhan [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"3.5";"RJ-T04 — Kotak ""Cari data..."" di Jadwal Rute hanya mencari kode rute, tidak nama pelabuhan
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Ketik ""LEMBAR"" di kotak Cari data...
+Ekspektasi: Rute yang asal/tujuannya LEMBAR (mis. LMB-PGA) tampil
+Aktual: Hasil pencarian: 0 data (""Belum ada rute"")";""
+"29";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-08 cari jadwal berdasarkan kode → hanya jadwal itu";"PEMERIKSAAN";"LULUS";"3.4";"";""
+"30";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-09 cari jadwal yang tidak ada → 0 data";"PEMERIKSAAN";"LULUS";"3.4";"";""
+"31";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-24 sort Jam Berangkat: naik lalu turun";"PEMERIKSAAN";"LULUS";"4.4";"";""
+"32";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-25 jadwal lebih dari 10 → Berikutnya menampilkan sisanya";"PEMERIKSAAN";"LULUS";"2.9";"";""
+"33";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-26 menu ⋯ rute berisi Edit Rute & Jadwal, Duplikasi, Atur Tarif, Sembunyikan, Aktivasi, Hapus Data";"PEMERIKSAAN";"LULUS";"2.1";"";""
+"34";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-27 Atur Tarif → halaman detail rute dengan tab ""Tarif Dasar"" terbuka";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"35";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-28 Duplikasi rute → form Tambah terisi pelabuhan & nama, kode kosong; [Negatif] lanjut tanpa kode → ""Kode rute wajib diisi""";"PEMERIKSAAN";"LULUS";"4.8";"";""
+"36";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Edge] RJ-29 Duplikasi rute menyalin pengaturan langkah 2 (batas online sama dengan rute asal)";"PEMERIKSAAN";"LULUS";"3.3";"";""
+"37";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Edge] RJ-43 Ubah rute lalu tutup tanpa mengubah apa pun → langsung tertutup tanpa konfirmasi";"PEMERIKSAAN";"LULUS";"4.9";"";""
+"38";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-44 Ubah rute: kode rute dikosongkan → ""Kode rute wajib diisi"", tetap di langkah 1";"PEMERIKSAAN";"LULUS";"3.7";"";""
+"39";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-45 Ubah rute: kapasitas operasional 0% → ""Isi persen 1 sampai 100"", tidak bisa lanjut";"PEMERIKSAAN";"LULUS";"3.8";"";""
+"40";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-50 Edit Jadwal → form ""Ubah Jadwal"" 5 langkah berisi jam, kode, dan kapal jadwal itu";"PEMERIKSAAN";"LULUS";"6.2";"";""
+"41";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-51 Edit Jadwal: kode jadwal dikosongkan → ada pesan wajib, tetap di langkah 1";"PEMERIKSAAN";"LULUS";"5.1";"";""
+"42";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-52 Tanggal Akhir tidak bisa sebelum Tanggal Mulai; [Edge] tanggal yang sama boleh";"PEMERIKSAAN";"LULUS";"8.2";"";""
+"43";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-53 Tanggal Mulai tidak bisa setelah Tanggal Akhir";"PEMERIKSAAN";"LULUS";"7.7";"";""
+"44";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Negatif] RJ-54 alokasi kuota: golongan I tipe Reserve tanpa nilai → ""wajib diisi dan lebih dari 0"", tetap di langkah 3";"PEMERIKSAAN";"LULUS";"5.3";"";""
+"45";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-55 alokasi kuota: Reserve melebihi kuota kendaraan → tanda ""Melebihi kuota"" tampil";"PEMERIKSAAN";"LULUS";"5.5";"";""
+"46";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-56 Duplikasi jadwal → jam disalin, kode otomatis ""<kode>-2""";"PEMERIKSAAN";"LULUS";"4.1";"";""
+"47";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-57 klik ""n Transit"" → dialog titik naik/turun: asal = Naik, tujuan = Turun; Simpan nonaktif tanpa perubahan";"PEMERIKSAAN";"LULUS";"5.8";"";""
+"48";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Temuan] RJ-T12 konfirmasi batal di form ""Ubah Jadwal"" seharusnya bukan ""Batalkan Penambahan Data?""";"PEMERIKSAAN";"LULUS";"6.4";"RJ-T12 — Form ""Ubah Jadwal"" menampilkan konfirmasi ""Batalkan Penambahan Data?"" padahal sedang mengubah
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA → ⋯ → Edit Rute & Jadwal
+  3. Di jadwal LMB-PGA-1500 klik ⋯ → Edit Jadwal
+  4. Ubah sesuatu (mis. hapus centang ""Pilih semua"" hari)
+  5. Klik X
+Ekspektasi: Judul konfirmasi sesuai konteks, mis. ""Batalkan Perubahan?""
+Aktual: Judul konfirmasi: ""Batalkan Penambahan Data?""";""
+"49";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Temuan] RJ-T13 judul form duplikasi jadwal seharusnya bahasa Indonesia (""Duplikasi Jadwal"")";"PEMERIKSAAN";"LULUS";"5.3";"RJ-T13 — Judul form duplikasi jadwal memakai bahasa Inggris ""Duplicate Jadwal"" (menu bertuliskan ""Duplikasi"")
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA → ⋯ → Edit Rute & Jadwal
+  3. Di jadwal LMB-PGA-1500 klik ⋯ → Duplikasi
+Ekspektasi: Judul ""Duplikasi Jadwal"", sama dengan nama menu
+Aktual: Judul form: ""Duplicate Jadwal""";""
+"50";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Temuan] RJ-T16 menu jadwal yang AKTIF seharusnya ""Nonaktifkan"", bukan ""Aktifkan""";"PEMERIKSAAN";"LULUS";"4.7";"RJ-T16 — Jadwal aktif menampilkan menu ""Aktifkan"" (sama seperti RJ-T01 di level rute)
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA → ⋯ → Edit Rute & Jadwal
+  3. Di jadwal LMB-PGA-1500 (kolom Aktivasi: ""Aktif"") klik ⋯
+Ekspektasi: Jadwal yang Aktif menampilkan ""Nonaktifkan""
+Aktual: Menu menampilkan ""Aktifkan""";""

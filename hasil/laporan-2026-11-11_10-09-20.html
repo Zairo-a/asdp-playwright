@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 11-11-2026 10:09</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>11-11-2026 10:09 · 39 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">39</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">32</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">7</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">0</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D02 rumus kuota: Total kuota = bulat(kapasitas fisik × % operasional)</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: expect(locator).toBeVisible() failed | Locator: getByRole('tab', { name: 'Kapasitas Operasional', exact: true }) | Expected: visible | Timeout: 5000ms | Error: element(s) not found</p>
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T01 preview alokasi valid (Mitra 1 ≤ kuota kelas) seharusnya &quot;Sesuai kuota&quot; sebelum disimpan</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: expect(locator).toContainText(expected) failed | Locator: locator('main table').filter({ hasText: 'Kelompok channel' }) | Expected substring: &quot;Sesuai kuota&quot; | Received string:    &quot;Kelompok channelEXPRESSkuota 2REGULERkuota 8BISNISkuota 4BISNISkuota 2VIPkuota 5TES77kuota 8TotalSumberRetail20 terjual80 terjual40 terjual20 terjual50 terjual80 terjual290 terjualOtomatisMitra0 terjual0 terjual0 terjual0 terjual0 terjual0 terjual10 terjualOverride↺ jadwalKorporasi0 terjual0 terjual0 terjual0 terjual0 terjual0 terjual00 terjualJadwalBlok00 terjual00 terjual00 terjual00 terjual00 terjual00 terjual00 terjualBlokSKPT00 terjual00 terjual00 terjual00 terjual00 terjual00 terjual00 terjualnoneTotal2 ✓0 terjual9 ⚠0 terjual4 ✓0 terjual2 ✓0 terjual5 ✓0 terjual8 ✓0 terjual300 terjualTidak sesuai kuota&quot; | Timeout: 5000ms</p>
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T02 Mitra melebihi kuota kelas → seharusnya Simpan terkunci / ada pesan di form</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: expect(locator).toBeDisabled() failed | Locator:  locator('main:not(:has(main))').getByRole('button', { name: 'Simpan', exact: true }) | Expected: disabled | Received: enabled | Timeout:  5000ms</p>
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T03 rentang tanggal terbalik di URL → seharusnya ditukar otomatis atau muncul validasi</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: expect(locator).toBeVisible() failed | Locator: getByRole('button', { name: 'Tanggal', exact: true }).filter({ hasText: '01/05/2027 - 07/05/2027' }).or(getByText(/tanggal (akhir|mulai)|tidak valid|rentang/i)).first() | Expected: visible | Timeout: 5000ms | Error: element(s) not found</p>
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T04 route_id tidak valid → seharusnya tampil state &quot;Pilih rute…&quot; / pesan rute tidak ditemukan</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: expect(locator).toBeVisible() failed | Locator: getByText('Pilih rute untuk menampilkan data').or(getByText(/rute tidak ditemukan/i)).first() | Expected: visible | Timeout: 5000ms | Error: element(s) not found</p>
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T05 nama kelas di tabel alokasi seharusnya unik (tidak ada kelas kembar)</div>
+        <div class="berkas">UI\keberangkatan-detail.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: Kelas: EXPRESS, REGULER, BISNIS, BISNIS, VIP, TES77 | expect(received).toBe(expected) // Object.is equality | Expected: 6 | Received: 5</p>
+        
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F13 tanggal tanpa keberangkatan → pesan kosong, tidak error</div>
+        <div class="berkas">UI\keberangkatan-filter.spec.ts · PEMERIKSAAN</div>
+        
+        <p class="pesan">Error: expect(locator).toBeVisible() failed | Locator: getByText('Tidak ada keberangkatan untuk filter ini.') | Expected: visible | Timeout: 5000ms | Error: element(s) not found</p>
+        
+      </div>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p><h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p><h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D01 klik jadwal → buka detail; Kuota di list = Total kuota di detail</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>11.9</td>
+      </tr>
+      <tr class="gagal">
+        <td>2</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D02 rumus kuota: Total kuota = bulat(kapasitas fisik × % operasional)</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>9.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D03 tab Alokasi: jumlah kuota semua kelas = Total kuota &amp; status &quot;Sesuai kuota&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D04 Retail otomatis berisi sisa: Retail = kuota kelas − Mitra − Korporasi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D05 Teralokasi 0 → tab Transaksi menampilkan &quot;Belum ada transaksi&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D06 status Aktif &amp; Penjualan di list sama dengan di detail</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-D07 tombol Back browser → kembali ke list dengan filter tetap</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V01 kapasitas 0 → otomatis jadi 1 (batas bawah)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V02 kapasitas 150 → otomatis jadi 100 (batas atas)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>10</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V03 kapasitas huruf &quot;abc&quot; → ditolak, nilai tetap angka</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-V04 tombol Batal mengembalikan nilai awal &amp; mengunci Simpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>12</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Negatif] KA-V05 Nonaktifkan tanpa alasan / alasan spasi saja → tombol &quot;Ya, lanjutkan&quot; terkunci</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>13</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-V06 dialog Set Offline: alasan opsional, Batal → tetap Online</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>14</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Positif] KA-V07 dropdown Kapal override hanya berisi opsi default + kapal (bisa dicari)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>15</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — detail &amp; konsistensi &gt; [Edge] KA-V08 Buang Perubahan di tab Alokasi → nilai Mitra kembali seperti awal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.4</td>
+      </tr>
+      <tr class="gagal">
+        <td>16</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T01 preview alokasi valid (Mitra 1 ≤ kuota kelas) seharusnya &quot;Sesuai kuota&quot; sebelum disimpan</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>11.6</td>
+      </tr>
+      <tr class="gagal">
+        <td>17</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T02 Mitra melebihi kuota kelas → seharusnya Simpan terkunci / ada pesan di form</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>11.5</td>
+      </tr>
+      <tr class="gagal">
+        <td>18</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T03 rentang tanggal terbalik di URL → seharusnya ditukar otomatis atau muncul validasi</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>7.8</td>
+      </tr>
+      <tr class="gagal">
+        <td>19</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T04 route_id tidak valid → seharusnya tampil state &quot;Pilih rute…&quot; / pesan rute tidak ditemukan</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>9.0</td>
+      </tr>
+      <tr class="gagal">
+        <td>20</td><td>UI\keberangkatan-detail.spec.ts</td><td>Keberangkatan &amp; Alokasi — temuan (perlu konfirmasi) &gt; [Temuan] KA-T05 nama kelas di tabel alokasi seharusnya unik (tidak ada kelas kembar)</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>6.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>21</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F01 state awal: empty state, Jadwal terkunci, placeholder benar</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>22</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F02 pilih rute → data tampil, route_id tersimpan di URL, Jadwal aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>23</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F03 deep link URL (rute + tanggal) → filter terisi otomatis &amp; data sesuai tanggal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>24</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F04 filter Jadwal → hanya jadwal terpilih yang tampil</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>25</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F05 rentang tanggal lewat kalender → URL date_from &amp; date_to</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>26</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F06 filter Status &quot;Open&quot; → semua baris berstatus Open, badge filter = 1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>27</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F07 Reset filter → badge hilang &amp; jumlah data kembali seperti awal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>28</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F08 filter Mode &quot;Pax&quot; → semua baris mode Pax</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>29</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F09 filter Penjualan &quot;Online&quot; → semua baris Online</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>30</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Negatif] KA-F10 cari rute yang tidak ada → &quot;Tidak ditemukan&quot;, tidak ada opsi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>31</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F11 cari rute huruf kecil semua → tetap ketemu (tidak case-sensitive)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>32</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F12 kombinasi filter yang mustahil (Nonaktif + Online) → 0 data &amp; pesan kosong</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.8</td>
+      </tr>
+      <tr class="gagal">
+        <td>33</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F13 tanggal tanpa keberangkatan → pesan kosong, tidak error</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>8.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>34</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F14 pagination: Sebelumnya terkunci di hal. 1, Berikutnya pindah ke hal. 2, terakhir terkunci</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>35</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F15 ubah filter saat di halaman 2 → kembali ke halaman 1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>36</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Edge] KA-F16 ganti rute → pilihan Jadwal ter-reset ke &quot;Semua jadwal&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>37</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F17 reload halaman → rute, tanggal, &amp; filter tetap (tersimpan di URL)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>38</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Positif] KA-F18 pilih semua → bar aksi massal muncul dengan jumlah benar; Batal pilih menutupnya</td>
+        <td>PEMERIKSAAN</td><td>LULUS SETELAH ULANG</td><td>6.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>39</td><td>UI\keberangkatan-filter.spec.ts</td><td>Keberangkatan &amp; Alokasi — filter &amp; navigasi &gt; [Negatif] KA-F19 route_id tidak valid di URL → tidak crash, tidak ada data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr></table>
+
+</body></html>

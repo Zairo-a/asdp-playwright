@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 11:39</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 11:39 · 18 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">18</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">0</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">18</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lewat">
+        <td>1</td><td>UI\tarif-dasar-ubah.spec.ts</td><td>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Positif] TR-40 isi sel kosong Rp 12.345 → Simpan → tersimpan setelah halaman dimuat ulang; &quot;sel belum diisi&quot; berkurang 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>2</td><td>UI\tarif-dasar-ubah.spec.ts</td><td>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Positif] TR-41 Riwayat: versi baru di paling atas — rute LMB-PGA, Pejalan kaki, Rp 0 → Rp 12.345, &quot;Naik&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>3</td><td>UI\tarif-dasar-ubah.spec.ts</td><td>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Dampak] TR-42 tarif baru tampil di web (kartu Water Taxi) — FRC-02-04</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>4</td><td>UI\tarif-dasar-ubah.spec.ts</td><td>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Positif] TR-43 Rollback versi itu → sel kosong lagi; Riwayat mencatat versi Rollback; &quot;sel belum diisi&quot; kembali</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>5</td><td>UI\tarif-dasar-ubah.spec.ts</td><td>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Negatif] TR-44 ubah sel lalu muat ulang halaman TANPA Simpan → perubahan tidak tersimpan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>6</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — tampilan matriks &gt; [Positif] TR-01 tab Tarif Dasar rute: judul, 3 sub-tab, tombol, tabel segmen &amp; matriks</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>7</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — tampilan matriks &gt; [Positif] TR-02 menu &quot;Tarif Dasar&quot; (/tariff-fares): pilih rute dulu, lalu matriks tampil</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>8</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — tampilan matriks &gt; [Positif] TR-03 &quot;N sel belum diisi&quot; di tabel segmen = jumlah sel kosong di matriks (per tab)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>9</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — tampilan matriks &gt; [Positif] TR-04 Unduh Template → file terunduh</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — isian sel (TIDAK disimpan) &gt; [Negatif] TR-10 huruf ditolak, tanda minus dibuang; Simpan aktif hanya bila ada perubahan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — isian sel (TIDAK disimpan) &gt; [Edge] TR-11 angka diberi pemisah ribuan otomatis (1000000 → 1.000.000)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>12</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — isian sel (TIDAK disimpan) &gt; [Temuan] TR-T03 tarif berdesimal &amp; sangat besar seharusnya ditolak/dibatasi [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>13</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Temuan] TR-T01/T02 baris Pejalan Kaki seharusnya = kategori penumpang AKTIF (termasuk Dewasa); kelas = kelas AKTIF</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>14</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Dampak] TR-21 baris tab Kendaraan = golongan kendaraan AKTIF</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>15</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Temuan] TR-T04 tab Barang: semua kategori barang Aktif seharusnya sudah punya tarif di rute utama</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>16</td><td>UI\tarif-dasar.spec.ts</td><td>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Dampak] TR-22 harga &quot;Rp … / orang&quot; di kartu web = salah satu tarif ONLINE jenis kapal itu di matriks [perlu konfirmasi aturan]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>17</td><td>UI\tarif-dasar.spec.ts</td><td>Riwayat Perubahan Tarif &gt; [Positif] TR-30 daftar versi terbaru di atas; detail versi menampilkan tarif lama → baru &amp; arah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\tarif-dasar.spec.ts</td><td>Riwayat Perubahan Tarif &gt; [Positif] TR-31 filter Rute → hanya versi rute itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Positif] TR-40 isi sel kosong Rp 12.345 → Simpan → tersimpan setelah halaman dimuat ulang; &quot;sel belum diisi&quot; berkurang 1: -</p><p>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Positif] TR-41 Riwayat: versi baru di paling atas — rute LMB-PGA, Pejalan kaki, Rp 0 → Rp 12.345, &quot;Naik&quot;: -</p><p>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Dampak] TR-42 tarif baru tampil di web (kartu Water Taxi) — FRC-02-04: -</p><p>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Positif] TR-43 Rollback versi itu → sel kosong lagi; Riwayat mencatat versi Rollback; &quot;sel belum diisi&quot; kembali: -</p><p>Tarif Dasar — ubah 1 sel LMB-PGA lalu rollback &gt; [Negatif] TR-44 ubah sel lalu muat ulang halaman TANPA Simpan → perubahan tidak tersimpan: -</p><p>Tarif Dasar — tampilan matriks &gt; [Positif] TR-01 tab Tarif Dasar rute: judul, 3 sub-tab, tombol, tabel segmen &amp; matriks: -</p><p>Tarif Dasar — tampilan matriks &gt; [Positif] TR-02 menu &quot;Tarif Dasar&quot; (/tariff-fares): pilih rute dulu, lalu matriks tampil: -</p><p>Tarif Dasar — tampilan matriks &gt; [Positif] TR-03 &quot;N sel belum diisi&quot; di tabel segmen = jumlah sel kosong di matriks (per tab): -</p><p>Tarif Dasar — tampilan matriks &gt; [Positif] TR-04 Unduh Template → file terunduh: -</p><p>Tarif Dasar — isian sel (TIDAK disimpan) &gt; [Negatif] TR-10 huruf ditolak, tanda minus dibuang; Simpan aktif hanya bila ada perubahan: -</p><p>Tarif Dasar — isian sel (TIDAK disimpan) &gt; [Edge] TR-11 angka diberi pemisah ribuan otomatis (1000000 → 1.000.000): -</p><p>Tarif Dasar — isian sel (TIDAK disimpan) &gt; [Temuan] TR-T03 tarif berdesimal &amp; sangat besar seharusnya ditolak/dibatasi [perlu konfirmasi]: -</p><p>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Temuan] TR-T01/T02 baris Pejalan Kaki seharusnya = kategori penumpang AKTIF (termasuk Dewasa); kelas = kelas AKTIF: -</p><p>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Dampak] TR-21 baris tab Kendaraan = golongan kendaraan AKTIF: -</p><p>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Temuan] TR-T04 tab Barang: semua kategori barang Aktif seharusnya sudah punya tarif di rute utama: -</p><p>Tarif Dasar — dampak (konsistensi dengan master) &gt; [Dampak] TR-22 harga &quot;Rp … / orang&quot; di kartu web = salah satu tarif ONLINE jenis kapal itu di matriks [perlu konfirmasi aturan]: -</p><p>Riwayat Perubahan Tarif &gt; [Positif] TR-30 daftar versi terbaru di atas; detail versi menampilkan tarif lama → baru &amp; arah: -</p><p>Riwayat Perubahan Tarif &gt; [Positif] TR-31 filter Rute → hanya versi rute itu: -</p>
+</body></html>

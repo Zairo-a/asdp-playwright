@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 13-11-2026 09:03</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>13-11-2026 09:03 · 24 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">24</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">24</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">2</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">0</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Pelabuhan — daftar &gt; [Temuan] PL-T02 tombol &quot;Export Ke Excel&quot; seharusnya menghasilkan file Excel (.xlsx)</div>
+        <div class="berkas">UI\pelabuhan.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">PL-T02 — Tombol &quot;Export Ke Excel&quot; mengunduh file CSV, bukan Excel [perlu konfirmasi]
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik &quot;Export Ke Excel&quot;
+Ekspektasi: File yang terunduh berformat Excel (.xlsx), sesuai label tombol
+Aktual: File yang terunduh: &quot;outlets_export_2026-11-13_09-02-49.csv&quot;</p>
+        <div class="bukti"><a href="bukti/PL-T02_20261113-090310.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/PL-T02_20261113-090310.png" alt="Bukti bukti/PL-T02_20261113-090310.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/PL-T02_20261113-090310.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] PL-T02 — Tombol &quot;Export Ke Excel&quot; mengunduh file CSV, bukan Excel [perlu konfirmasi]
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik &quot;Export Ke Excel&quot;
+Ekspektasi: File yang terunduh berformat Excel (.xlsx), sesuai label tombol
+Aktual: File yang terunduh: &quot;outlets_export_2026-11-13_09-02-49.csv&quot;
+(bukti: hasil\bukti\PL-T02_20261113-090310.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Temuan] PL-T01 mode &quot;Pelabuhan 24 jam&quot;: kapasitas harian kosong seharusnya ditolak di langkah 2</div>
+        <div class="berkas">UI\pelabuhan.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">PL-T01 — Mode Pelabuhan 24 jam bisa lanjut ke langkah 3 walau kapasitas harian kosong
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik &quot;Tambah&quot;
+  3. Isi Kode, Nama, Kota → Selanjutnya
+  4. Pilih mode &quot;Pelabuhan 24 jam&quot;, biarkan kapasitas harian kosong → Selanjutnya
+Ekspektasi: Tetap di langkah 2/3 dengan pesan wajib diisi pada Kapasitas penumpang harian &amp; Kapasitas kendaraan harian (SUP)
+Aktual: Pindah ke langkah 3/3; error baru muncul setelah klik Simpan di langkah terakhir</p>
+        <div class="bukti"><a href="bukti/PL-T01_20261113-090356.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/PL-T01_20261113-090356.png" alt="Bukti bukti/PL-T01_20261113-090356.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/PL-T01_20261113-090356.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] PL-T01 — Mode Pelabuhan 24 jam bisa lanjut ke langkah 3 walau kapasitas harian kosong
+Langkah:
+  1. Buka menu Master data → Pelabuhan (/outlets)
+  2. Klik &quot;Tambah&quot;
+  3. Isi Kode, Nama, Kota → Selanjutnya
+  4. Pilih mode &quot;Pelabuhan 24 jam&quot;, biarkan kapasitas harian kosong → Selanjutnya
+Ekspektasi: Tetap di langkah 2/3 dengan pesan wajib diisi pada Kapasitas penumpang harian &amp; Kapasitas kendaraan harian (SUP)
+Aktual: Pindah ke langkah 3/3; error baru muncul setelah klik Simpan di langkah terakhir
+(bukti: hasil\bukti\PL-T01_20261113-090356.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-02 cari berdasarkan kode → hanya baris yang cocok</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-03 cari berdasarkan nama (huruf kecil) → tetap ketemu</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Negatif] PL-04 cari kata yang tidak ada → tabel kosong, 0 data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Edge] PL-05 cari dengan karakter khusus → tidak error, 0 data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-06 sort Kode: klik 1x A→Z, klik 2x Z→A</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-07 Limit 25 → 25 baris &amp; ringkasan 1-25</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-08 pindah halaman: Berikutnya → 11-20, Sebelumnya aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-09 filter Tidak Aktif → semua baris &quot;Tidak Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>10</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-10 filter Aktif → tidak ada baris &quot;Tidak Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-11 Tampilan: sembunyikan kolom Kota → kolom hilang</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>12</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-12 Export → file terunduh &amp; berisi data pelabuhan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>7.5</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>13</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Temuan] PL-T02 tombol &quot;Export Ke Excel&quot; seharusnya menghasilkan file Excel (.xlsx)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>20.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>14</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Positif] PL-13 zona waktu sesuai provinsi (contoh: NTT = WITA, Sumut = WIB)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>15</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — daftar &gt; [Negatif] PL-14 Hapus massal → Batal → data tetap ada</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>16</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Negatif] PL-15 langkah 1 kosong → Selanjutnya → 3 pesan wajib diisi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>17</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Edge] PL-16 batas panjang: Kode 50, Nama 100, Alamat 150 karakter</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>18</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Positif] PL-17 pilih kota → provinsi tampil di keterangan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>19</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Negatif] PL-18 kuota penumpang gratis negatif → ditolak</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>20</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Positif] PL-19 mode default &quot;Per kapal&quot;; pilih &quot;Pelabuhan 24 jam&quot; → muncul 2 kolom kapasitas harian</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>21</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Positif] PL-20 Batal menutup form tanpa menyimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>22</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Positif] PL-21 dermaga baru: kode otomatis ber-awalan kode pelabuhan, nama wajib</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>23</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Positif] PL-22 Ubah Data: kode terkunci, judul memuat nama pelabuhan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>24</td><td>UI\pelabuhan.spec.ts</td><td>Pelabuhan — form Tambah (tanpa menyimpan) &gt; [Temuan] PL-T01 mode &quot;Pelabuhan 24 jam&quot;: kapasitas harian kosong seharusnya ditolak di langkah 2</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.3</td>
+      </tr></table>
+
+</body></html>

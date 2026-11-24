@@ -1,0 +1,39 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\template-alokasi-ubah.spec.ts";"Template Alokasi Rute — simpan > [Negatif] TA-10 Mitra melebihi kuota kelas di Template → ditolak";"PEMERIKSAAN";"LULUS";"8.0";"";""
+"2";"UI\template-alokasi-ubah.spec.ts";"Template Alokasi Rute — simpan > [Temuan] TA-T10 Simpan di Template seharusnya TIDAK mengubah keberangkatan yang sudah ada (hari ini)";"PEMERIKSAAN";"LULUS";"36.4";"TA-T10 — Simpan di halaman Template langsung mengubah keberangkatan hari ini (bukan template)
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI, Jadwal MRK-BKH-REG-2100
+  3. Isi Mitra kelas REGULER = 1 → Simpan (toast ""Alokasi berhasil disimpan"")
+  4. Buka detail keberangkatan MRK-BKH-REG-2100 tanggal 2026-11-12 → tab Alokasi
+Ekspektasi: Keberangkatan tanggal 2026-11-12 yang sudah ada TIDAK berubah (sesuai keterangan ""keberangkatan yang sudah ada tidak berubah""); template dipakai untuk keberangkatan baru
+Aktual: Simpan mengirim PUT /api/proxy/cms/capacity/departures/2026-11-12/955/allocations; keberangkatan 2026-11-12 kini Mitra REGULER = 1 (sebelumnya 0), label ""Mode ubah · override untuk keberangkatan ini""";""
+"3";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Positif] TA-01 state awal: Rute wajib, Jadwal terkunci, pesan ""Pilih rute terlebih dahulu""";"PEMERIKSAAN";"LULUS";"1.9";"";""
+"4";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Positif] TA-02 pilih rute → Jadwal aktif & hanya berisi jadwal rute tersebut";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"5";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Positif] TA-03 pilih rute + jadwal → tabel alokasi tampil, sub-tab Penumpang & Kendaraan tersedia";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"6";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Negatif] TA-04 cari rute yang tidak ada → ""Tidak ditemukan""";"PEMERIKSAAN";"LULUS";"1.6";"";""
+"7";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Edge] TA-05 ganti rute setelah jadwal dipilih → pilihan jadwal ter-reset";"PEMERIKSAAN";"LULUS";"2.8";"";""
+"8";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Temuan] TA-T01 halaman Template seharusnya memuat data TEMPLATE, bukan keberangkatan hari ini";"PEMERIKSAAN";"LULUS";"2.4";"TA-T01 — Halaman ""Template Alokasi Rute"" memuat alokasi keberangkatan hari ini, bukan template jadwal
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Lihat data yang dimuat (Network: …/allocations)
+Ekspektasi: Halaman memuat template alokasi jadwal (nilai awal, dalam %), bukan data satu keberangkatan
+Aktual: Data dimuat dari keberangkatan tanggal 2026-11-12 (id 955): /api/proxy/cms/capacity/departures/2026-11-12/955/allocations; tabel menampilkan kolom ""terjual"" milik keberangkatan itu";""
+"9";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Temuan] TA-T02 nilai template seharusnya dalam % sesuai keterangan di layar [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"2.5";"TA-T02 — Keterangan menyebut nilai template ""dalam %"", tetapi tabel menampilkan kursi dan kolom ""terjual""
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Baca keterangan di atas tabel, bandingkan dengan isi tabel
+Ekspektasi: Tabel template menampilkan persentase per kelompok channel/kelas, tanpa angka terjual
+Aktual: Keterangan: ""Nilai awal dari Alokasi Kuota Jadwal (dalam %), di sini dalam kursi dan bisa dioverride.""; tabel tidak berisi nilai %, berisi kolom ""terjual""";""
+"10";"UI\template-alokasi.spec.ts";"Template Alokasi Rute — read-only > [Temuan] TA-T03 pilihan rute & jadwal seharusnya tetap setelah reload (seperti halaman Keberangkatan)";"PEMERIKSAAN";"LULUS";"2.8";"TA-T03 — Pilihan rute & jadwal di Template hilang setelah reload
+Langkah:
+  1. Buka menu Template Alokasi Rute
+  2. Pilih Rute MERAK - BAKAUHENI
+  3. Pilih Jadwal MRK-BKH-REG-2100
+  4. Tekan F5 / reload halaman
+Ekspektasi: Rute ""MERAK - BAKAUHENI"" dan jadwal ""MRK-BKH-REG-2100"" tetap terpilih (tersimpan di URL, seperti halaman Keberangkatan & Alokasi)
+Aktual: Setelah reload: Rute ""Pilih rute"", Jadwal ""Semua jadwal"" — pilihan hilang, URL tanpa parameter";""

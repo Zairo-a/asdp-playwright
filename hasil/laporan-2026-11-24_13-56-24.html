@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 13:56</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 13:56 · 30 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">30</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">29</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">5</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">1</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Kelas Penumpang — siklus data uji &gt; [Negatif] KK-36 Hapus kelas yang DIPAKAI kapal → ditolak, kelas tetap ada</div>
+        <div class="berkas">UI\kelas-penumpang-ubah.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T07 — Kelas penumpang yang masih dipakai kapal bisa dihapus
+Langkah:
+  1. Kapal QAKPKKTCX memakai kelas QAKPRN (kuota 5)
+  2. Menu Kelas Penumpang → QAKPRN → ⋯ → Hapus Data → Hapus
+Ekspektasi: Ditolak dengan pesan kelas masih dipakai kapal; kelas tetap ada
+Aktual: Toast: &quot;Kelas penumpang berhasil dihapus&quot;; kelas terhapus</p>
+        <div class="bukti"><a href="bukti/KK-T07_20261124-135434.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T07_20261124-135434.png" alt="Bukti bukti/KK-T07_20261124-135434.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T07_20261124-135434.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T07 — Kelas penumpang yang masih dipakai kapal bisa dihapus
+Langkah:
+  1. Kapal QAKPKKTCX memakai kelas QAKPRN (kuota 5)
+  2. Menu Kelas Penumpang → QAKPRN → ⋯ → Hapus Data → Hapus
+Ekspektasi: Ditolak dengan pesan kelas masih dipakai kapal; kelas tetap ada
+Aktual: Toast: &quot;Kelas penumpang berhasil dihapus&quot;; kelas terhapus
+(bukti: hasil\bukti\KK-T07_20261124-135434.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Kelas Penumpang — dampak &gt; [Dampak] KK-21 kelas di tabel Alokasi Keberangkatan ada di master Kelas Penumpang &amp; Aktif</div>
+        <div class="berkas">UI\kelas-penumpang.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T06 — Kelas yang Nonaktif / tidak ada di master masih dipakai di alokasi keberangkatan
+Langkah:
+  1. Keberangkatan &amp; Alokasi → tanggal 2027-05-02 → LMB-PGA-2100 → tab Alokasi
+  2. Bandingkan kolom kelas dengan menu Kelas Penumpang
+Ekspektasi: Semua kelas di alokasi ada di master dan Aktif
+Aktual: Kelas di alokasi: REGULER. Masalah: &quot;REGULER&quot; Nonaktif di master</p>
+        <div class="bukti"><a href="bukti/KK-T06_20261124-135610.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T06_20261124-135610.png" alt="Bukti bukti/KK-T06_20261124-135610.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T06_20261124-135610.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T06 — Kelas yang Nonaktif / tidak ada di master masih dipakai di alokasi keberangkatan
+Langkah:
+  1. Keberangkatan &amp; Alokasi → tanggal 2027-05-02 → LMB-PGA-2100 → tab Alokasi
+  2. Bandingkan kolom kelas dengan menu Kelas Penumpang
+Ekspektasi: Semua kelas di alokasi ada di master dan Aktif
+Aktual: Kelas di alokasi: REGULER. Masalah: &quot;REGULER&quot; Nonaktif di master
+(bukti: hasil\bukti\KK-T06_20261124-135610.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Kelas Penumpang — temuan &gt; [Temuan] KK-T01 nama kelas seharusnya unik (tidak ada dua kelas bernama sama) [perlu konfirmasi]</div>
+        <div class="berkas">UI\kelas-penumpang.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T01 — Ada beberapa kelas penumpang dengan nama yang sama
+Langkah:
+  1. Buka menu Kelas Penumpang (Limit 50)
+  2. Lihat kolom Nama
+Ekspektasi: Nama kelas unik, supaya pilihan kelas di Kapal/Keberangkatan/Tarif tidak membingungkan
+Aktual: BISNIS: BIS (Nonaktif), BSN (Aktif); EKONOMI: EKO (Nonaktif), EKM (Aktif)</p>
+        <div class="bukti"><a href="bukti/KK-T01_20261124-135613.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T01_20261124-135613.png" alt="Bukti bukti/KK-T01_20261124-135613.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T01_20261124-135613.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T01 — Ada beberapa kelas penumpang dengan nama yang sama
+Langkah:
+  1. Buka menu Kelas Penumpang (Limit 50)
+  2. Lihat kolom Nama
+Ekspektasi: Nama kelas unik, supaya pilihan kelas di Kapal/Keberangkatan/Tarif tidak membingungkan
+Aktual: BISNIS: BIS (Nonaktif), BSN (Aktif); EKONOMI: EKO (Nonaktif), EKM (Aktif)
+(bukti: hasil\bukti\KK-T01_20261124-135613.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Kelas Penumpang — temuan &gt; [Temuan] KK-T02 label menu &quot;Edit Data&quot; seharusnya &quot;Ubah Data&quot; seperti menu master lain</div>
+        <div class="berkas">UI\kelas-penumpang.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T02 — Menu baris Kelas Penumpang memakai &quot;Edit Data&quot;, menu master lain &quot;Ubah Data&quot;
+Langkah:
+  1. Buka menu Kelas Penumpang
+  2. Klik ⋯ pada kelas EKS
+Ekspektasi: Label konsisten &quot;Ubah Data&quot;
+Aktual: Menu: Edit Data, Nonaktifkan, Hapus Data</p>
+        <div class="bukti"><a href="bukti/KK-T02_20261124-135615.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T02_20261124-135615.png" alt="Bukti bukti/KK-T02_20261124-135615.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T02_20261124-135615.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T02 — Menu baris Kelas Penumpang memakai &quot;Edit Data&quot;, menu master lain &quot;Ubah Data&quot;
+Langkah:
+  1. Buka menu Kelas Penumpang
+  2. Klik ⋯ pada kelas EKS
+Ekspektasi: Label konsisten &quot;Ubah Data&quot;
+Aktual: Menu: Edit Data, Nonaktifkan, Hapus Data
+(bukti: hasil\bukti\KK-T02_20261124-135615.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Kelas Penumpang — temuan &gt; [Temuan] KK-T03 kuota kelas NONAKTIF di kapal tidak terlihat di form Kapal tapi tetap dihitung di total [perlu konfirmasi]</div>
+        <div class="berkas">UI\kelas-penumpang.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">KK-T03 — Kuota kelas yang sudah Nonaktif tidak bisa dilihat/diubah di form Kapal, tapi tetap masuk total kapasitas
+Langkah:
+  1. Kapal QAWTAXI01 menyimpan kuota kelas REGULER (200)
+  2. Kelas itu Nonaktif di menu Kelas Penumpang
+  3. Kapal → QAWTAXI01 → Ubah Data → langkah 3
+Ekspektasi: Kuota kelas nonaktif ditampilkan (ditandai nonaktif) atau tidak dihitung lagi di total
+Aktual: Baris kelas itu tidak tampil; Total 200</p>
+        <div class="bukti"><a href="bukti/KK-T03_20261124-135620.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/KK-T03_20261124-135620.png" alt="Bukti bukti/KK-T03_20261124-135620.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/KK-T03_20261124-135620.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] KK-T03 — Kuota kelas yang sudah Nonaktif tidak bisa dilihat/diubah di form Kapal, tapi tetap masuk total kapasitas
+Langkah:
+  1. Kapal QAWTAXI01 menyimpan kuota kelas REGULER (200)
+  2. Kelas itu Nonaktif di menu Kelas Penumpang
+  3. Kapal → QAWTAXI01 → Ubah Data → langkah 3
+Ekspektasi: Kuota kelas nonaktif ditampilkan (ditandai nonaktif) atau tidak dihitung lagi di total
+Aktual: Baris kelas itu tidak tampil; Total 200
+(bukti: hasil\bukti\KK-T03_20261124-135620.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Positif] KK-30 Tambah kelas → muncul di daftar dengan nama &amp; status Aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-31 kelas baru (Aktif) muncul di form Kapal langkah 3 &quot;Kuota per kelas penumpang&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>12.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Negatif] KK-32 kode kelas yang sudah dipakai → ditolak, tidak ada data ganda</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Temuan] KK-T04 nama kelas yang sama dengan kelas lain (kode beda) seharusnya ditolak [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Positif] KK-33 Ubah nama → daftar ikut berubah; [Dampak] nama baru tampil di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>16.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-34 Nonaktifkan → Status &quot;Nonaktif&quot;, menu jadi &quot;Aktifkan&quot;, hilang dari form Kapal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>17.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-35 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form Kapal; [Edge] nama tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>15.2</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>8</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Negatif] KK-36 Hapus kelas yang DIPAKAI kapal → ditolak, kelas tetap ada</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Edge] KK-37 Tambah kelas dengan status Nonaktif sejak awal → tersimpan Nonaktif, tidak ditawarkan di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>15.8</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Positif] KK-38 Hapus Data → hilang dari daftar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-01 halaman tampil: judul, toolbar, kolom Kode | Nama | Status, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>12</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-02 cari berdasarkan kode → kelas itu ada di hasil</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>13</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>14</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Negatif] KK-04 cari kata yang tidak ada → 0 data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>15</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Edge] KK-05 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>16</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-06 filter Aktif → semua Aktif; filter Nonaktif → semua Nonaktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>17</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-07 sort Kode &amp; Nama: klik kedua membalik urutan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>18</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-08 lebih dari 10 kelas → Berikutnya menampilkan sisanya</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>19</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-09 Export Ke Excel (hasil cari) → file berisi kode kelas</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>7.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>20</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-10 menu ⋯: kelas Aktif → Nonaktifkan; kelas Nonaktif → Aktifkan (+ ubah &amp; hapus)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>21</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Negatif] KK-11 Simpan form kosong → &quot;Kode … wajib diisi&quot; &amp; &quot;Nama … wajib diisi&quot;, form tetap terbuka</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>22</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-12 status default form Tambah = Aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>23</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Edge] KK-13 kode 30 karakter / huruf kecil / simbol → dibatasi atau ditolak (tidak tersimpan apa adanya)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>24</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-14 Batal: form kosong langsung tertutup; form terisi → konfirmasi → Kembali → isian tetap</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>6.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>25</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-15 Ubah/Edit Data: isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>26</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — dampak &gt; [Dampak] KK-20 form Kapal langkah 3 hanya menawarkan kelas AKTIF dari master Kelas Penumpang</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>15.5</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>27</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — dampak &gt; [Dampak] KK-21 kelas di tabel Alokasi Keberangkatan ada di master Kelas Penumpang &amp; Aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>28</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — temuan &gt; [Temuan] KK-T01 nama kelas seharusnya unik (tidak ada dua kelas bernama sama) [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>29</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — temuan &gt; [Temuan] KK-T02 label menu &quot;Edit Data&quot; seharusnya &quot;Ubah Data&quot; seperti menu master lain</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>1.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>30</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — temuan &gt; [Temuan] KK-T03 kuota kelas NONAKTIF di kapal tidak terlihat di form Kapal tapi tetap dihitung di total [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>7.4</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Kelas Penumpang — siklus data uji &gt; [Positif] KK-38 Hapus Data → hilang dari daftar: KK-30 / KK-36 sudah menghapus kelas</p>
+</body></html>

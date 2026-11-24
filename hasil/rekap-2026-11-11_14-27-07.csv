@@ -1,0 +1,94 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-dampak-ubah.spec.ts";"Dampak ke Alokasi Kuota Jadwal (template) > [Positif] KA-X01 ubah template jadwal TIDAK mengubah keberangkatan yang sudah ada";"PEMERIKSAAN";"LULUS";"12.2";"";""
+"2";"UI\keberangkatan-dampak-ubah.spec.ts";"Dampak ke Alokasi Kuota Jadwal (template) > [Negatif] KA-X02 template: Mitra melebihi kuota kelas → ditolak";"PEMERIKSAAN";"LULUS";"3.9";"";""
+"3";"UI\keberangkatan-dampak-ubah.spec.ts";"Dampak ke web reservasi Ferizy > [Positif] KA-X10 keberangkatan Aktif + Online di CMS → muncul di pencarian Ferizy";"PEMERIKSAAN";"DILEWATI";"0.0";"Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap";""
+"4";"UI\keberangkatan-dampak-ubah.spec.ts";"Dampak ke web reservasi Ferizy > [Positif] KA-X11 Set Offline di CMS → hilang dari Ferizy; Online lagi → muncul lagi";"PEMERIKSAAN";"DILEWATI";"0.0";"Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap";""
+"5";"UI\keberangkatan-dampak-ubah.spec.ts";"Dampak ke web reservasi Ferizy > [Positif] KA-X12 Nonaktifkan di CMS → hilang dari Ferizy; Aktifkan → muncul lagi";"PEMERIKSAAN";"DILEWATI";"0.0";"Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap";""
+"6";"UI\keberangkatan-dampak-ubah.spec.ts";"Dampak ke web reservasi Ferizy > [Edge] KA-X13 kapasitas diturunkan di CMS → sisa kuota di Ferizy ikut turun";"PEMERIKSAAN";"DILEWATI";"0.0";"Set FERIZY_READY=1, FERIZY_ASAL, FERIZY_TUJUAN di .env setelah integrasi reservasi siap";""
+"7";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D01 klik jadwal → buka detail; Kuota di list = Total kuota di detail";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"8";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D02 rumus kuota: Total kuota = bulat(kapasitas fisik × % operasional)";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"9";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D03 tab Alokasi: jumlah kuota semua kelas = Total kuota & status ""Sesuai kuota""";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"10";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D04 Retail otomatis berisi sisa: Retail = kuota kelas − Mitra − Korporasi";"PEMERIKSAAN";"LULUS";"2.9";"";""
+"11";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D05 Teralokasi 0 → tab Transaksi menampilkan ""Belum ada transaksi""";"PEMERIKSAAN";"LULUS";"2.2";"";""
+"12";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D06 status Aktif & Penjualan di list sama dengan di detail";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"13";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-D07 tombol Back browser → kembali ke list dengan filter tetap";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"14";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Negatif] KA-V01 kapasitas 0 → otomatis jadi 1 (batas bawah)";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"15";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Negatif] KA-V02 kapasitas 150 → otomatis jadi 100 (batas atas)";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"16";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Negatif] KA-V03 kapasitas huruf ""abc"" → ditolak, nilai tetap angka";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"17";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-V04 tombol Batal mengembalikan nilai awal & mengunci Simpan";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"18";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Negatif] KA-V05 Nonaktifkan tanpa alasan / alasan spasi saja → tombol ""Ya, lanjutkan"" terkunci";"PEMERIKSAAN";"LULUS";"2.1";"";""
+"19";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-V06 dialog Set Offline: alasan opsional, Batal → tetap Online";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"20";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Positif] KA-V07 dropdown Kapal override hanya berisi opsi default + kapal (bisa dicari)";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"21";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — detail & konsistensi > [Edge] KA-V08 Buang Perubahan di tab Alokasi → nilai Mitra kembali seperti awal";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"22";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — temuan > [Temuan] KA-T01 preview alokasi valid (Mitra 1 ≤ kuota kelas) seharusnya ""Sesuai kuota"" sebelum disimpan";"PEMERIKSAAN";"LULUS";"6.2";"KA-T01 — Preview alokasi salah saat Mitra diisi nilai yang valid
+Langkah:
+  1. Buka menu Keberangkatan & Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100, lalu buka tab Alokasi
+  4. Isi Mitra kelas REGULER = 1 (kuota kelas 8), belum klik Simpan
+Ekspektasi: Retail REGULER otomatis berkurang jadi 7, total kelas tetap 8, status ""Sesuai kuota""
+Aktual: Retail REGULER tetap 8, total kelas jadi 9 dari kuota 8 (tanda ⚠), status ""Tidak sesuai kuota""";""
+"23";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — temuan > [Temuan] KA-T02 Mitra melebihi kuota kelas → seharusnya Simpan terkunci / ada pesan di form";"PEMERIKSAAN";"LULUS";"6.5";"KA-T02 — Tombol Simpan tetap aktif walau alokasi melebihi kuota
+Langkah:
+  1. Buka menu Keberangkatan & Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100, lalu buka tab Alokasi
+  4. Isi Mitra kelas REGULER = 13 (kuota kelas hanya 8)
+Ekspektasi: Tombol Simpan terkunci atau muncul pesan error di form sebelum disimpan
+Aktual: Tombol Simpan tetap aktif dan bisa diklik; penolakan baru muncul dari server setelah diklik";""
+"24";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — temuan > [Temuan] KA-T03 rentang tanggal terbalik di URL → seharusnya ditukar otomatis atau muncul validasi";"PEMERIKSAAN";"LULUS";"6.1";"KA-T03 — Rentang tanggal terbalik diterima tanpa validasi
+Langkah:
+  1. Buka URL: /capacity-departures?route_id=64&date_from=2027-05-07&date_to=2027-05-01
+  2. (tanggal mulai lebih besar dari tanggal akhir)
+Ekspektasi: Tanggal otomatis ditukar jadi 01/05/2027 - 07/05/2027, atau muncul pesan validasi tanggal
+Aktual: Kolom Tanggal menampilkan ""07/05/2027 - 01/05/2027"", tidak ada pesan validasi, tabel kosong";""
+"25";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — temuan > [Temuan] KA-T04 route_id tidak valid → seharusnya tampil state ""Pilih rute…"" / pesan rute tidak ditemukan";"PEMERIKSAAN";"LULUS";"6.2";"KA-T04 — Rute tidak valid di URL tidak memunculkan pesan yang jelas
+Langkah:
+  1. Buka URL: /capacity-departures?route_id=999999 (rute tidak ada)
+Ekspektasi: Muncul tampilan ""Pilih rute untuk menampilkan data"" atau pesan ""rute tidak ditemukan""
+Aktual: Dropdown Rute ""Pilih rute"", tabel tampil dengan pesan ""Tidak ada keberangkatan untuk filter ini."" (seolah rute valid tapi kosong)";""
+"26";"UI\keberangkatan-detail.spec.ts";"Keberangkatan & Alokasi — temuan > [Temuan] KA-T05 nama kelas di tabel alokasi seharusnya unik (tidak ada kelas kembar)";"PEMERIKSAAN";"LULUS";"3.2";"KA-T05 — Nama kelas kembar di tabel alokasi
+Langkah:
+  1. Buka menu Keberangkatan & Alokasi
+  2. Pilih rute MERAK - BAKAUHENI, tanggal 2027-05-02
+  3. Klik jadwal MRK-BKH-REG-2100, lalu buka tab Alokasi
+  4. Lihat baris judul kolom (nama kelas)
+Ekspektasi: Setiap kelas punya nama unik
+Aktual: Kelas BISNIS muncul lebih dari sekali (EXPRESS, REGULER, BISNIS, BISNIS, VIP, TES77)";""
+"27";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F01 state awal: empty state, Jadwal terkunci, placeholder benar";"PEMERIKSAAN";"LULUS";"1.0";"";""
+"28";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F02 pilih rute → data tampil, route_id tersimpan di URL, Jadwal aktif";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"29";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F03 deep link URL (rute + tanggal) → filter terisi otomatis & data sesuai tanggal";"PEMERIKSAAN";"LULUS";"1.6";"";""
+"30";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F04 filter Jadwal → hanya jadwal terpilih yang tampil";"PEMERIKSAAN";"LULUS";"2.0";"";""
+"31";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F05 rentang tanggal lewat kalender → URL date_from & date_to";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"32";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F06 filter Status ""Open"" → semua baris berstatus Open, badge filter = 1";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"33";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F07 Reset filter → badge hilang & jumlah data kembali seperti awal";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"34";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F08 filter Mode ""Pax"" → semua baris mode Pax";"PEMERIKSAAN";"LULUS";"2.2";"";""
+"35";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F09 filter Penjualan ""Online"" → semua baris Online";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"36";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Negatif] KA-F10 cari rute yang tidak ada → ""Tidak ditemukan"", tidak ada opsi";"PEMERIKSAAN";"LULUS";"1.7";"";""
+"37";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F11 cari rute huruf kecil semua → tetap ketemu (tidak case-sensitive)";"PEMERIKSAAN";"LULUS";"1.6";"";""
+"38";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F12 kombinasi filter yang mustahil (Nonaktif + Online) → 0 data & pesan kosong";"PEMERIKSAAN";"LULUS";"2.4";"";""
+"39";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F13 rute tanpa jadwal → pesan kosong ""0 data"", tidak error";"PEMERIKSAAN";"LULUS";"1.7";"";""
+"40";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F14 pagination: Sebelumnya terkunci di hal. 1, Berikutnya pindah ke hal. 2, terakhir terkunci";"PEMERIKSAAN";"LULUS";"2.5";"";""
+"41";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F15 ubah filter saat di halaman 2 → kembali ke halaman 1";"PEMERIKSAAN";"LULUS";"2.7";"";""
+"42";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F16 ganti rute → pilihan Jadwal ter-reset ke ""Semua jadwal""";"PEMERIKSAAN";"LULUS";"2.6";"";""
+"43";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F17 reload halaman → rute, tanggal, & filter tetap (tersimpan di URL)";"PEMERIKSAAN";"LULUS";"2.9";"";""
+"44";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Positif] KA-F18 pilih semua → bar aksi massal muncul dengan jumlah benar; Batal pilih menutupnya";"PEMERIKSAAN";"LULUS";"1.9";"";""
+"45";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Negatif] KA-F19 route_id tidak valid di URL → tidak crash, tidak ada data";"PEMERIKSAAN";"LULUS";"0.9";"";""
+"46";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Positif] KA-U01 Nonaktifkan dengan alasan → status Nonaktif, otomatis Offline, alasan tampil; lalu Aktifkan kembali";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"47";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Positif] KA-U02 Set Offline (tanpa alasan) → Penjualan Offline di list & detail; lalu Online kembali";"PEMERIKSAAN";"LULUS";"4.1";"";""
+"48";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Positif] KA-U03 aksi massal: pilih 2 keberangkatan → Set Offline → keduanya Offline; lalu Set Online";"PEMERIKSAAN";"LULUS";"4.6";"";""
+"49";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Edge] KA-U04 Offline → Nonaktifkan → Aktifkan: Penjualan seharusnya kembali ke Offline (keadaan sebelum) [perlu konfirmasi]";"PEMERIKSAAN";"LULUS";"5.4";"";""
+"50";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Positif] KA-U05 kapasitas 50% → Total kuota, Alokasi, dan Kuota di list ikut berubah";"PEMERIKSAAN";"LULUS";"5.6";"";""
+"51";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Edge] KA-U06 kapasitas 100% (batas atas) → kuota = kapasitas fisik";"PEMERIKSAAN";"LULUS";"6.2";"";""
+"52";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Edge] KA-U07 kapasitas 1% (batas bawah) → kuota = bulat(fisik × 1%)";"PEMERIKSAAN";"LULUS";"6.0";"";""
+"53";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Positif] KA-U08 alokasi Mitra 1 → tersimpan, Retail berkurang 1, sumber ""Override""; data bertahan setelah reload";"PEMERIKSAAN";"LULUS";"6.2";"";""
+"54";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Edge] KA-U09 alokasi Mitra = tepat kuota kelas (batas) → tersimpan, Retail kelas jadi 0";"PEMERIKSAAN";"LULUS";"4.5";"";""
+"55";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Negatif] KA-U10 alokasi Mitra melebihi kuota kelas → ditolak server, data tidak berubah";"PEMERIKSAAN";"LULUS";"4.4";"";""
+"56";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Negatif] KA-U11 alokasi Mitra negatif (-1) → tidak boleh tersimpan negatif";"PEMERIKSAAN";"LULUS";"4.2";"";""
+"57";"UI\keberangkatan-ubah.spec.ts";"Keberangkatan & Alokasi — ubah data (dengan restore) > [Temuan] KA-U12 pesan gagal simpan alokasi seharusnya bahasa manusia, bukan kode ""FCAP-…""";"PEMERIKSAAN";"LULUS";"4.5";"KA-U12 — Pesan gagal simpan alokasi berupa kode teknis
+Langkah:
+  1. Buka detail keberangkatan, tab Alokasi
+  2. Isi Mitra kelas REGULER melebihi kuota kelas
+  3. Klik Simpan
+Ekspektasi: Pesan yang mudah dipahami, mis. ""Alokasi melebihi kuota kelas REGULER (maks. 8)""
+Aktual: Toast menampilkan ""Gagal menyimpan alokasi / FCAP-ALLOCATION-EXCEEDS-QUOTA""";""

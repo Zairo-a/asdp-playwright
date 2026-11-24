@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 13-11-2026 14:52</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>13-11-2026 14:52 · 25 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">25</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">24</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">1</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">4</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">0</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T01 menu rute yang AKTIF seharusnya &quot;Nonaktifkan&quot;, bukan &quot;Aktifkan&quot;</div>
+        <div class="berkas">UI\rute.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">RJ-T01 — Rute aktif menampilkan menu &quot;Aktifkan&quot;; mengkliknya justru MENONAKTIFKAN rute dengan pesan &quot;Rute berhasil diaktifkan&quot;
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA (kolom Aktivasi: &quot;Aktif&quot;)
+  3. Klik ⋯ (Buka menu) di baris itu
+Ekspektasi: Rute yang Aktif menampilkan &quot;Nonaktifkan&quot; (dan dialog/toast &quot;dinonaktifkan&quot;)
+Aktual: Menu menampilkan &quot;Aktifkan&quot;. Dari eksplorasi: dialog &quot;Aktifkan Data? … akan diaktifkan kembali&quot; → toast &quot;Rute berhasil diaktifkan&quot;, tetapi rute menjadi Tidak Aktif</p>
+        <div class="bukti"><a href="bukti/RJ-T01_20261113-145212.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/RJ-T01_20261113-145212.png" alt="Bukti bukti/RJ-T01_20261113-145212.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/RJ-T01_20261113-145212.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] RJ-T01 — Rute aktif menampilkan menu &quot;Aktifkan&quot;; mengkliknya justru MENONAKTIFKAN rute dengan pesan &quot;Rute berhasil diaktifkan&quot;
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA (kolom Aktivasi: &quot;Aktif&quot;)
+  3. Klik ⋯ (Buka menu) di baris itu
+Ekspektasi: Rute yang Aktif menampilkan &quot;Nonaktifkan&quot; (dan dialog/toast &quot;dinonaktifkan&quot;)
+Aktual: Menu menampilkan &quot;Aktifkan&quot;. Dari eksplorasi: dialog &quot;Aktifkan Data? … akan diaktifkan kembali&quot; → toast &quot;Rute berhasil diaktifkan&quot;, tetapi rute menjadi Tidak Aktif
+(bukti: hasil\bukti\RJ-T01_20261113-145212.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T02 detail rute AKTIF seharusnya menampilkan &quot;Aktifasi: Aktif&quot;</div>
+        <div class="berkas">UI\rute.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">RJ-T02 — Status aktivasi di halaman detail rute berbeda dengan di daftar (selalu &quot;Tidak Aktif&quot;)
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA, lihat kolom Aktivasi
+  3. Klik ⋯ → Edit Rute &amp; Jadwal, lihat bagian Informasi
+Ekspektasi: &quot;Aktifasi&quot; di detail sama dengan daftar (&quot;Aktif&quot;); ejaan seharusnya &quot;Aktivasi&quot;
+Aktual: Daftar: &quot;Aktif&quot;, detail: &quot;Aktifasi Tidak Aktif&quot;</p>
+        <div class="bukti"><a href="bukti/RJ-T02_20261113-145215.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/RJ-T02_20261113-145215.png" alt="Bukti bukti/RJ-T02_20261113-145215.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/RJ-T02_20261113-145215.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] RJ-T02 — Status aktivasi di halaman detail rute berbeda dengan di daftar (selalu &quot;Tidak Aktif&quot;)
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Cari rute LMB-PGA, lihat kolom Aktivasi
+  3. Klik ⋯ → Edit Rute &amp; Jadwal, lihat bagian Informasi
+Ekspektasi: &quot;Aktifasi&quot; di detail sama dengan daftar (&quot;Aktif&quot;); ejaan seharusnya &quot;Aktivasi&quot;
+Aktual: Daftar: &quot;Aktif&quot;, detail: &quot;Aktifasi Tidak Aktif&quot;
+(bukti: hasil\bukti\RJ-T02_20261113-145215.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T03 pesan &quot;wajib diisi&quot; seharusnya hilang setelah kolomnya diisi</div>
+        <div class="berkas">UI\rute.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">RJ-T03 — Pesan &quot;wajib diisi&quot; tetap tampil walau kolomnya sudah terisi
+Langkah:
+  1. Buka menu Jadwal Rute (/routes)
+  2. Klik &quot;Tambah&quot;
+  3. Klik Berikutnya dengan form kosong (muncul 3 pesan wajib)
+  4. Pilih Pelabuhan asal LEMBAR dan tujuan PADANG BAI (kode rute terisi otomatis)
+Ekspektasi: Pesan wajib pada kolom yang sudah diisi langsung hilang
+Aktual: Masih tampil: &quot;Outlet asal wajib diisi&quot;, &quot;Outlet tujuan wajib diisi&quot;, &quot;Kode rute wajib diisi&quot;</p>
+        <div class="bukti"><a href="bukti/RJ-T03_20261113-145219.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/RJ-T03_20261113-145219.png" alt="Bukti bukti/RJ-T03_20261113-145219.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/RJ-T03_20261113-145219.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] RJ-T03 — Pesan &quot;wajib diisi&quot; tetap tampil walau kolomnya sudah terisi
+Langkah:
+  1. Buka menu Jadwal Rute (/routes)
+  2. Klik &quot;Tambah&quot;
+  3. Klik Berikutnya dengan form kosong (muncul 3 pesan wajib)
+  4. Pilih Pelabuhan asal LEMBAR dan tujuan PADANG BAI (kode rute terisi otomatis)
+Ekspektasi: Pesan wajib pada kolom yang sudah diisi langsung hilang
+Aktual: Masih tampil: &quot;Outlet asal wajib diisi&quot;, &quot;Outlet tujuan wajib diisi&quot;, &quot;Kode rute wajib diisi&quot;
+(bukti: hasil\bukti\RJ-T03_20261113-145219.png)</pre></details>
+      </div>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-temuan">TEMUAN</span> Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T04 pencarian rute seharusnya juga bisa dengan nama pelabuhan [perlu konfirmasi]</div>
+        <div class="berkas">UI\rute.spec.ts · PEMERIKSAAN</div>
+        <p class="temuan">RJ-T04 — Kotak &quot;Cari data...&quot; di Jadwal Rute hanya mencari kode rute, tidak nama pelabuhan
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Ketik &quot;LEMBAR&quot; di kotak Cari data...
+Ekspektasi: Rute yang asal/tujuannya LEMBAR (mis. LMB-PGA) tampil
+Aktual: Hasil pencarian: 0 data (&quot;Belum ada rute&quot;)</p>
+        <div class="bukti"><a href="bukti/RJ-T04_20261113-145224.png" target="_blank" title="Klik untuk memperbesar"><img src="bukti/RJ-T04_20261113-145224.png" alt="Bukti bukti/RJ-T04_20261113-145224.png"></a><div class="bukti-ket">Bukti screenshot (klik untuk memperbesar) — file: hasil/bukti/RJ-T04_20261113-145224.png</div></div>
+        
+        <details open><summary>Cetakan test</summary><pre>[TEMUAN] RJ-T04 — Kotak &quot;Cari data...&quot; di Jadwal Rute hanya mencari kode rute, tidak nama pelabuhan
+Langkah:
+  1. Buka menu Jadwal Rute
+  2. Ketik &quot;LEMBAR&quot; di kotak Cari data...
+Ekspektasi: Rute yang asal/tujuannya LEMBAR (mis. LMB-PGA) tampil
+Aktual: Hasil pencarian: 0 data (&quot;Belum ada rute&quot;)
+(bukti: hasil\bukti\RJ-T04_20261113-145224.png)</pre></details>
+      </div>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2>
+      <div class="bug">
+        <div class="judul"><span class="lencana l-gagal">GAGAL</span> Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-22 langkah 5 waktu tiba kosong → &quot;Waktu tujuan wajib diisi&quot;, tidak muncul konfirmasi</div>
+        <div class="berkas">UI\rute.spec.ts · PEMERIKSAAN</div>
+        
+        
+        <p class="pesan">Error: expect(received).toContain(expected) // indexOf | Expected value: &quot;Waktu tujuan wajib diisi&quot; | Received array: [] | Call Log: | - Timeout 5000ms exceeded while waiting on the predicate</p>
+        
+      </div>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lulus">
+        <td>1</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-01 halaman tampil: judul, toolbar, kolom tabel, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>8.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>2</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-02 cari berdasarkan kode → hanya rute itu</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>3</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Negatif] RJ-03 cari kode yang tidak ada → &quot;Belum ada rute&quot;, 0 data</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>4</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-04 sort Kode: A→Z lalu Z→A</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>5</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-05 filter Aktivasi &quot;Tidak Aktif&quot; → semua baris Tidak Aktif</td>
+        <td>PEMERIKSAAN</td><td>LULUS SETELAH ULANG</td><td>3.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>6</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-06 klik &quot;n Jadwal&quot; → daftar jadwal rute tampil, jumlah sesuai</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>7</td><td>UI\rute.spec.ts</td><td>Rute — daftar &gt; [Positif] RJ-07 Edit Rute &amp; Jadwal → halaman detail berisi info rute &amp; daftar jadwal</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>8</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-10 langkah 1 kosong → Berikutnya → 3 pesan wajib diisi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>9</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-11 pelabuhan tujuan tidak boleh sama dengan asal (tidak ditawarkan)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.7</td>
+      </tr>
+      <tr class="lulus">
+        <td>10</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-12 pilih asal &amp; tujuan → kode &amp; nama rute terisi otomatis</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>11</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Edge] RJ-13 pasangan pelabuhan yang sudah punya rute → kode otomatis tidak bentrok (diberi akhiran)</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.3</td>
+      </tr>
+      <tr class="lulus">
+        <td>12</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-14 batas online &amp; go-show negatif → ditolak di langkah 2</td>
+        <td>PEMERIKSAAN</td><td>LULUS SETELAH ULANG</td><td>8.2</td>
+      </tr>
+      <tr class="lulus">
+        <td>13</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-15 kapasitas operasional 150% → ditolak &quot;Isi persen 1 sampai 100&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.8</td>
+      </tr>
+      <tr class="lulus">
+        <td>14</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-16 Batal menutup form tanpa menyimpan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.1</td>
+      </tr>
+      <tr class="lulus">
+        <td>15</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-17 form jadwal kosong → &quot;Jam keberangkatan&quot; &amp; &quot;Unit bisnis&quot; wajib, tetap di langkah 1</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.0</td>
+      </tr>
+      <tr class="lulus">
+        <td>16</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-18 isi jam keberangkatan → kode jadwal terisi otomatis &quot;&lt;kode rute&gt;-HHMM&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>5.4</td>
+      </tr>
+      <tr class="lulus">
+        <td>17</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-19 hari operasional dikosongkan → &quot;Hari operasional wajib dipilih&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>8.5</td>
+      </tr>
+      <tr class="lulus">
+        <td>18</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-20 langkah 2 tanpa kapal &amp; tanpa denah kursi → &quot;Layout kursi wajib dipilih&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>9.9</td>
+      </tr>
+      <tr class="lulus">
+        <td>19</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-21 kapasitas jadwal 150% → &quot;Isi persen 1 sampai 100&quot;; [Edge] 100% → boleh lanjut</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>9.1</td>
+      </tr>
+      <tr class="gagal">
+        <td>20</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Negatif] RJ-22 langkah 5 waktu tiba kosong → &quot;Waktu tujuan wajib diisi&quot;, tidak muncul konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>GAGAL</td><td>13.6</td>
+      </tr>
+      <tr class="lulus">
+        <td>21</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Positif] RJ-23 Ubah rute yang sudah punya jadwal → pelabuhan asal &amp; tujuan terkunci dengan keterangan</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.1</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>22</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T01 menu rute yang AKTIF seharusnya &quot;Nonaktifkan&quot;, bukan &quot;Aktifkan&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.5</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>23</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T02 detail rute AKTIF seharusnya menampilkan &quot;Aktifasi: Aktif&quot;</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>2.9</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>24</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T03 pesan &quot;wajib diisi&quot; seharusnya hilang setelah kolomnya diisi</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>4.8</td>
+      </tr>
+      <tr class="temuanbaris">
+        <td>25</td><td>UI\rute.spec.ts</td><td>Rute — form Tambah (tanpa menyimpan) &gt; [Temuan] RJ-T04 pencarian rute seharusnya juga bisa dengan nama pelabuhan [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>LULUS</td><td>3.7</td>
+      </tr></table>
+
+</body></html>

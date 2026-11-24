@@ -1,0 +1,2 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\rute.spec.ts";"Rute & Jadwal — menu lain, ubah & duplikasi (tanpa menyimpan) > [Positif] RJ-62 tipe Restrict → ""Jika habis: Tolak (tidak ambil Normal)""; Reserve → ""Ambil dari sisa Normal""";"PEMERIKSAAN";"LULUS";"7.7";"";""

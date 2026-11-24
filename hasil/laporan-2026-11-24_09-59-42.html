@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Laporan test 24-11-2026 09:59</title>
+<style>
+  body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#1b1f23;background:#fafbfc}
+  h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:2px solid #e1e4e8;padding-bottom:6px}
+  .catatan{background:#fff8c5;border:1px solid #d4a72c;padding:10px 14px;border-radius:6px;margin:14px 0}
+  .kartu-baris{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .kartu{padding:12px 18px;border-radius:8px;min-width:130px;color:#fff}
+  .kartu .angka{font-size:28px;font-weight:700}
+  .k-total{background:#57606a}.k-lulus{background:#1a7f37}.k-gagal{background:#cf222e}
+  .k-temuan{background:#bc4c00}.k-koneksi{background:#8250df}.k-lewat{background:#6e7781}
+  .bug{background:#fff;border:1px solid #d0d7de;border-left:5px solid #cf222e;border-radius:6px;padding:10px 14px;margin:10px 0}
+  .bug .judul{font-weight:600}.bug .berkas{color:#57606a;font-size:12px;margin:2px 0 6px}
+  .lencana{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;margin-right:6px}
+  .l-temuan{background:#bc4c00}.l-gagal{background:#cf222e}.l-koneksi{background:#8250df}
+  .temuan{color:#953800;margin:6px 0;white-space:pre-line;line-height:1.5}.pesan{color:#82071e;margin:6px 0;font-family:Consolas,monospace;font-size:13px}
+  .bukti{margin:8px 0}.bukti img{max-width:min(100%,900px);border:1px solid #d0d7de;border-radius:6px;display:block;margin:6px 0}
+  .bukti-ket{color:#57606a;font-size:12px}
+  pre{background:#f6f8fa;padding:10px;border-radius:6px;overflow:auto;font-size:12px;white-space:pre-wrap}
+  table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+  th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}th{background:#f6f8fa}
+  tr.lulus td:nth-child(5){color:#1a7f37}tr.gagal{background:#ffebe9}tr.koneksi{background:#fbefff}
+  tr.lewat{color:#6e7781}tr.temuanbaris{background:#fff1e5}.kosong{color:#57606a}
+</style></head><body>
+<h1>Laporan test</h1>
+<div>24-11-2026 09:59 · 56 test</div>
+<div class="catatan"><b>Cara membaca:</b> laporan ini hanya menampilkan apa yang diperiksa test. <b>Hijau tidak berarti tidak ada bug.</b>
+Test berjenis EKSPLORASI hanya mencetak isi balasan (0 test di run ini), jadi belum menilai sesuai atau tidak.
+Masalah yang hanya terlihat di layar (tombol, tulisan, tata letak) tidak terdeteksi.</div>
+<div class="kartu-baris">
+  <div class="kartu k-total"><div class="angka">56</div><div>Total test</div></div>
+  <div class="kartu k-lulus"><div class="angka">0</div><div>Lulus</div></div>
+  <div class="kartu k-gagal"><div class="angka">0</div><div>Gagal (perlu dicek)</div></div>
+  <div class="kartu k-temuan"><div class="angka">0</div><div>Temuan tercatat</div></div>
+  <div class="kartu k-koneksi"><div class="angka">0</div><div>Gangguan koneksi</div></div>
+  <div class="kartu k-lewat"><div class="angka">56</div><div>Dilewati</div></div>
+</div>
+<h2>Temuan tercatat (diperkirakan bug)</h2><p class="kosong">Tidak ada temuan yang tercatat.</p>
+<h2>Gagal (perlu dicek, belum tentu bug)</h2><p class="kosong">Tidak ada test yang gagal.</p>
+<h2>Gangguan koneksi (bukan bug fitur)</h2><p class="kosong">Tidak ada gangguan koneksi.</p>
+<h2>Hasil eksplorasi (isi cetakan, belum dinilai)</h2><p class="kosong">Tidak ada.</p>
+<h2>Semua test</h2>
+<table><tr><th>No</th><th>Berkas</th><th>Test</th><th>Jenis</th><th>Status</th><th>Detik</th></tr>
+      <tr class="lewat">
+        <td>1</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Positif] KG-30 Tambah kategori (gratis tanpa kursi, tanpa identitas) → muncul di daftar dengan nilai benar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>2</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Dampak] KG-31 kategori baru (Aktif) tampil di pilihan &quot;Penumpang&quot; web</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>3</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Negatif] KG-32 kode kategori yang sudah dipakai → ditolak, tidak ada data ganda</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>4</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Temuan] KG-T05 rentang usia yang tumpang-tindih dengan kategori lain seharusnya ditolak [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>5</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Positif] KG-33 Ubah nama &amp; maks umur → daftar ikut berubah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>6</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Dampak] KG-34 Nonaktifkan → Status &quot;Nonaktif&quot;; hilang dari pilihan penumpang web</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>7</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Dampak] KG-35 Aktifkan kembali → Status &quot;Aktif&quot;; tampil lagi di web dengan nama baru</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>8</td><td>UI\kategori-penumpang-ubah.spec.ts</td><td>Kategori Penumpang — siklus data uji &gt; [Positif] KG-36 Hapus Data → hilang dari daftar, total kembali seperti semula</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>9</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-01 halaman tampil: judul, toolbar, 9 kolom, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>10</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-02 cari kode &amp; nama (huruf kecil) → hanya kategori itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>11</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Negatif] KG-03 cari kata yang tidak ada → 0 data; [Edge] karakter khusus → tidak error</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>12</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-04 filter Status Aktif → semua Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>13</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-05 urutan default mengikuti kolom Urutan (naik)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>14</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-06 sort Usia Min: naik lalu turun</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>15</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-07 Export Ke Excel → file berisi kode kategori</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>16</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — daftar &gt; [Positif] KG-08 menu ⋯ kategori Aktif: ubah, Nonaktifkan, Hapus Data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>17</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — form (tanpa menyimpan) &gt; [Negatif] KG-10 Simpan form kosong → &quot;Kode/Nama/Min umur wajib diisi&quot;; [Edge] Urutan otomatis = jumlah data + 1</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>18</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — form (tanpa menyimpan) &gt; [Positif] KG-11 nilai default switch: Pakai kursi = Ya, Wajib identitas = Ya, Status = Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>19</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — form (tanpa menyimpan) &gt; [Negatif] KG-12 Min umur lebih besar dari Maks umur → ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>20</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — form (tanpa menyimpan) &gt; [Negatif] KG-13 umur negatif / huruf → tidak bisa diketik atau ditolak</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>21</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — form (tanpa menyimpan) &gt; [Positif] KG-14 Batal: form terisi → konfirmasi → Kembali → isian tetap</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>22</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — form (tanpa menyimpan) &gt; [Positif] KG-15 Ubah Data: isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>23</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — dampak ke web Ferizy &gt; [Dampak] KG-20 pilihan &quot;Penumpang&quot; di web = kategori Aktif di CMS (nama, keterangan, urutan)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>24</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — temuan &gt; [Temuan] KG-T01 deskripsi kategori seharusnya sesuai Usia Min / Maks</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>25</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — temuan &gt; [Temuan] KG-T02 rentang usia kategori Aktif seharusnya menutup semua umur (0 → tanpa batas), tanpa tumpang-tindih</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>26</td><td>UI\kategori-penumpang.spec.ts</td><td>Kategori Penumpang — temuan &gt; [Temuan] KG-T03 kolom &quot;Wajib Identitas&quot; seharusnya Ya/Tidak, bukan 1/0</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>27</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Positif] KK-30 Tambah kelas → muncul di daftar dengan nama &amp; status Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>28</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-31 kelas baru (Aktif) muncul di form Kapal langkah 3 &quot;Kuota per kelas penumpang&quot;</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>29</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Negatif] KK-32 kode kelas yang sudah dipakai → ditolak, tidak ada data ganda</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>30</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Temuan] KK-T04 nama kelas yang sama dengan kelas lain (kode beda) seharusnya ditolak [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>31</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Positif] KK-33 Ubah nama → daftar ikut berubah; [Dampak] nama baru tampil di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>32</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-34 Nonaktifkan → Status &quot;Nonaktif&quot;, menu jadi &quot;Aktifkan&quot;, hilang dari form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>33</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-35 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form Kapal; [Edge] nama tidak berubah</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>34</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Negatif] KK-36 Hapus kelas yang DIPAKAI kapal → ditolak, kelas tetap ada</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>35</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Edge] KK-37 Tambah kelas dengan status Nonaktif sejak awal → tersimpan Nonaktif, tidak ditawarkan di form Kapal</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>36</td><td>UI\kelas-penumpang-ubah.spec.ts</td><td>Kelas Penumpang — siklus data uji &gt; [Positif] KK-38 Hapus Data → hilang dari daftar</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>37</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-01 halaman tampil: judul, toolbar, kolom Kode | Nama | Status, ringkasan data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>38</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-02 cari berdasarkan kode → kelas itu ada di hasil</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>39</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>40</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Negatif] KK-04 cari kata yang tidak ada → 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>41</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Edge] KK-05 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>42</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-06 filter Aktif → semua Aktif; filter Nonaktif → semua Nonaktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>43</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-07 sort Kode &amp; Nama: klik kedua membalik urutan</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>44</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-08 lebih dari 10 kelas → Berikutnya menampilkan sisanya</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>45</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-09 Export Ke Excel (hasil cari) → file berisi kode kelas</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>46</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — daftar &gt; [Positif] KK-10 menu ⋯: kelas Aktif → Nonaktifkan; kelas Nonaktif → Aktifkan (+ ubah &amp; hapus)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>47</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Negatif] KK-11 Simpan form kosong → &quot;Kode … wajib diisi&quot; &amp; &quot;Nama … wajib diisi&quot;, form tetap terbuka</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>48</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-12 status default form Tambah = Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>49</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Edge] KK-13 kode 30 karakter / huruf kecil / simbol → dibatasi atau ditolak (tidak tersimpan apa adanya)</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>50</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-14 Batal: form kosong langsung tertutup; form terisi → konfirmasi → Kembali → isian tetap</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>51</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-15 Ubah/Edit Data: isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>52</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — dampak &gt; [Dampak] KK-20 form Kapal langkah 3 hanya menawarkan kelas AKTIF dari master Kelas Penumpang</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>53</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — dampak &gt; [Dampak] KK-21 kelas di tabel Alokasi Keberangkatan ada di master Kelas Penumpang &amp; Aktif</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>54</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — temuan &gt; [Temuan] KK-T01 nama kelas seharusnya unik (tidak ada dua kelas bernama sama) [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>55</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — temuan &gt; [Temuan] KK-T02 label menu &quot;Edit Data&quot; seharusnya &quot;Ubah Data&quot; seperti menu master lain</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr>
+      <tr class="lewat">
+        <td>56</td><td>UI\kelas-penumpang.spec.ts</td><td>Kelas Penumpang — temuan &gt; [Temuan] KK-T03 kuota kelas NONAKTIF di kapal tidak terlihat di form Kapal tapi tetap dihitung di total [perlu konfirmasi]</td>
+        <td>PEMERIKSAAN</td><td>DILEWATI</td><td>0.0</td>
+      </tr></table>
+<h2>Dilewati</h2><p>Kategori Penumpang — siklus data uji &gt; [Positif] KG-30 Tambah kategori (gratis tanpa kursi, tanpa identitas) → muncul di daftar dengan nilai benar: -</p><p>Kategori Penumpang — siklus data uji &gt; [Dampak] KG-31 kategori baru (Aktif) tampil di pilihan &quot;Penumpang&quot; web: -</p><p>Kategori Penumpang — siklus data uji &gt; [Negatif] KG-32 kode kategori yang sudah dipakai → ditolak, tidak ada data ganda: -</p><p>Kategori Penumpang — siklus data uji &gt; [Temuan] KG-T05 rentang usia yang tumpang-tindih dengan kategori lain seharusnya ditolak [perlu konfirmasi]: -</p><p>Kategori Penumpang — siklus data uji &gt; [Positif] KG-33 Ubah nama &amp; maks umur → daftar ikut berubah: -</p><p>Kategori Penumpang — siklus data uji &gt; [Dampak] KG-34 Nonaktifkan → Status &quot;Nonaktif&quot;; hilang dari pilihan penumpang web: -</p><p>Kategori Penumpang — siklus data uji &gt; [Dampak] KG-35 Aktifkan kembali → Status &quot;Aktif&quot;; tampil lagi di web dengan nama baru: -</p><p>Kategori Penumpang — siklus data uji &gt; [Positif] KG-36 Hapus Data → hilang dari daftar, total kembali seperti semula: -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-01 halaman tampil: judul, toolbar, 9 kolom, ringkasan data: -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-02 cari kode &amp; nama (huruf kecil) → hanya kategori itu: -</p><p>Kategori Penumpang — daftar &gt; [Negatif] KG-03 cari kata yang tidak ada → 0 data; [Edge] karakter khusus → tidak error: -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-04 filter Status Aktif → semua Aktif: -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-05 urutan default mengikuti kolom Urutan (naik): -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-06 sort Usia Min: naik lalu turun: -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-07 Export Ke Excel → file berisi kode kategori: -</p><p>Kategori Penumpang — daftar &gt; [Positif] KG-08 menu ⋯ kategori Aktif: ubah, Nonaktifkan, Hapus Data: -</p><p>Kategori Penumpang — form (tanpa menyimpan) &gt; [Negatif] KG-10 Simpan form kosong → &quot;Kode/Nama/Min umur wajib diisi&quot;; [Edge] Urutan otomatis = jumlah data + 1: -</p><p>Kategori Penumpang — form (tanpa menyimpan) &gt; [Positif] KG-11 nilai default switch: Pakai kursi = Ya, Wajib identitas = Ya, Status = Aktif: -</p><p>Kategori Penumpang — form (tanpa menyimpan) &gt; [Negatif] KG-12 Min umur lebih besar dari Maks umur → ditolak: -</p><p>Kategori Penumpang — form (tanpa menyimpan) &gt; [Negatif] KG-13 umur negatif / huruf → tidak bisa diketik atau ditolak: -</p><p>Kategori Penumpang — form (tanpa menyimpan) &gt; [Positif] KG-14 Batal: form terisi → konfirmasi → Kembali → isian tetap: -</p><p>Kategori Penumpang — form (tanpa menyimpan) &gt; [Positif] KG-15 Ubah Data: isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi: -</p><p>Kategori Penumpang — dampak ke web Ferizy &gt; [Dampak] KG-20 pilihan &quot;Penumpang&quot; di web = kategori Aktif di CMS (nama, keterangan, urutan): -</p><p>Kategori Penumpang — temuan &gt; [Temuan] KG-T01 deskripsi kategori seharusnya sesuai Usia Min / Maks: -</p><p>Kategori Penumpang — temuan &gt; [Temuan] KG-T02 rentang usia kategori Aktif seharusnya menutup semua umur (0 → tanpa batas), tanpa tumpang-tindih: -</p><p>Kategori Penumpang — temuan &gt; [Temuan] KG-T03 kolom &quot;Wajib Identitas&quot; seharusnya Ya/Tidak, bukan 1/0: -</p><p>Kelas Penumpang — siklus data uji &gt; [Positif] KK-30 Tambah kelas → muncul di daftar dengan nama &amp; status Aktif: -</p><p>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-31 kelas baru (Aktif) muncul di form Kapal langkah 3 &quot;Kuota per kelas penumpang&quot;: -</p><p>Kelas Penumpang — siklus data uji &gt; [Negatif] KK-32 kode kelas yang sudah dipakai → ditolak, tidak ada data ganda: -</p><p>Kelas Penumpang — siklus data uji &gt; [Temuan] KK-T04 nama kelas yang sama dengan kelas lain (kode beda) seharusnya ditolak [perlu konfirmasi]: -</p><p>Kelas Penumpang — siklus data uji &gt; [Positif] KK-33 Ubah nama → daftar ikut berubah; [Dampak] nama baru tampil di form Kapal: -</p><p>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-34 Nonaktifkan → Status &quot;Nonaktif&quot;, menu jadi &quot;Aktifkan&quot;, hilang dari form Kapal: -</p><p>Kelas Penumpang — siklus data uji &gt; [Dampak] KK-35 Aktifkan kembali → Status &quot;Aktif&quot;, muncul lagi di form Kapal; [Edge] nama tidak berubah: -</p><p>Kelas Penumpang — siklus data uji &gt; [Negatif] KK-36 Hapus kelas yang DIPAKAI kapal → ditolak, kelas tetap ada: -</p><p>Kelas Penumpang — siklus data uji &gt; [Edge] KK-37 Tambah kelas dengan status Nonaktif sejak awal → tersimpan Nonaktif, tidak ditawarkan di form Kapal: -</p><p>Kelas Penumpang — siklus data uji &gt; [Positif] KK-38 Hapus Data → hilang dari daftar: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-01 halaman tampil: judul, toolbar, kolom Kode | Nama | Status, ringkasan data: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-02 cari berdasarkan kode → kelas itu ada di hasil: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-03 cari berdasarkan nama (huruf kecil) → semua hasil mengandung kata itu: -</p><p>Kelas Penumpang — daftar &gt; [Negatif] KK-04 cari kata yang tidak ada → 0 data: -</p><p>Kelas Penumpang — daftar &gt; [Edge] KK-05 cari dengan karakter khusus (%' &lt;) → tidak error, 0 data: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-06 filter Aktif → semua Aktif; filter Nonaktif → semua Nonaktif: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-07 sort Kode &amp; Nama: klik kedua membalik urutan: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-08 lebih dari 10 kelas → Berikutnya menampilkan sisanya: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-09 Export Ke Excel (hasil cari) → file berisi kode kelas: -</p><p>Kelas Penumpang — daftar &gt; [Positif] KK-10 menu ⋯: kelas Aktif → Nonaktifkan; kelas Nonaktif → Aktifkan (+ ubah &amp; hapus): -</p><p>Kelas Penumpang — form (tanpa menyimpan) &gt; [Negatif] KK-11 Simpan form kosong → &quot;Kode … wajib diisi&quot; &amp; &quot;Nama … wajib diisi&quot;, form tetap terbuka: -</p><p>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-12 status default form Tambah = Aktif: -</p><p>Kelas Penumpang — form (tanpa menyimpan) &gt; [Edge] KK-13 kode 30 karakter / huruf kecil / simbol → dibatasi atau ditolak (tidak tersimpan apa adanya): -</p><p>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-14 Batal: form kosong langsung tertutup; form terisi → konfirmasi → Kembali → isian tetap: -</p><p>Kelas Penumpang — form (tanpa menyimpan) &gt; [Positif] KK-15 Ubah/Edit Data: isian sama dengan baris di tabel; tutup tanpa perubahan → tanpa konfirmasi: -</p><p>Kelas Penumpang — dampak &gt; [Dampak] KK-20 form Kapal langkah 3 hanya menawarkan kelas AKTIF dari master Kelas Penumpang: -</p><p>Kelas Penumpang — dampak &gt; [Dampak] KK-21 kelas di tabel Alokasi Keberangkatan ada di master Kelas Penumpang &amp; Aktif: -</p><p>Kelas Penumpang — temuan &gt; [Temuan] KK-T01 nama kelas seharusnya unik (tidak ada dua kelas bernama sama) [perlu konfirmasi]: -</p><p>Kelas Penumpang — temuan &gt; [Temuan] KK-T02 label menu &quot;Edit Data&quot; seharusnya &quot;Ubah Data&quot; seperti menu master lain: -</p><p>Kelas Penumpang — temuan &gt; [Temuan] KK-T03 kuota kelas NONAKTIF di kapal tidak terlihat di form Kapal tapi tetap dihitung di total [perlu konfirmasi]: -</p>
+</body></html>

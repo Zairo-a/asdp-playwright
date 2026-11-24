@@ -1,0 +1,8 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"branch-list.spec.ts";"cabang: lihat struktur (tanpa filter)";"EKSPLORASI";"LULUS";"1.0";"";""
+"2";"branch-list.spec.ts";"cabang: filter dan hak akses yang dikirim server";"EKSPLORASI";"LULUS";"0.2";"";""
+"3";"branch-list.spec.ts";"cabang: variasi parameter yang sah (lihat balasan)";"EKSPLORASI";"LULUS";"8.5";"";""
+"4";"branch-list.spec.ts";"cabang: parameter yang salah (lihat balasan)";"EKSPLORASI";"LULUS";"3.9";"";""
+"5";"branch-list.spec.ts";"cabang: karakter khusus pada pencarian tidak membuat error server";"PEMERIKSAAN";"LULUS";"3.8";"";""
+"6";"branch-list.spec.ts";"cabang gagal: tanpa token ditolak";"PEMERIKSAAN";"LULUS";"0.2";"";""
+"7";"branch-list.spec.ts";"cabang gagal: token ngawur ditolak";"PEMERIKSAAN";"LULUS";"0.1";"";""

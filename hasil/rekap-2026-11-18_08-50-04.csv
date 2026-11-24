@@ -1,0 +1,2 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\golongan.spec.ts";"Golongan Kendaraan — form (tanpa menyimpan) > [Negatif] GK-10 Simpan form kosong → 4 pesan wajib diisi";"PEMERIKSAAN";"GAGAL";"31.8";"";"Error: expect(locator).toBeVisible() failed"

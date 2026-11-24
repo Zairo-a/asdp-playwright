@@ -1,0 +1,2 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-filter.spec.ts";"Keberangkatan & Alokasi — filter & navigasi > [Edge] KA-F13 rute tanpa jadwal → pesan kosong ""0 data"", tidak error";"PEMERIKSAAN";"LULUS";"8.2";"";""

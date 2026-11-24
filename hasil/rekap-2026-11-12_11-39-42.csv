@@ -1,0 +1,6 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-barang-ubah.spec.ts";"Keberangkatan — Barang & Hewan (ubah data + restore) > [Positif] KB-10 simpan target 10 → label ""override"", Sisa target 10, bertahan setelah reload";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"2";"UI\keberangkatan-barang-ubah.spec.ts";"Keberangkatan — Barang & Hewan (ubah data + restore) > [Positif] KB-11 kosongkan target lalu Simpan → kembali ke nilai jadwal";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"3";"UI\keberangkatan-barang-ubah.spec.ts";"Keberangkatan — Barang & Hewan (ubah data + restore) > [Edge] KB-12 target 1 (nilai terkecil yang bermakna) → tersimpan";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"4";"UI\keberangkatan-barang-ubah.spec.ts";"Keberangkatan — Barang & Hewan (ubah data + restore) > [Temuan] KB-T02 target sangat besar seharusnya ditolak dengan pesan validasi, bukan error server (HTTP 500)";"PEMERIKSAAN";"DILEWATI";"0.0";"";""
+"5";"UI\keberangkatan-barang-ubah.spec.ts";"Keberangkatan — Barang & Hewan (ubah data + restore) > [Temuan] KB-T03 Simpan berikutnya seharusnya TIDAK menghapus target yang sudah tersimpan";"PEMERIKSAAN";"DILEWATI";"0.0";"";""

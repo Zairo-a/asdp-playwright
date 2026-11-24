@@ -1,0 +1,6 @@
+﻿No;Berkas;Test;Jenis;Status;Durasi (detik);Catatan;Pesan error
+"1";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Positif] KA-K01 dropdown Kapal hanya berisi kapal AKTIF dari master Kapal";"PEMERIKSAAN";"GAGAL";"4.2";"";"Error: opsi ""656ghgf (7565)"" harus kapal aktif di master"
+"2";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Positif] KA-K02 ganti kapal tanpa Simpan → angka belum berubah; Batal mengembalikan kapal default";"PEMERIKSAAN";"LULUS";"3.1";"";""
+"3";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Negatif] KA-K03 cari kapal yang tidak ada → tidak ada opsi";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"4";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Positif] KA-K04 kapasitas fisik = min(SKKP − ABK, pelampung) sesuai keterangan di layar";"PEMERIKSAAN";"LULUS";"2.3";"";""
+"5";"UI\keberangkatan-kapal.spec.ts";"Keberangkatan — Kapal override (read-only) > [Temuan] KA-K05 kapasitas fisik di keberangkatan seharusnya sama dengan ""Kap. Penumpang"" di master Kapal [perlu konfirmasi]";"PEMERIKSAAN";"DILEWATI";"3.5";"Kapal ""JDHAFGD"" tidak ditemukan di master";""
